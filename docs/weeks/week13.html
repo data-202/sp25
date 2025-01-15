@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nathan Alexander, PhD">
+
+<title>DATA 202 - Week 13 – DATA 202: Statistically Measuring and Modeling Social Justice</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../weeks/week14.html" rel="next">
+<link href="../weeks/week12.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<meta property="og:title" content="DATA 202 - Week 13 – DATA 202: Statistically Measuring and Modeling Social Justice">
+<meta property="og:description" content="Multivariate analysis">
+<meta property="og:site_name" content="DATA 202: Statistically Measuring and Modeling Social Justice">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week01.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week13.html">Week 13</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/dubois-loc.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/data-202/" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://canvas.howard.edu/courses/59441" title="Canvas site" class="quarto-navigation-tool px-1" aria-label="Canvas site"><i class="bi bi-code-square"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course landing page</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computing</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Weekly materials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week06.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week13.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Week 13</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 14</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Papers</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../papers/annotated.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annotated Bibliography</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../papers/paper1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paper 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../papers/paper2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paper 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../papers/papers-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructions for each paper</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../papers/papers-more-info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">More information for papers</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab1.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Resources</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#part-i-context" id="toc-part-i-context" class="nav-link active" data-scroll-target="#part-i-context">Part I: Context</a>
+  <ul class="collapse">
+  <li><a href="#framing-social-justice" id="toc-framing-social-justice" class="nav-link" data-scroll-target="#framing-social-justice">Framing social justice</a></li>
+  <li><a href="#understanding-social-justice" id="toc-understanding-social-justice" class="nav-link" data-scroll-target="#understanding-social-justice">Understanding social justice</a></li>
+  </ul></li>
+  <li><a href="#part-ii-content" id="toc-part-ii-content" class="nav-link" data-scroll-target="#part-ii-content">Part II: Content</a>
+  <ul class="collapse">
+  <li><a href="#multivariable-vs.-multivariate" id="toc-multivariable-vs.-multivariate" class="nav-link" data-scroll-target="#multivariable-vs.-multivariate">Multivariable vs.&nbsp;Multivariate</a></li>
+  <li><a href="#examples-of-multivariate-analysis-techniques" id="toc-examples-of-multivariate-analysis-techniques" class="nav-link" data-scroll-target="#examples-of-multivariate-analysis-techniques">Examples of multivariate analysis techniques</a></li>
+  </ul></li>
+  <li><a href="#part-iii-code" id="toc-part-iii-code" class="nav-link" data-scroll-target="#part-iii-code">Part III: Code</a>
+  <ul class="collapse">
+  <li><a href="#next-up-week-14" id="toc-next-up-week-14" class="nav-link" data-scroll-target="#next-up-week-14">Next up: Week 14</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week13-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week01.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week13.html">Week 13</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">DATA 202 - Week 13</h1>
+<p class="subtitle lead">Multivariate analysis</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Nathan Alexander, PhD </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Center for Applied Data Science and Analytics
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="part-i-context" class="level2">
+<h2 class="anchored" data-anchor-id="part-i-context">Part I: Context</h2>
+<section id="framing-social-justice" class="level3">
+<h3 class="anchored" data-anchor-id="framing-social-justice">Framing social justice</h3>
+<p>Multivariate analyses may require that we consider various intersections of social justice. Namely, rather than a single lens on an issue, we may be required to take an intersectional perspective with regards to a given <em>set</em> of social issues.</p>
+<p>There are many different definitions of social justice. Through our course, we have examined different data and statistical analyses to better engage the various connections when measuring and modeling social justice. However, it is important to develop more specific ideations and frameworks as we delve deeper into our selection of various methodologies to explore data.</p>
+<p>Earlier, we considered <em>theory construction</em> as one method to examine distinct and interrelated concepts in the development of a statistical study. Theory construction, together with the importance of understanding the phenomenon of <strong>social justice</strong> requires that we review some of the key concepts and principles that can be accented by data analysis.</p>
+<p>Importantly, we generally want to prioritize theory and context before methodology.</p>
+<hr>
+</section>
+<section id="understanding-social-justice" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-social-justice">Understanding social justice</h3>
+<p>When considering the different definitions of social justice, we want to consider the distinction between individual and collective frameworks for justice. This distinction allows us to explore the relationships between social issues and equality, as a foundational principle to understanding difference. However, when we consider the historical context, we are often required to extend our analyses beyond the blanket expressions for equality.</p>
+<p>Equality and equity are two concepts that are often discussed in the context of social justice and fairness. While they are related, they have distinct meanings.</p>
+<hr>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Definitions</strong>: Equality vs.&nbsp;Equity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Equality</strong>: Equality refers to the state of being equal, particularly in terms of rights, opportunities, and treatment. It emphasizes providing everyone with the same resources, regardless of their circumstances or needs. In other words, equality means that everyone is treated identically, without discrimination or favoritism. The goal of equality is to ensure fairness and eliminate unfair advantages or disadvantages.</p>
+<p><strong>Equity</strong>: Equity is about fairness and justice by taking into account the unique circumstances and needs of individuals, as well as the historical contexts. It recognizes that not everyone starts from the same place and that treating everyone equally may not result in true fairness. Equity aims to provide individuals with the resources and support they need to overcome systemic disadvantages and achieve equality of outcome. It involves allocating resources and opportunities based on the specific needs and circumstances of individuals or groups.</p>
+</div>
+</div>
+<p>More generally, equality focuses on treating everyone the same, while equity emphasizes fairness by addressing individual or group-specific disadvantages and providing resources accordingly. Both concepts play an important role in promoting social justice and creating a more equitable society.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/wk13-a-1.png" class="img-fluid figure-img"></p>
+<figcaption>A surface explanation of equality vs.&nbsp;equity. Image from NACEweb.org</figcaption>
+</figure>
+</div>
+<hr>
+<section id="principles-of-social-justice" class="level4">
+<h4 class="anchored" data-anchor-id="principles-of-social-justice">Principles of social justice</h4>
+<p>There are many ways to take a theoretical approach to social justice, and often too many to list. As a result, it may be helpful for us to consider the principles of social justice as a framework to adapt your specific analyses (using real-world data) and your theoretical framework to a subset of these principles.</p>
+<table class="table-striped table-hover caption-top table">
+<caption>Principles of social justice</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Principle</th>
+<th>Component 1</th>
+<th>Component 2</th>
+<th>Component 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fairness</td>
+<td>Equal opportunity</td>
+<td>Systemic disadvantage</td>
+<td>Reducing inequality</td>
+</tr>
+<tr class="even">
+<td>Solidarity</td>
+<td>Social cohesion</td>
+<td>Self-determination</td>
+<td>Collective responsibility</td>
+</tr>
+<tr class="odd">
+<td>Dignity</td>
+<td>Human rights</td>
+<td>Worth of all</td>
+<td>Combating marginalization</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="dimensions-of-social-justice" class="level4">
+<h4 class="anchored" data-anchor-id="dimensions-of-social-justice">Dimensions of social justice</h4>
+<p>Just as there are many theoretical entry points to social justice, there are also dimensional components that may be used to help focus your analysis. These dimensions help to clarify the specific principles noted above in a more concrete way. Importantly, these principles and dimensions are neither rigid or fixed.</p>
+<table class="table-striped table-hover caption-top table">
+<caption>Dimensions of social justice</caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th>Component 1</th>
+<th>Component 2</th>
+<th>Component 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Economic</td>
+<td>Poverty and income inequality</td>
+<td>Fair distribution of resources and wealth</td>
+<td>Access to education, employment, healthcare</td>
+</tr>
+<tr class="even">
+<td>Environmental</td>
+<td>Protecting and preserving the environment</td>
+<td>Mitigating environmental degradation</td>
+<td>Ensuring equitable access to natural resources</td>
+</tr>
+<tr class="odd">
+<td>Racial and ethnic</td>
+<td>Combating racism and discrimination</td>
+<td>Promoting racial and ethnic equality</td>
+<td>Recognizing and valuing cultural diversity</td>
+</tr>
+<tr class="even">
+<td>Gender and LGBTQ+</td>
+<td>Achieving gender equality and empowerment</td>
+<td>Addressing discrimination based on sexuality or gender expression</td>
+<td>Ensuring equal rights for all genders</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/wk13-a-2.jpg" class="img-fluid figure-img"></p>
+<figcaption>A sample framework for racial justice in education. Image from NEA.org</figcaption>
+</figure>
+</div>
+<hr>
+</section>
+<section id="strategies-to-promote-social-justice" class="level4">
+<h4 class="anchored" data-anchor-id="strategies-to-promote-social-justice">Strategies to promote social justice</h4>
+<p>As you consider the various principles and dimensions in your theoretical framing of a particular social issue, data can be used as a method to promote social justice by examining attitudes around the various principles and dimensions (e.g., consider variables in the GSS data), examining real-world data on issues of social injustice (e.g., consider the fatal force database), and a host of other methods that center data analysis as a form of political knowledge.</p>
+<p>There are, however, specific ways to think about the implications of a particular analytical study. These methods can help to further refine the role and goals of any particular modeling of a social justice issues. Importantly, considering the various contexts to which an issue intersections is also important (i.e., global, national, and/or local).</p>
+<hr>
+<ul>
+<li><p>Advocacy and activism</p>
+<p>– Using data to raise awareness about social issues</p>
+<p>– Mobilizing for policy change with various statistical models</p>
+<p>– Supporting grassroots movements using quantitative information</p></li>
+</ul>
+<hr>
+<ul>
+<li><p>Policy interventions</p>
+<p>– Analyses to help examine and implement laws and regulations</p>
+<p>– Quantification to help redistribute resources and opportunities</p>
+<p>– Models to help inform inclusive social welfare programs</p></li>
+</ul>
+<hr>
+<ul>
+<li><p>Education and awareness</p>
+<p>– Promoting critical thinking and empathy</p>
+<p>– Incorporating social justice into curricula</p>
+<p>– Engaging in dialogue and community outreach</p>
+<p>– Calls to action for promoting a more just and equitable society</p></li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+<section id="part-ii-content" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii-content">Part II: Content</h2>
+<p>Multiple Variable Analysis and Multivariate Analysis are two terms often used in statistics and research methodology to describe different approaches to analyzing data involving multiple variables. While they share similarities, there are distinct differences between these two concepts.</p>
+<hr>
+<section id="multivariable-vs.-multivariate" class="level3">
+<h3 class="anchored" data-anchor-id="multivariable-vs.-multivariate">Multivariable vs.&nbsp;Multivariate</h3>
+<p><em>Multiple variable analysis</em> investigates the influence of individual independent variables on a single dependent variable, while <em>multivariate analysis</em> explores the relationships and patterns among multiple variables simultaneously. Multiple Variable Analysis is often used when studying the effects of specific factors, while multivariate analysis is employed to uncover broader patterns and structures within a dataset. Both approaches are valuable in data analysis, and the choice between them depends on the research objectives and the nature of the data being analyzed.</p>
+<div class="callout callout-style-simple callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Definitions</strong>: Multiple variable analysis vs.&nbsp;Multivariate analysis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Multiple Variable Analysis</strong>: Multiple Variable Analysis refers to the process of examining the relationships between several independent variables and a single dependent variable. It aims to understand how each independent variable influences or predicts the dependent variable individually, while controlling for other variables. In this analysis, each independent variable is analyzed separately, often using techniques such as regression analysis or analysis of variance (ANOVA).</p>
+<p><strong>Multivariate Analysis</strong>: Multivariate Analysis involves the simultaneous analysis of multiple dependent and independent variables. It aims to explore the relationships and patterns among multiple variables, considering them as a whole. This analysis technique allows for the examination of complex interactions and associations between variables, providing a more comprehensive understanding of the data.</p>
+</div>
+</div>
+<hr>
+<section id="key-characteristics-of-multiple-variable-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="key-characteristics-of-multiple-variable-analysis">Key characteristics of multiple variable analysis</h4>
+<ol type="1">
+<li><p><strong>Focus</strong>: Examining the impact of individual independent variables on a single dependent variable.</p></li>
+<li><p><strong>Analytic approach</strong>: Each independent variable is analyzed separately, allowing for isolation of their effects.</p></li>
+<li><p><strong>Purpose</strong>: To identify the individual contributions and significance of multiple variables in explaining the variation in the dependent variable.</p></li>
+<li><p><strong>Statistical techniques</strong>: Common techniques include simple linear regression, multiple linear regression, and ANOVA.</p></li>
+</ol>
+<hr>
+</section>
+<section id="key-characteristics-of-multivariate-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="key-characteristics-of-multivariate-analysis">Key characteristics of multivariate analysis</h4>
+<ol type="1">
+<li><p><strong>Focus</strong>: Examining the relationships and interactions among multiple variables simultaneously.</p></li>
+<li><p><strong>Analytic approach</strong>: Considering all variables together, accounting for their joint effects and potential interdependence.</p></li>
+<li><p><strong>Purpose</strong>: To explore patterns, associations, and structures within the data, identifying underlying factors or dimensions.</p></li>
+<li><p><strong>Statistical techniques</strong>: Common techniques include factor analysis, principal component analysis, cluster analysis, and structural equation modeling.</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="examples-of-multivariate-analysis-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="examples-of-multivariate-analysis-techniques">Examples of multivariate analysis techniques</h3>
+<ul>
+<li><p><em>Principal component analysis (PCA)</em>: PCA is used to reduce the dimensionality of data by transforming it into a new set of uncorrelated variables called principal components. R functions for PCA include <code>prcomp()</code> and <code>princomp()</code>.</p></li>
+<li><p><em>Factor analysis</em>: Factor Analysis aims to identify latent factors that explain the correlations among observed variables. R offers functions like <code>factanal()</code> and <code>psych::fa()</code> for conducting factor analysis.</p></li>
+<li><p><em>Canonical correlation analysis (CCA)</em>: CCA examines the relationships between two sets of variables and identifies the linear combinations of each set that have maximum correlation with each other. The <code>CCA()</code> function in the stats package can be used for this analysis.</p></li>
+<li><p><em>Cluster analysis</em>: Cluster Analysis groups similar observations into clusters based on the similarity of their characteristics. R provides various clustering techniques, such as k-means clustering (<code>kmeans()</code>), hierarchical clustering (<code>hclust()</code>), and model-based clustering (<code>Mclust()</code>).</p></li>
+<li><p><em>Discriminant analysis</em>: Discriminant Analysis aims to find a linear combination of variables that maximally separate predefined groups or classes. R offers functions like <code>lda()</code> and <code>qda()</code> for performing Linear Discriminant Analysis (LDA) and Quadratic Discriminant Analysis (QDA), respectively.</p></li>
+<li><p><em>Multivariate regression</em>: Multivariate Regression extends simple linear regression to multiple response variables. The <code>lm()</code> function in R can be used for multivariate regression analysis.</p></li>
+<li><p><em>Multivariate analysis of variance (MANOVA)</em>: MANOVA extends the analysis of variance (ANOVA) to multiple response variables simultaneously. The <code>manova()</code> function in R can be used for MANOVA.</p></li>
+<li><p><em>Multidimensional scaling (MDS)</em>: MDS visualizes the similarity or dissimilarity between objects in a lower-dimensional space. R provides functions like <code>cmdscale()</code> and <code>isoMDS()</code> for performing MDS.</p></li>
+<li><p><em>Structural Equation Modeling (SEM)</em>: SEM is a comprehensive framework for testing complex relationships among variables. R packages like lavaan and sem offer functionalities for conducting SEM.</p></li>
+<li><p><em>Correspondence Analysis</em>: Correspondence Analysis explores the associations between categorical variables and visualizes them in a low-dimensional space. The <code>ca()</code> function in the ca package is commonly used for correspondence analysis.</p></li>
+</ul>
+<p>We will consider a few of these models in our final weeks for the course.</p>
+<hr>
+</section>
+</section>
+<section id="part-iii-code" class="level2">
+<h2 class="anchored" data-anchor-id="part-iii-code">Part III: Code</h2>
+<p>We will discuss specific code for your projects.</p>
+<section id="next-up-week-14" class="level3">
+<h3 class="anchored" data-anchor-id="next-up-week-14">Next up: Week 14</h3>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/github\.com\/data-202\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../weeks/week12.html" class="pagination-link" aria-label="Week 12">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 12</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../weeks/week14.html" class="pagination-link" aria-label="Week 14">
+        <span class="nav-page-text">Week 14</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2025, Nathan Alexander</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This page was built by Nathan Alexander, PhD in <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

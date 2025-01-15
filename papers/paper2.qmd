@@ -12,7 +12,7 @@ For review, you may also refer to *more information for course papers* in two ad
 
 # Step 1: Theory and logic diagram
 
-For paper #2, we are interested in exploring theories pertaining to the relationship between two individual level variables - a bivariate analysis. Specifically, we are interested in understanding the association of individual characteristics as they relate to some broader systems-level issue. For example, we could examine the relationship between income and gender at the individual level to understand the historical practices and development of systems that have contributed to theories relating income and gender.
+For paper #2, we are interested in exploring theories pertaining to the relationship between **three or more variables**. Specifically, we are interested in understanding the association of individual characteristics as they relate to some broader systems-level issue. For example, we could examine the relationship between income and gender at the individual level to understand the historical practices and development of systems that have contributed to theories relating income and gender.
 
 *Note: For your paper, please remember to address the theoretical relationship that the literature has identified between the conceptual variables selected. That is, before describing the measures and the survey you will be using, explain your theory and why you think that your independent variable is having an effect on your dependent variable.*
 
@@ -29,8 +29,11 @@ For example, we might assume that certain individual level characteristics, like
 %%| fig-responsive: false
 flowchart LR
   A[Income] --> B[Strength of support for a political party]
+  A --> C[Religious affiliation]
   
 ```
+
+In the code below, we will focus on the relationship between `A` and `B`.
 
 ## Prepare files
 
@@ -264,5 +267,3 @@ In paper 2, you should use two variables and conduct a bivariate analyses, such 
 Using your cross-tabulations and statistical analyses, you should write up the results of your findings. These findings should refer to your initial hypothesis and whether or not the statistical outputs confirm those findings.
 
 You should include relevant plots or graphics in your paper.
-
-Be sure to save your Rscript as you work, one easy name is `paper2`.

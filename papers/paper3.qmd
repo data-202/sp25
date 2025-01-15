@@ -12,7 +12,9 @@ For review, you may also refer to *more information for course papers* in two ad
 
 # Step 1: Theory and logic diagram
 
-For paper #3, we are interested in exploring theories pertaining to the relationship between two variables. Specifically, we are interested in understanding the association of characteristics. Your paper 3 assignment should align with your lab 3 submissions, although updates may be made.
+Paper #3 is meant for those for whom two papers was not enough!
+
+For this paper, we are interested in exploring more advanced theories pertaining to the relationship between variables explored in papers 1 or 2. Specifically, we are interested in understanding the association of characteristics, co-variates, and other relationships. Your paper 3 assignment should align with any goals you have upon completing your studies.
 
 *Note: For your paper, please remember to address the theoretical relationship that the literature has identified between the conceptual variables selected. That is, before describing the measures and the survey you will be using, explain your theory and why you think that your independent variable is having an effect on your dependent variable.*
 

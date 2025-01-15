@@ -66,17 +66,21 @@ Throughout the course, there will be a strong emphasis on how statistical modeli
 
 -   Make sense of data and be able to report the results in appropriate tables or statistical terms
 
-## Course CANVAS site
-
 ## Course companion site
 
-The landing page for our companion site can be found [here](https://data-202.github.io/fa24).
+The landing page for our companion site can be found [here](https://data-202.github.io/sp25).
 
 ## Initial assignments
 
-### Paper #1
+### Annotated Bibliography
 
-[<u>**REMINDER: Paper 1 is due Friday September 25**</u>]{style="color:red;"}
+Your annotated bibliography is due Sun Feb 2 using OpenAlex or the Web of Science (WoS).
+
+### Lab #1
+
+Lab 1 is due Sun Feb 16.
+
+### Paper #1
 
 You can read more about paper #1 [here](/papers/paper1.qmd).
 
@@ -84,7 +88,7 @@ See the instructions for paper assignments [here](/papers/papers-instructions.qm
 
 Also, learn more about paper assignments [here](/papers/papers-more-info.qmd).
 
-### Case Study: Tuskegee Experiement of Untreated Syphillis
+## Case Study 1: Tuskegee Experiement of Untreated Syphillis
 
 To help you prepare for our forthcoming discussions and readings, you should explore information about our first case study.
 One place to start is here: "The Tuskegee Experiment: Crash Course Black American History #29" in the video below:
@@ -97,4 +101,3 @@ One place to start is here: "The Tuskegee Experiment: Crash Course Black America
 
 </center>
 
-## References
