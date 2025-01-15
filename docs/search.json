@@ -1,0 +1,112 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to DATA 202",
+    "section": "",
+    "text": "Part\nWeek\nDay\nTopics\nLabs\nPapers\nReadings\n\n\n\n\nI\n1\nWed, Jan 15\nIntroduction\nLab 0\n\nCase study 1 files\n\n\n\n2\nWed, Jan 22\nFoundations\n\n\nPelham (2013, ch. 1)\n\n\n\n3\nWed, Jan 29\nTheory construction\n\nAnnotated bibliography\nFrisby (2024)\n\n\n\n4\nWed, Feb 5\nProbability theory\n\n\nGarcia, López, & Vélez (2018)\n\n\nII\n5\nWed, Feb 12\nUnivariate analysis\nLab 1\n\nCase study 2 files\n\n\n\n6\nWed, Feb 19\nBivariate analysis\n\n\n\n\n\n\n7\nWed, Feb 26\nExploratory analysis\n\nPaper 1\n\n\n\n\n8\nWed, Mar 12\nHypothesis testing\n\n\n\n\n\nIII\n9\nWed, Mar 19\nNotes on causal theories\n\n\nCase study 3 files\n\n\n\n10\nWed, Mar 26\nModeling social in/justice\nLab 2\n\n\n\n\n\n11\nWed, Apr 2\nOn regression\n\n\n\n\n\n\n12\nWed, Apr 9\nMore on regression\n\n\n\n\n\nIV\n13\nWed, Apr 16\nStatistical learning\n\nPaper 2\nCase study 4 files\n\n\n\n14\nWed, Apr 23\nOverview of additional models",
+    "crumbs": [
+      "Course information",
+      "Course landing page"
+    ]
+  },
+  {
+    "objectID": "index.html#site-description",
+    "href": "index.html#site-description",
+    "title": "Welcome to DATA 202",
+    "section": "Site Description",
+    "text": "Site Description\nThe pages on this site outline the coding components of the DATA 202: Statistically Measuring and Modeling Social Justice course at Howard University, taught by me: Professor Nathan Alexander.\nThe information on this page will serve as a technical companion to our Canvas site.\nThis page will support you in our course in the following ways:\n\nThis page will help you work with data sets and complete small tasks over time.\nThis page will walk you through the measurement aspect of research questions relevant to modeling issues of social justice.\nThis page will help you integrate mathematical ideas and technical formulas into your work.\nThis page will support your use of theory in your statistical practice, and increase your ability to document reproducible code around a set of research questions.\n\nOur canvas site (click here) contains readings and is where you will submit all assignments.\nThis site should be paired with Canvas to help you complete course assignments.\nAnd just for good measure: all assignments should be turned in via Canvas.\nWhen turning in assignments on Canvas:\n\nGenerally, PDF submissions are the way to go.\nI will not download any files not uploaded to Canvas. I will only click on a clearly visible Github repository (i.e., no shortened or bit.ly links). Article citations that include DOIs are preferred.\nWe will discuss Quarto Markdown files which integrate code, formulas, and text. Quarto is actually how I created this site for our course, and it is a great way to communicate your technical ideas.\nThis is a Canvas companion site/page (I’ll use these terms interchangeably) and it will serve as your guide to completing all technical assignments.\n\n\nGiving credit\nThe below websites were used when building this course site. I am thankful for those who have provided open source resources such as these that allow others to generate new products.\n\nDuke University’s STAT 101 course site\nNoli Brazil’s Quantitative Methods in Community Research\n\n\n\nNext up: Overview\nThe overview in the next section will walk you through the technical flow of the course.\nLike this section, a preview of forthcoming topics will be included at the bottom of each page; this means that you can treat this site like a textbook that you would read in order from start to finish. Though I encourage you to explore what else is out there and make use of other resources. That said, submissions should follow the formal guidelines outlined on our syllabus, Canvas, and this site.\n\nThe syllabus provides a high-level view of the course.\nCanvas is the go-to for submissions and provides readings and assignments.\nThis course site provides technical items and code to help you complete your assignments.\n\nComing up next are the four parts of the course and an overview of the assignments for the term. Course topics are outlined in more detail and integrated into the assignment submission schedule on the next page; see you over there!",
+    "crumbs": [
+      "Course information",
+      "Course landing page"
+    ]
+  },
+  {
+    "objectID": "assignments.html",
+    "href": "assignments.html",
+    "title": "Assignments",
+    "section": "",
+    "text": "This page contains three sections:\n\nBrief overview of all course assignments.\nInformation about lab 0 (ungraded).\n\n\nOverview of course assignments\nOur course assignments will be split between reading and typing (code and analytic results).\n\n\n\n\n\n\n\n\nCourse component\nAssignment\nDate(s)\n\n\n\n\nPart I: Statistics and society\n\n\n\n\n\nLab #0\nDue: Tue Jan 21\n\n\n\nAnnotated Bibliography\nDue: Sun Feb 2\n\n\n\nLab #1\nDue: Sun Feb 16\n\n\nPart II: Data and people\n\n\n\n\n\nPaper #1\nDue: Fri Feb 28\n\n\nPart III: Data and policy\n\n\n\n\n\nLab #2\nDue: Sun Mar 30\n\n\nPart IV: Data in practice\n\n\n\n\n\nPaper #2\nDue: Sun Apr 20\n\n\n\nPaper #3 (optional)\nDue: Sun Apr 27\n\n\n\n\n\nSample exercises\nBelow are a few sample exercises of the types of problems we’ll explore in class. This work is ungraded, and while there is no prerequisite for this course, these problems should serve as a review and a preview of content that we’ll explore for the course. Please do not hesitate to reach out with questions.\nExercise 0.1. If an individual’s projected income is to be converted to a z-score, which of these z-scores would a “rational agent” prefer: -2.00, -1.00, 0, 1.00, or 2.00? What is a “rational agent”? Explain why the “rational agent” would prefer the z-score you selected? Cite any sources.\nExercise 0.2. What is an integer? What is the sum of the first 100 positive integers? Explain your solution. Cite any sources. Bonus points (but definitely not required for our course): write a proof of the solution.\nExercise 0.3. Have you ever heard of p-hacking? P-hacking is where a researcher conducts multiple tests and only reports the significant results from those tests. What are some main issues here?\n\n\nLab 0\nFor your first lab, you will install two software programs on your local machine: the first is base R and the second is the RStudio Integrated Development Environment, or IDE. Both programs are required.\n\n\n\n\n\n\nYou must download both R and RStudio!\n\n\n\n\n\nIn order to complete assignments, you must download base R and RStudio to your computer.\n\n\n\nRStudio is now called Posit. When you are searching online you will begin to see language differences.\nIt can all get very confusing. In order to reduce confusion, I am requesting that you watch this short tutorial so that we’re all on the same page. I will discuss this more when we meet.\n\n\nNext up: Computing\nOn the next page, I will walk you through downloading the appropriate software for our work this term.",
+    "crumbs": [
+      "Course information",
+      "Assignments"
+    ]
+  },
+  {
+    "objectID": "course-overview.html",
+    "href": "course-overview.html",
+    "title": "Course overview",
+    "section": "",
+    "text": "On the previous page, we ended with the following three points:\n\nThe syllabus provides a high-level view of the course.\nCanvas is the go-to for submissions and provides readings and assignments.\nThis course site provides technical items and code to help you complete your assignments.\n\nWe’ll focus on the syllabus, Canvas, and this companion site to get a detailed overview of our course.\n\n\nA high-level view of the course.\nPlease note: this section is only a summary of our syllabus. The full syllabus is available on our Canvas site here. I have summarized some important items found on the syllabus below:\nInstructor: Nathan Alexander, PhD\n\nContact information:\nEmail: nathan.alexander@howard.edu\nOffice hours: By appointment at https://nathanalexander.youcanbook.me\nCourse information:\nCourse meeting times: Wednesdays at 5:10pm EST (10:10pm UTC)\nCourse meeting location: Zoom (see Canvas)\n\n\n\n\nTable 1: DATA 202 course schedule (spring 2025)\n\n\n\n\n\nCourse component\nWeeks\nDates1\n\n\n\n\nPart I: Statistics and society\n4 weeks\nJan 15 - Feb 5\n\n\nPart II: Data and people\n4 weeks\nFeb 12 - Mar 12\n\n\nPart III: Data and policy\n4 weeks\nMar 19 - Apr 9\n\n\nPart IV: Data in practice\n2 weeks\nApr 16 - Apr 23\n\n\n\n\n\n\n\n\n\nCanvas is the go-to for submissions, and where you can find readings and assignment rubrics. Here is another link to Canvas, I’ll try to drop these as often as possible. Two things about Canvas: it has your assignments and it has your readings.\n\n\n\nThe four categories for assignments in this course are as follows:\n\nAnnotated Bibliography. Statistical studies [10 points]\nLabs reports. Two long-form lab reports [30 points]\nPapers. Two 20-page papers [60 points]\n\n\n\n\n\n\n\n\n\n\n\nThis course should be viewed as an intense but remote introduction to what we might label “critical statistics” or “social justice statistics”. It will be important that we gain both a conceptual and theoretical understanding of the various concepts we will explore, and then a technical understanding of the complex issues that relate to them. We also want to communicate our ideas. These can be difficult tasks.\nBut I encourage you to explore and to be creative, and to take chances. Errors should mostly remind us that there is always the backspace button. Below are some general expectations to keep us all moving forward as a community:\n\n\nCommunicate early and often\nShow up to class on time\nDo not schedule other meetings during class time\nNo late work will be accepted without prior discussion\n\n\n\n\n\n\nYou can return to this page to remind yourself of the four parts of our course, especially when we dive deep into specific projects. This page will remain static (it will not be updated), so use it as an archive that you can return to; start in this page position if you have questions about the schedule, procedures, expectations (above) …then assignments (next).\n\n\n\nIn the next section, we’ll start with a brief overview of assignments and dive into your first two assignments (ungraded). The HW #0 and Lab #0 assignments will serve two purposes: first, they will help introduce you to the tools we’ll use as we begin to review statistical concepts; second, they will set you up for your first graded assignment coming up in two weeks.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#a-slightly-more-detailed-overview.",
+    "href": "course-overview.html#a-slightly-more-detailed-overview.",
+    "title": "Course overview",
+    "section": "",
+    "text": "On the previous page, we ended with the following three points:\n\nThe syllabus provides a high-level view of the course.\nCanvas is the go-to for submissions and provides readings and assignments.\nThis course site provides technical items and code to help you complete your assignments.\n\nWe’ll focus on the syllabus, Canvas, and this companion site to get a detailed overview of our course.\n\n\nA high-level view of the course.\nPlease note: this section is only a summary of our syllabus. The full syllabus is available on our Canvas site here. I have summarized some important items found on the syllabus below:\nInstructor: Nathan Alexander, PhD\n\nContact information:\nEmail: nathan.alexander@howard.edu\nOffice hours: By appointment at https://nathanalexander.youcanbook.me\nCourse information:\nCourse meeting times: Wednesdays at 5:10pm EST (10:10pm UTC)\nCourse meeting location: Zoom (see Canvas)\n\n\n\n\nTable 1: DATA 202 course schedule (spring 2025)\n\n\n\n\n\nCourse component\nWeeks\nDates1\n\n\n\n\nPart I: Statistics and society\n4 weeks\nJan 15 - Feb 5\n\n\nPart II: Data and people\n4 weeks\nFeb 12 - Mar 12\n\n\nPart III: Data and policy\n4 weeks\nMar 19 - Apr 9\n\n\nPart IV: Data in practice\n2 weeks\nApr 16 - Apr 23\n\n\n\n\n\n\n\n\n\nCanvas is the go-to for submissions, and where you can find readings and assignment rubrics. Here is another link to Canvas, I’ll try to drop these as often as possible. Two things about Canvas: it has your assignments and it has your readings.\n\n\n\nThe four categories for assignments in this course are as follows:\n\nAnnotated Bibliography. Statistical studies [10 points]\nLabs reports. Two long-form lab reports [30 points]\nPapers. Two 20-page papers [60 points]\n\n\n\n\n\n\n\n\n\n\n\nThis course should be viewed as an intense but remote introduction to what we might label “critical statistics” or “social justice statistics”. It will be important that we gain both a conceptual and theoretical understanding of the various concepts we will explore, and then a technical understanding of the complex issues that relate to them. We also want to communicate our ideas. These can be difficult tasks.\nBut I encourage you to explore and to be creative, and to take chances. Errors should mostly remind us that there is always the backspace button. Below are some general expectations to keep us all moving forward as a community:\n\n\nCommunicate early and often\nShow up to class on time\nDo not schedule other meetings during class time\nNo late work will be accepted without prior discussion\n\n\n\n\n\n\nYou can return to this page to remind yourself of the four parts of our course, especially when we dive deep into specific projects. This page will remain static (it will not be updated), so use it as an archive that you can return to; start in this page position if you have questions about the schedule, procedures, expectations (above) …then assignments (next).\n\n\n\nIn the next section, we’ll start with a brief overview of assignments and dive into your first two assignments (ungraded). The HW #0 and Lab #0 assignments will serve two purposes: first, they will help introduce you to the tools we’ll use as we begin to review statistical concepts; second, they will set you up for your first graded assignment coming up in two weeks.",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "course-overview.html#footnotes",
+    "href": "course-overview.html#footnotes",
+    "title": "Course overview",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nPlease note that these are rough estimates↩︎",
+    "crumbs": [
+      "Course information",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "computing.html#setting-up-your-reference-and-style-files.",
+    "href": "computing.html#setting-up-your-reference-and-style-files.",
+    "title": "Computing",
+    "section": "Setting up your reference and style files.",
+    "text": "Setting up your reference and style files.",
+    "crumbs": [
+      "Course information",
+      "Computing"
+    ]
+  },
+  {
+    "objectID": "computing.html#lab-0-downloading-r-and-rstudio.",
+    "href": "computing.html#lab-0-downloading-r-and-rstudio.",
+    "title": "Computing",
+    "section": "",
+    "text": "For Lab #0 you will download two software programs to your computer.\nPlease watch the below video to help you download R and RStudio.\n\n\n\n\nWatch this video to complete the steps below:\n\n\n\n\n\n\n\n\n\n\n\nOnce you have completed your downloads, check to see that you can open RStudio (not R).\nWe’ll pick up here in class next week.\n\n\n\nAfter completing Lab 0, you will use OpenAlex to support your literature identification process. OpenAlex is a comprehensive open catalog of the global research system that can help you find relevant publications for your research.\nOnce you are set up in R, try working with the code below:\n\nlibrary(openalexR)\n\n# Search for works related to your social justice topic\nworks_search &lt;- oa_fetch(\n  entity = \"works\",\n  title.search = c(\"keyword1\", \"your specific topic\"),\n  from_publication_date = \"2020-01-01\",\n  options = list(sort = \"cited_by_count:desc\"),\n  verbose = TRUE\n)\n\n# Display the top results\nworks_search |&gt;\n  head(10) |&gt;\n  show_works() |&gt;\n  knitr::kable()",
+    "crumbs": [
+      "Course information",
+      "Computing"
+    ]
+  },
+  {
+    "objectID": "computing.html",
+    "href": "computing.html",
+    "title": "Computing",
+    "section": "",
+    "text": "For Lab #0 you will download two software programs to your computer.\nPlease watch the below video to help you download R and RStudio.\n\n\n\n\nWatch this video to complete the steps below:\n\n\n\n\n\n\n\n\n\n\n\nOnce you have completed your downloads, check to see that you can open RStudio (not R).\nWe’ll pick up here in class next week.\n\n\n\nAfter completing Lab 0, you will use OpenAlex to support your literature identification process. OpenAlex is a comprehensive open catalog of the global research system that can help you find relevant publications for your research.\nOnce you are set up in R, try working with the code below:\n\nlibrary(openalexR)\n\n# Search for works related to your social justice topic\nworks_search &lt;- oa_fetch(\n  entity = \"works\",\n  title.search = c(\"keyword1\", \"your specific topic\"),\n  from_publication_date = \"2020-01-01\",\n  options = list(sort = \"cited_by_count:desc\"),\n  verbose = TRUE\n)\n\n# Display the top results\nworks_search |&gt;\n  head(10) |&gt;\n  show_works() |&gt;\n  knitr::kable()",
+    "crumbs": [
+      "Course information",
+      "Computing"
+    ]
+  },
+  {
+    "objectID": "schedule.html",
+    "href": "schedule.html",
+    "title": "Schedule",
+    "section": "",
+    "text": "Part\nWeek\nDay\nTopics\nLabs\nPapers\nReadings\n\n\n\n\nI\n1\nWed, Jan 15\nIntroduction\nLab 0\n\nCase study 1 files\n\n\n\n2\nWed, Jan 22\nFoundations\n\n\nPelham (2013, ch. 1)\n\n\n\n3\nWed, Jan 29\nTheory construction\n\nAnnotated bibliography\nFrisby (2024)\n\n\n\n4\nWed, Feb 5\nProbability theory\n\n\nGarcia, López, & Vélez (2018)\n\n\nII\n5\nWed, Feb 12\nUnivariate analysis\nLab 1\n\nCase study 2 files\n\n\n\n6\nWed, Feb 19\nBivariate analysis\n\n\n\n\n\n\n7\nWed, Feb 26\nExploratory analysis\n\nPaper 1\n\n\n\n\n8\nWed, Mar 12\nHypothesis testing\n\n\n\n\n\nIII\n9\nWed, Mar 19\nNotes on causal theories\n\n\nCase study 3 files\n\n\n\n10\nWed, Mar 26\nModeling social in/justice\nLab 2\n\n\n\n\n\n11\nWed, Apr 2\nOn regression\n\n\n\n\n\n\n12\nWed, Apr 9\nMore on regression\n\n\n\n\n\nIV\n13\nWed, Apr 16\nStatistical learning\n\nPaper 2\nCase study 4 files\n\n\n\n14\nWed, Apr 23\nOverview of additional models",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  }
+]

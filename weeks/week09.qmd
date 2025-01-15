@@ -1,0 +1,196 @@
+---
+title: "DATA 202 - Week 9"
+subtitle: "Hypothesis Testing"
+author: "Nathan Alexander, PhD"
+institute: "Center for Applied Data Science and Analytics"
+format: 
+  html: default
+  revealjs:
+    output-file: week09-slides.html
+    height: 900
+    width: 1600
+    smaller: false
+    scrollable: true
+    slide-number: c/t #< collapsted/total
+    logo: "img/howard-logo.jpg"
+    footer: "[Course Data GitHub](https://github.com/data-202)"
+    toc: false
+    echo: true
+    incremental: false
+---
+
+## Part I: Context
+
+What is your hypothesis? We begin today's class with a note about the different studies we are conducting and our hypotheses.
+
+Hypothesis testing requires a solid theory to make sense of the relevant options to develop a hypothesis. 
+
+As a fundamental statistical tool, it is important to be critical wen dealing with social issues and the standars of hypothesis testing. QuantCrit (or critical quantitative methodologies) have been developed as a tool to help guide researchers in the quantitative social sciences, and in education, to consider how hypotheses can reinforce or challenge existing power structues and biases.
+
+---
+
+Some basic but important real-world examples:
+
+    Gender pay gap: Testing whether there's a significant difference in salaries between men and women in a particular industry.
+    
+    Racial disparities in healthcare: Examining if there's a significant difference in health outcomes between different racial groups.
+    
+    Educational achievement: Investigating the relationship between socioeconomic status and academic performance.
+
+In each of these cases, it's essential to consider:
+
+- Who formulated the hypothesis and why?
+
+- What assumptions are built into the statistical methods?
+
+- How might the results be interpreted or misinterpreted?
+
+- What are the potential consequences of the findings?
+
+---
+
+### Considering your work
+
+As you think about your own work, what are some of the main hypothesis that you hold as it relates to the relationship between your study variables? What are the variable types? How might you measure and make sense of the relationship between the variables?
+    
+## Part II: Content
+
+Null and Alternative Hypotheses
+
+        Null hypothesis (H₀): Statement of no effect or no difference
+        
+        Alternative hypothesis (H₁): Statement of an effect or difference
+
+---
+
+Test Statistic
+
+        A measure that allows us to quantify the difference between the observed data and what we'd expect under the null hypothesis
+        
+        Common test statistics: z-score, t-statistic, F-statistic, chi-square statistic
+
+---
+
+Probability Distribution
+
+        The distribution of the test statistic under the null hypothesis
+        
+        Examples: Normal distribution, t-distribution, F-distribution, chi-square distribution
+
+---
+
+p-value
+
+    The probability of obtaining test results at least as extreme as the observed results, assuming the null hypothesis is true
+    
+    Calculated as: p-value = P(test statistic ≥ observed value | H₀ is true)
+
+---
+
+Significance Level (α)
+
+    The threshold below which we reject the null hypothesis
+    
+    Common values: 0.05, 0.01
+
+---
+
+Decision Rule
+
+    Reject H₀ if p-value ≤ α
+    
+    Fail to reject H₀ if p-value > α
+
+---
+
+Type I and Type II Errors
+
+    Type I error: Rejecting H₀ when it's actually true (false positive)
+    
+    Type II error: Failing to reject H₀ when it's actually false (false negative)
+
+---
+
+Power
+
+    The probability of correctly rejecting a false null hypothesis
+    
+    Power = 1 - P(Type II error)
+
+## Part III: Code
+
+### Two Categorical Variables: Chi-Square Test of Independence
+
+```{r}
+# Example: Testing association between gender and voting preference
+
+# Create sample data
+gender <- c(rep("Male", 100), rep("Female", 100))
+vote <- c(rep("Party A", 55), rep("Party B", 45), rep("Party A", 65), rep("Party B", 35))
+data <- data.frame(gender, vote)
+
+# Perform chi-square test
+result <- chisq.test(table(data$gender, data$vote))
+
+# Print results
+print(result)
+
+# Interpret results
+if (result$p.value < 0.05) {
+  print("There is a significant association between gender and voting preference.")
+} else {
+  print("There is no significant association between gender and voting preference.")
+}
+```
+
+---
+
+### Two Numeric Variables: Pearson Correlation Test
+
+```{r}
+# Example: Testing correlation between study hours and exam scores
+
+# Create sample data
+study_hours <- rnorm(100, mean = 20, sd = 5)
+exam_scores <- 2 * study_hours + rnorm(100, mean = 0, sd = 10)
+data <- data.frame(study_hours, exam_scores)
+
+# Perform correlation test
+result <- cor.test(data$study_hours, data$exam_scores)
+
+# Print results
+print(result)
+
+# Interpret results
+if (result$p.value < 0.05) {
+  print(paste("There is a significant correlation between study hours and exam scores. Correlation coefficient:", round(result$estimate, 2)))
+} else {
+  print("There is no significant correlation between study hours and exam scores.")
+}
+```
+
+---
+
+### One Categorical and One Numeric Variable: Independent Samples t-test
+
+```{r}
+# Example: Testing difference in exam scores between two teaching methods
+
+# Create sample data
+method <- c(rep("Method A", 50), rep("Method B", 50))
+scores <- c(rnorm(50, mean = 75, sd = 10), rnorm(50, mean = 80, sd = 10))
+data <- data.frame(method, scores)
+
+# Perform t-test
+result <- t.test(scores ~ method, data = data)
+
+# Print results
+print(result)
+
+# Interpret results
+if (result$p.value < 0.05) {
+  print("There is a significant difference in exam scores between the two teaching methods.")
+} else {
+  print("There is no significant difference in exam scores between the two teaching methods.")
+}
+```

@@ -1,0 +1,18 @@
+---
+title: "Resources"
+subtitle: "DATA 202: Statistically Measuring and Modeling Social Justice"
+---
+
+This page will contain resources to support you in our course.
+
+## The Organic Chemistry Tutor's Channel on YouTube
+
+Despite the profile's title, this channel offers a wealth of resources spanning mathematics and science. The resources offer detailed examples and explanations that you can follow along with as you watch the video. The below series of video review basic statistics.
+
+<center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XZo4xyJXCak?si=DD8n5GYrWfTs4rAs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+</iframe>
+
+</center>

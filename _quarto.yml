@@ -1,0 +1,116 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  page-navigation: true
+  title: "DATA 202: Statistically Measuring and Modeling Social Justice"
+  description: "Homepage for DATA 202: Statistically Measuring and Modeling Social Justice"
+  site-url: "https://github.com/data-202/"
+  
+  repo-url: https://github.com/data-202/
+  
+  open-graph: true
+
+  page-footer:
+    right: "This page was built by Nathan Alexander, PhD in [Quarto](https://quarto.org/)"
+    left: "&copy; Copyright 2025, Nathan Alexander"
+    background: "#D9E3E4"
+   
+  sidebar:
+    background: "#D9E3E4"
+    logo: "img/dubois-loc.jpg"
+    pinned: true
+    align: center
+    tools: 
+      - icon: github
+        href: https://github.com/data-202/
+        text: "GitHub organization"
+      - icon: code-square
+        href: https://canvas.howard.edu/courses/59441
+        text: "Canvas site"
+  
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:  
+    - section: "Course information"
+      contents:
+        - href: index.qmd
+          text: Course landing page
+        - href: course-overview.qmd
+          text: Overview
+        - href: assignments.qmd
+          text: Assignments
+        - href: computing.qmd
+          text: Computing
+    - section: "Weekly materials"
+      contents:
+        - href: weeks/week01.qmd
+          text: Week 1
+        - href: weeks/week02.qmd
+          text: Week 2
+        - href: weeks/week03.qmd
+          text: Week 3
+        - href: weeks/week04.qmd
+          text: Week 4
+        - href: weeks/week05.qmd
+          text: Week 5
+        - href: weeks/week06.qmd
+          text: Week 6
+        - href: weeks/week07.qmd
+          text: Week 7
+        - href: weeks/week08.qmd
+          text: Week 8
+        - href: weeks/week09.qmd
+          text: Week 9
+        - href: weeks/week10.qmd
+          text: Week 10
+        - href: weeks/week11.qmd
+          text: Week 11
+        - href: weeks/week12.qmd
+          text: Week 12
+        - href: weeks/week13.qmd
+          text: Week 13
+        - href: weeks/week14.qmd
+          text: Week 14
+    - section: "Appendix"
+      contents:
+        - section: "Papers"
+          contents:
+            - href: papers/annotated.qmd
+              text: Annotated Bibliography
+            - href: papers/paper1.qmd
+              text: Paper 1
+            - href: papers/paper2.qmd
+              text: Paper 2
+            - href: papers/papers-instructions.qmd
+              text: Instructions for each paper
+            - href: papers/papers-more-info.qmd
+              text: More information for papers
+        - section: "Labs"
+          contents: 
+            - href: labs/lab1.qmd
+              text: Lab 1
+            - href: labs/lab2.qmd
+              text: Lab 2
+        - section: "Resources"
+          contents:
+            - href: resources.qmd
+            
+format:
+  html:
+    theme: 
+      light: [cosmo, style/data202.scss]
+      dark: [cosmo, style/data202.scss, style/theme-dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    callout-appearance: simple
+    colorlinnks: true
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+
+execute: 
+  freeze: auto
+    
+editor: visual

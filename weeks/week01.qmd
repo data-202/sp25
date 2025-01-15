@@ -1,0 +1,100 @@
+---
+title: "DATA 202 - Week 1"
+subtitle: "Introduction to the Course"
+author: "Nathan Alexander, PhD"
+institute: "Center for Applied Data Science and Analytics"
+bibliography: references.bib # include references file
+csl: apa.csl
+format: 
+  html: default
+  pptx:
+    toc: false
+    reference_docx: "word-styles-reference.docx"
+    fig_caption: true
+  revealjs:
+    output-file: week01-slides.html
+    height: 900
+    width: 1600
+    smaller: false
+    slide-number: c/t #< collapsted/total
+    logo: "img/howard-logo.jpg"
+    footer: "[Course Data GitHub](https://github.com/data-202)"
+    toc: false
+    echo: true
+    incremental: false
+geometry: margin=1.0in
+editor_options:
+  markdown:
+    wrap: sentence
+---
+
+```{r, echo=F, eval=F, warning=FALSE}
+install.packages("devtools")
+library(devtools)
+```
+
+```{r, include=F, warning=F}
+library(tidyverse) #collection of R packages designed for data science
+library(here) #helps with filepaths
+library(gt) # creates tables
+library(DiagrammeR) # create path diagrams
+library(data.table) # use for `melt()` function
+here::i_am("week01.qmd")
+```
+
+## Course Description
+
+In this course, students will develop an understanding of statistics as a research tool.
+Students are expected to have some basic knowledge of statistics from a prior course.
+Emphasis will be placed on understanding statistical concepts and applying and interpreting tests of statistical inference for real-life applications.
+The content will include, but not be limited to, visual representations of data, descriptive statistics, correlation and simple regression, sampling distributions, and the assumptions associated with and the application of selected inferential statistical procedures.
+Throughout the course, there will be a strong emphasis on how statistical modeling can be a driving force for social justice.
+
+## Course Learning Objectives
+
+-   Appreciate and understand the role of statistics in your field
+
+-   Evaluate, comprehend, and explain the statistical findings in a data set
+
+-   Explore data in R
+
+-   Apply appropriate application and interpretation of various inferential statistical procedures
+
+-   Write a simple description of methodology and results from analysis
+
+-   Develop an ability to apply appropriate statistical methods to summarize and analyze data
+
+-   Make sense of data and be able to report the results in appropriate tables or statistical terms
+
+## Course CANVAS site
+
+## Course companion site
+
+The landing page for our companion site can be found [here](https://data-202.github.io/fa24).
+
+## Initial assignments
+
+### Paper #1
+
+[<u>**REMINDER: Paper 1 is due Friday September 25**</u>]{style="color:red;"}
+
+You can read more about paper #1 [here](/papers/paper1.qmd).
+
+See the instructions for paper assignments [here](/papers/papers-instructions.qmd).
+
+Also, learn more about paper assignments [here](/papers/papers-more-info.qmd).
+
+### Case Study: Tuskegee Experiement of Untreated Syphillis
+
+To help you prepare for our forthcoming discussions and readings, you should explore information about our first case study.
+One place to start is here: "The Tuskegee Experiment: Crash Course Black American History #29" in the video below:
+
+<center>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/56gqCXlUCoE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+
+</iframe>
+
+</center>
+
+## References
