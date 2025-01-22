@@ -45,7 +45,7 @@ here::i_am("week02.qmd")
 
 # Part I: Context
 
-## What is statistics?
+## What is Statistics?
 
 Statistics is a science.
 As a result, it follows a set of well-defined steps or methods.
@@ -58,26 +58,165 @@ As we explore new terms and definitions, we will gain a better understanding of 
 :::
 
 There are a multitude of ways to describe the steps, terms, and various processes undertaken in a statistical study.
-Importantly, statistics calls for questions where we explore difference or change.
-We use variation to understand differences within or between a set (or sets) of measurements.
+Importantly, however, modern statistics calls for more critical questions where we explore difference or change within specified contexts.
+We then use theory and concepts of variation to understand differences within or between a set (or sets) of measurements, resulting in a more *critical* orientation to statistics.
 
 ------------------------------------------------------------------------
 
-### Notes from *Pelham (2013)* reading
+## What is Critical Statistics?
 
-"Statistics are a set of mathematical procedures for summarizing and interpreting observations" (p.5).
+In popular media\index{media}, we might see information\index{information} reported as follows:
 
-**Descriptive statistics** vs. **Inferential statistics**
+> *In 2022, college enrollment for 18-24 year-olds in the United States was 39%, a two percent decrease from 41% in 2012. The enrollment rate for those aged 18-24 in 2022 who were Black was 36%, which was lower than the rates for Asian students, which was 61%, and White students, which was 41%*.
 
-Pelham describes *descriptive* statistics as "statistics used to summarize or describe a set of observations", whereas *inferential* statistics are defined as "statistics used to draw inferences about a set of observations" (p. 5).
+The data above is from the U.S.
+National Center for Education Statistics (NCES)\index{NCES}.
+While reading the paragraph, what were some of your opinions?
+What questions did you have?
+
+-   How was enrollment defined and measured?
+
+-   Should the differences be viewed as significant in some way?
+
+-   Do the percents mean that some students are less likely to go to college?
 
 ------------------------------------------------------------------------
 
-#### Descritpve measures
+In traditional statistics, a quantitative research question is answered using the scientific method.
+A *traditionalist* may blindly follow the steps of this method, focusing on model selection and assumptions while also ignoring any broader social and historical contexts.
 
--   Central tendency: the "average" of a set of observations (i.e., mean, median, mode)
+In the social sciences, for example, statistics continues to be used to perpetuate negative stereotypes -- which does not simply give it a bad rap but it results in real-world harm to communities.
+Does this mean we are just in need of *critical* statistics?
 
--   Dispersion: how data vary (i.e., range, variance, standard deviation)
+------------------------------------------------------------------------
+
+::: {.callout-caution icon="false"}
+### **Example**: Challenging Statistics in Media
+
+The American sitcom *A Different World* challenged negative stereotypes associated with Black youth and families regarding the pursuit of higher education\index{higher education}.
+By portraying a vibrant college life at Hillman, a predominately Black college in the U.S.\index{HBCU}, the series highlighted the importance of education as a priority within the Black community.
+
+![Image of 'A Different World' cast](../img/a-different-world.jpg){width="50%"}
+:::
+
+------------------------------------------------------------------------
+
+::: {.callout-warning icon="false"}
+## Practice
+
+In a discussion about the U.S. college enrollment rate of Black 18-24 year-olds, your colleague Rachel cites Bill Cosby and two shows that he produced, *A Different World* and *The Cosby Show*, as important examples to combat deficit racial stereotypes.
+However, during the discussion, another colleague mentions how Bill Cosby was found guilty of aggravated indecent assault and sexual predation, and mentions that we have to be mindful of the work we cite and the persons responsible for producing the work.
+The colleague states that \`\`one problematic case should not be combated with another problematic case" referring to Cosby; Rachel disagrees. Both colleagues ask for your opinion on the discussion. How might you respond?
+:::
+
+## A Different World of Statistics
+
+The idea of *traditional statistics* vs. *non-traditional statistics* may mean, on the surface at least, that we are in need of a *critical* statistics, and fast.
+But what if this dichotomy is a false one\index{false dichotomy}?
+What other pathways exist?
+Pathways of refusal?
+Pathways of exploration?
+
+We will make attempts to reside in the space between refusal\index{refusal} and exploration\index{exploration}, as two key aspects of what we will come to know as *critical statistics*.
+By employing a practice of refusal, we will have space to *refuse* harmful beliefs and scientific practices.
+In the spirit of learning, we will also *explore* the potential benefits (and drawbacks) of critical statistics.
+
+::: callout-tip
+### Traditional approaches to statistics
+
+Critical approaches to statistics require interdisciplinary thinking.
+:::
+
+------------------------------------------------------------------------
+
+Traditional approaches to statistics in some areas of study, like the environmental sciences, provide important information about changes and differences in global patterns.
+In other areas of study, such as education and the social sciences, statistics has a different history.
+
+In the specific case of U.S. college enrollment rates, you may be concerned with some broader questions about data in the education sciences.
+In the spirit of *exploration*, you might ask:
+
+-   Should we interpret these enrollment statistics as indicative of broader societal issues affecting access to higher education?
+
+-   What are the historical and systemic barriers that could explain the differences in enrollment rates among students?
+
+------------------------------------------------------------------------
+
+Alternatively, in the spirit of *refusal*, some different questions come to the surface:
+
+-   What beliefs underlie the analysis of college enrollment rates?
+
+-   What assumptions are being made when quantifying educational pathways?
+
+-   How does rejecting conventional racial comparisons challenge power dynamics?
+
+This second set of questions, as early examples of a practice of refusal, encourage your critical thinking in a few ways.
+First, the questions ask you to think about the less explicit components of the paragraph.
+Second, the questions present an option to reject conventional approaches to how we measure educational outcomes and ask why.
+Third, and to the seeming contradiction between refusal and exploration, a set of new pathways arise.
+
+------------------------------------------------------------------------
+
+::: {.callout-warning icon="false"}
+## Practice
+
+Bad Stats (or BS)\index{Bad Stats}, outlined by Professor Ivory Toldson, are data points that are poorly contextualized, generally negative, and they are often incomplete or incorrect.
+They are part of a problematic trend in which statistics are used to reinforce negative stereotypes.
+Identify two examples of *Bad Stats* in popular media.
+:::
+
+# Part II: Content
+
+------------------------------------------------------------------------
+
+### The Big Picture
+
+Pelham (2013) defines "statistics \[as\] a set of mathematical procedures for summarizing and interpreting observations" (p.5). Pelham describes *descriptive* statistics as "statistics used to summarize or describe a set of observations", whereas *inferential* statistics are defined as "statistics used to draw inferences about a set of observations" (p. 5).
+
+Some key concepts:
+
+-   Population parameter: A numerical characteristic of an entire population, often unknown and estimated using sample data.
+
+-   Sample statistic: A numerical value calculated from a sample to estimate a population parameter.
+
+-   Confidence interval: A range of values that likely contains an unknown population parameter, calculated with a specified level of confidence.
+
+-   Hypothesis test: A statistical method to make inferences about a population parameter based on sample data, involving null and alternative hypotheses.
+
+---
+
+-   Analysis of Variance (ANOVA): A statistical technique used to compare means across multiple groups, typically used when there are three or more categories of a single variable.
+
+-   Multiple comparisons: Statistical procedures used to control the family-wise error rate when making several simultaneous inferences or comparisons.
+
+-   Interaction effects: A situation in statistics where the effect of one variable on an outcome depends on the value of another variable.
+
+-   Correlation: A statistical measure that describes the strength and direction of the linear relationship between two variables.
+
+-   Regression: A statistical method used to model the relationship between a dependent variable and one or more independent variables.
+
+-   Chi-square tests: Statistical tests used to determine if there is a significant association between categorical variables or if observed frequencies differ from expected frequencies.
+
+------------------------------------------------------------------------
+
+#### Descriptive measures
+
+**Measures of central tendency**: These describe the "average" or central value of a set of observations.
+
+  - Mean: The arithmetic average of all values
+
+  - Median: The middle value when data is ordered
+
+  - Mode: The most frequently occurring value
+
+**Measures of dispersion**: These describe how data vary or spread out from the central tendency.
+
+  - Range: The difference between the maximum and minimum values
+  
+  - Variance: The average of squared deviations from the mean
+    
+  - Standard deviation: The square root of the variance
+
+---
 
 ```{r}
 #| echo: false
@@ -105,7 +244,7 @@ We can input and compute this data in *R* using the following code:
 x <- c(2, 2, 4, 4)
 ```
 
----
+------------------------------------------------------------------------
 
 ```{r, eval = T}
 #| echo: true
@@ -117,7 +256,7 @@ m = sum(x)/4
 m
 ```
 
----
+------------------------------------------------------------------------
 
 ```{r, eval = T}
 #| echo: true
@@ -128,7 +267,7 @@ m
 median(x)
 ```
 
----
+------------------------------------------------------------------------
 
 ```{r, eval = T}
 #| echo: true
@@ -140,7 +279,8 @@ mode(x)
 table.x <- table(x)
 table.x
 ```
----
+
+------------------------------------------------------------------------
 
 ```{r, eval = T}
 #| echo: true
@@ -211,13 +351,10 @@ Please review this document.
 
 ------------------------------------------------------------------------
 
-# Part II: Content
+The quantification of information can help us understand and represent important situations.
+We'll begin by exploring the concept of a set, and how it is defined in mathematics and used to frame various situations.
 
 ------------------------------------------------------------------------
-
-The quantification of information can help us understand and represent important situations. We'll begin by exploring the concept of a set, and how it is defined in mathematics and used to frame various situations.
-
----
 
 ::: {.callout-caution icon="false"}
 ## **DEFINITION**: Set
@@ -460,12 +597,6 @@ Overwrite the value of y by setting y equal to x divided by z
 y = x / z
 y
 ```
-
-------------------------------------------------------------------------
-
-::: callout-important
-Paper 1 is due on Monday September 16 at 11:59pm ET
-:::
 
 ------------------------------------------------------------------------
 
