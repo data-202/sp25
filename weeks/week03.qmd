@@ -186,6 +186,8 @@ Learn more at [https://www.cdc.gov/tuskegee/timeline](https://www.cdc.gov/tuskeg
 
 Learn more about the Howard University IRB at the [Office of Regulatory Research Compliance](https://www.orrchoward.com/humanresearchmain.html).
 
+---
+
 ### Group work
 
 ##### Problem #1:
@@ -203,8 +205,6 @@ Based on your knowledge of the researchers for the USPHS Syphilis Study at Tuske
 ##### Problem #4:
 
 Based on your knowledge of the study and the data tables below, list five variables that were collected during the study and explain their *variable types* in detail.
-
-------------------------------------------------------------------------
 
 # Part II: Content
 
@@ -243,6 +243,8 @@ We may consider some of the following elements as we prepare theoretical stateme
 
 -   Revision
 :::
+
+---
 
 #### Framing data and information
 
@@ -310,7 +312,7 @@ A spreadsheet in a traditional format contains important features that will supp
 
 ------------------------------------------------------------------------
 
-::: {.callout-caution icon="false"}
+:::: {.callout-caution icon="false"}
 ## **DEFINITION**: Filename extension
 
 A **file extension** (or file name extension) is a suffix at the end of a digital file name:
@@ -324,7 +326,7 @@ A **file extension** (or file name extension) is a suffix at the end of a digita
 
 The extension indicates the file's format and the organization of information.
 :::
-:::
+::::
 
 ::: incremental
 There are many different file extensions.
@@ -676,18 +678,16 @@ flowchart LR
 
 <u>Levels of measurement</u> are used to describe variable types.
 
-| Level of measurement | Brief description                                                                      | Examples               |
-|----------------|---------------------------------------|----------------|
-| **Nominal**          | Data cannot be arranged in some order. Only categories are used.                       | Eye color, city        |
-| **Ordinal**          | Data can be arranged in some order but differences cannot be found or are meaningless. | Rankings, likert scale |
-| **Interval**         | There is not a natural zero starting point and rations are meaningless.                | Temperatures, years    |
-| **Ratio**            | There is a natural zero starting point and ratios are meaningful.                      | Heights, distances     |
+| Level of measurement | Brief description | Examples |
+|-----------------|--------------------------------------|-----------------|
+| **Nominal** | Data cannot be arranged in some order. Only categories are used. | Eye color, city |
+| **Ordinal** | Data can be arranged in some order but differences cannot be found or are meaningless. | Rankings, likert scale |
+| **Interval** | There is not a natural zero starting point and rations are meaningless. | Temperatures, years |
+| **Ratio** | There is a natural zero starting point and ratios are meaningful. | Heights, distances |
 
 ------------------------------------------------------------------------
 
 ![The four levels of measurement. Image from Scribbr](img/wk3-f-3.png)
-
-------------------------------------------------------------------------
 
 # Part III: Code
 
@@ -715,55 +715,46 @@ In the RStudio IDE, open an RMarkdown by using the following navigation:
 
 ### Preamble
 
-The preamble begins at the top of your RMarkdown file with three dashes.
+The preamble begins at the top of your RMarkdown file with three dashes. I have added some options that can be changed to your liking. For example, you can change the table of contents (toc) options or the theme; `flatly` is one of many different themes.
 
-```{r}
-# ---
-# title: "Title goes here"
-# bibliography: references.bib # include references file
-# csl: apa.csl # include cls file for your references
-# always_allow_html: true
-# output:
-#  word_document: 
-#    reference_docx: "word-styles-reference.docx" # include style file
-#    fig_caption: true
-#  pdf_document:
-#    toc: false
-#    toc_depth: 2
-#    number_section: true 
-#  html_document:
-#    toc: true
-#    toc_depth: 2
-#    number_sections: true
-#    theme: flatly
-# geometry: margin=1.0in
-# editor_options:
-#  markdown:
-#    wrap: sentence
-# ---
+```{r, eval=F}
+---
+title: "Title goes here"
+auhtor: "First Last"
+always_allow_html: true
+output:
+ html_document:
+   toc: true
+   toc_depth: 3
+   number_sections: true
+   theme: flatly
+geometry: margin=1.0in
+editor_options:
+ markdown:
+   wrap: sentence
+---
 ```
+
+---
 
 ### Setup
-The set-up chunk gives the file further instructions.
 
-```{r}
-# ```{r setup, include=FALSE}
-# knitr::opts_chunk$set(
-#  echo = FALSE, # By default, hide code; set to TRUE to see code
-#  fig.pos = 'th', # Places figures at top or here
-#  out.width = '100%', dpi = 300, # Figure resolution and size
-#  fig.env="figure"
-# ) # Latex figure environment
+A set-up chunk gives the file further instructions to prepare for your analysis.
 
-# install.packages("praise")
-# library(praise)
+```{r, eval=F}
+knitr::opts_chunk$set(echo = FALSE, # By default, hide code; set to TRUE to see code
+  fig.pos = 'th', # Places figures at top or here
+  out.width = '100%', dpi = 300, # Figure resolution and size
+  fig.env="figure"
+ ) # Latex figure environment
 
-# layout="l-body-outset"
-# library(rmarkdown)
+install.packages("praise")
+library(praise)
 
-# options(knitr.table.format = "latex") # For kable tables to write LaTeX table directly
-# ```
+options(knitr.table.format = "latex") # For kable tables to write LaTeX table directly
 ```
+
+---
 
 ### Inserting code into an RMarkdown
 
@@ -845,6 +836,8 @@ Take the square root of b
 ```{r}
 sqrt(b)
 ```
+
+---
 
 Compute the natural log of b
 
@@ -1078,6 +1071,3 @@ For future use, we can view our data frame by just typing its name into our cons
 df
 ```
 
-------------------------------------------------------------------------
-
-# References
