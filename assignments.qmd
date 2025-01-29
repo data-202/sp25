@@ -13,19 +13,18 @@ This page contains three sections:
 
 Our course assignments will be split between reading and typing (code and analytic results).
 
-| Course component                   | Assignment              | Date(s)            |
-|------------------------------------|-------------------------|--------------------|
-| **Part I: Statistics and society** |                         |                    |
-|                                    | Lab #0                  | Due: Tue Jan 21    |
-|                                    | Annotated Bibliography  | Due: Sun Feb 2     |
-|                                    | Lab #1                  | Due: Sun Feb 16    |
-| **Part II: Data and people**       |                         |                    |
-|                                    | Paper #1                | Due: Fri Feb 28    |
-| **Part III: Data and policy**      |                         |                    |
-|                                    | Lab #2                  | Due: Sun Mar 30    |
-| **Part IV: Data in practice**      |                         |                    |
-|                                    | Paper #2                | Due: Sun Apr 20    |
-|                                    | Paper #3 (optional)     | Due: Sun Apr 27    |
+| Course component                   | Assignment          | Date(s)         |
+|------------------------------------|---------------------|-----------------|
+| **Part I: Statistics and society** |                     |                 |
+|                                    | Lab #0              | Due: Tue Jan 21 |
+|                                    | Lab #1              | Due: Sun Feb 16 |
+| **Part II: Data and people**       |                     |                 |
+|                                    | Paper #1            | Due: Fri Feb 28 |
+| **Part III: Data and policy**      |                     |                 |
+|                                    | Lab #2              | Due: Sun Mar 30 |
+| **Part IV: Data in practice**      |                     |                 |
+|                                    | Paper #2            | Due: Sun Apr 20 |
+|                                    | Paper #3 (optional) | Due: Sun Apr 27 |
 
 ### **Sample exercises**
 

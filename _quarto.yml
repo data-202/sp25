@@ -78,8 +78,6 @@ website:
       contents:
         - section: "Papers"
           contents:
-            - href: papers/annotated.qmd
-              text: Annotated Bibliography
             - href: papers/paper1.qmd
               text: Paper 1
             - href: papers/paper2.qmd

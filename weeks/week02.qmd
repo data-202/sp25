@@ -170,7 +170,8 @@ Identify two examples of *Bad Stats* in popular media.
 
 ### The Big Picture
 
-Pelham (2013) defines "statistics \[as\] a set of mathematical procedures for summarizing and interpreting observations" (p.5). Pelham describes *descriptive* statistics as "statistics used to summarize or describe a set of observations", whereas *inferential* statistics are defined as "statistics used to draw inferences about a set of observations" (p. 5).
+Pelham (2013) defines "statistics \[as\] a set of mathematical procedures for summarizing and interpreting observations" (p.5).
+Pelham describes *descriptive* statistics as "statistics used to summarize or describe a set of observations", whereas *inferential* statistics are defined as "statistics used to draw inferences about a set of observations" (p. 5).
 
 Some key concepts:
 
@@ -182,7 +183,7 @@ Some key concepts:
 
 -   Hypothesis test: A statistical method to make inferences about a population parameter based on sample data, involving null and alternative hypotheses.
 
----
+------------------------------------------------------------------------
 
 -   Analysis of Variance (ANOVA): A statistical technique used to compare means across multiple groups, typically used when there are three or more categories of a single variable.
 
@@ -202,21 +203,21 @@ Some key concepts:
 
 **Measures of central tendency**: These describe the "average" or central value of a set of observations.
 
-  - Mean: The arithmetic average of all values
+-   Mean: The arithmetic average of all values
 
-  - Median: The middle value when data is ordered
+-   Median: The middle value when data is ordered
 
-  - Mode: The most frequently occurring value
+-   Mode: The most frequently occurring value
 
 **Measures of dispersion**: These describe how data vary or spread out from the central tendency.
 
-  - Range: The difference between the maximum and minimum values
-  
-  - Variance: The average of squared deviations from the mean
-    
-  - Standard deviation: The square root of the variance
+-   Range: The difference between the maximum and minimum values
 
----
+-   Variance: The average of squared deviations from the mean
+
+-   Standard deviation: The square root of the variance
+
+------------------------------------------------------------------------
 
 ```{r}
 #| echo: false
