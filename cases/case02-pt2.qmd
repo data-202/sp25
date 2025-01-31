@@ -1,0 +1,592 @@
+---
+title: "Case Study 2, Part 2: The True Size of Africa"
+subtitle: "DATA 202 - Alexander"
+format: 
+  html:
+    self-contained: true
+    self-contained-math: true
+editor: visual
+---
+
+In Case Study 2, we will explore the social politics of maps and globally oriented data to help us make sense of what we mean by a "population." The case study will integrate a series of new packages, functions, and code to support our explorations.
+
+There are two parts to this case study, this is part 2.
+
+## Learning Objectives
+
+This case study component will teach you how to use functions in `dplyr` to manipulate variables and data frames. You will also learn some base-R functions to conduct univariate analysis in the RStudio IDE.
+
+------------------------------------------------------------------------
+
+## Learning Activities
+
+By the end of this case study you will be able to:
+
+1.  Install and/or update R packages
+2.  Assign data frames to different names for efficient exploration
+3.  Generate a set of outputs using the [`dplyr`](https://dplyr.tidyverse.org/) package
+4.  Overwrite a data frame while using the [pipe operator](https://style.tidyverse.org/pipes.html)
+5.  Produce simple plots using data located in an `R` package
+
+---
+
+**Reminder**: Load lackages and libraries
+
+```{r}
+#| echo: true
+#| output: false
+#| warning: false
+
+# install package
+# install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+# install.packages("remotes", repos = "http://cran.us.r-project.org")
+ 
+# load the necessary libraries
+library(tidyverse) #collection of R packages designed for data science
+library(dplyr)
+library(remotes)
+```
+
+---
+
+# Part 2: Univariate analysis
+
+In this part of the case study, you will complete the following tasks:
+
+-   Examine the `africa_data_all` data in the `critstats` package
+
+    -- Create a table of the number of observations by year
+
+    -- Gather summary statistics for all variables by year
+
+    -- Create separate data frames for each year
+
+-   Compute univariate statistics for the year 2020 in `africa_data_all`
+
+## Task 2.1: Load the `africa_data_all` data
+
+The `africa_data_all` data set will be used for instructional purposes only.
+
+The data in this data frame was collected from the internet.
+
+The data frame contains data on African countries and territories for two years: 2020 and 2023.
+
+### Task 2.1.1: Call the `africa_data_all` data
+
+We begin by taking a look at the data.
+
+```{r}
+#| echo: true
+#| output: false
+critstats::africa_data_all 
+```
+
+What are some of your early observations?
+
+### Task 2.1.2: Inspect `africa_data_all` documentation
+
+The documentation can help us get a better idea of the data frame's content.
+
+```{r}
+#| echo: true
+#| output: false
+??critstats::africa_data_all 
+```
+
+If, by chance, you cannot load the documentation or experience issues with the `critstats` data package, you may need to restart your RStudio session.
+
+## Task 2.2: Prepare the `africa_data_all` data
+
+To be efficient, we will only use specific functions to explore the data set.
+
+Please note that there are many other approaches to exploration.
+
+The approach taken below is one of many possibiliites.
+
+### Task 2.2.1: Assign `africa_data_all` to df2
+
+Use the assignment operator to assign the `africa_data_all` data frame to the object df2.
+
+```{r}
+df2 <- critstats::africa_data_all
+```
+
+We can now work more efficiently by typing `df2` when we want to call the data frame. Notice that I did not overwrite `df1` in the event you want to return to Part 1 of this case study.
+
+### Task 2.2.2: Inspect your data
+
+The str() function displays the structure of R objects.
+
+```{r}
+str(df2)
+```
+
+Use `head()` to view the "top" of your data.
+
+```{r}
+head(df2)
+```
+
+Use `tail()` to view the "bottom" of your data.
+
+```{r}
+tail(df2)
+```
+
+View your data using the `view()` command.
+
+```{r, eval=F}
+View(df2)
+```
+
+Get a summary of your data with `summary()`.
+
+```{r}
+summary(df2)
+```
+
+Take note of the content and values of the data and its structure.
+
+## Task 2.3: Examine the data in detail
+
+Before starting any analyses, we want to make sure we really understand our data.
+
+You may have noticed that there is a `year` variable in the data set.
+
+Specifically, the variable `year` separates the 2020 and 2023 data.
+
+### Task 2.3.1: Make a table of a single variable's contents
+
+To examine how many data values are listed by year we can use `table()`.
+
+```{r}
+# create a table of the number of observations by year
+table(df2$year)
+```
+
+We notice 58 values for each year. What does this say about our data?
+
+### Task 2.3.2: Gather summary statistics for the data by year
+
+There are different ways to gather summary statistics by year.
+
+I can nest the request using some logic and the year 2020 as follows:
+
+```{r}
+summary(filter(df2, year == 2020))
+```
+
+Consider why `filter(summary(df2, year == 2020))` returns an error.
+
+We can also use the `%>%` operator to list the commands in order for 2020.
+
+```{r}
+# gather summary statistics for all variables for year == 2020
+df2 %>% 
+  filter(year == 2020) %>% 
+  summary()
+```
+
+We can use the same commands to filter the data for 2023.
+
+```{r}
+# gather summary statistics for all variables for year == 2023
+df2 %>% 
+  filter(year == 2023) %>% 
+  summary()
+```
+
+## Task 2.4: Get univariate statistics
+
+To help advance our understanding of statistical analyses in the RStudio IDE, we will lean a few tasks to compute univariate statistics. You are likely familiar with univariate statistics. Univariate statistics are statistics done on a single variable. Some base R functions for univariate statistics are as follows:
+
+-   `mean()` returns the mean of a single numeric variable
+
+-   `median()` returns the middle value of a single numeric variable
+
+-   `mode()` returns the variable type for the mode of a single variable
+
+-   `table()` returns a frequency table with counts of each level for a single variable
+
+-   `max()` returns the maximum value of a single numeric variable
+
+-   `min()` returns the minimum value of a single numeric variable
+
+-   `range()` returns the `min()` and `max()` values of a single numeric variable
+
+-   `IQR()` returns the interquartile range values for a single numeric variable
+
+-   `sd()` returns the standard deviation for a single numeric variable
+
+-   `boxplot()` returns a boxplot of a numeric variable or variables
+
+-   `hist()` returns a histogram of a single numeric variable
+
+-   `stem()` provides a stem-and-leaf plot when a single numeric variable is input.
+
+-   `plot()` provides a scatter plot of data values by its index, $i$.
+
+-   `plot(density())` provides a density plot of a single numeric variable
+
+Each of the above functions provides a different perspective on the distribution of values for a single variable.
+
+### Task 2.4.1: Inspect data prior to analysis
+
+From our earlier observations, we see that the `africa_data_all` (`df2`) contains data across two years: 2020 and 2023. Let's use pipes `%>%` to create separate data from for each year.
+
+```{r}
+# create a separate data frame for 2020
+data_2020 <- df2 %>% 
+  filter(year == 2020)
+
+data_2020 # view the data for 2020
+```
+
+It is not clear that this data is for 2020. As a result, we can reorganize the columns and overwrite the data frame.
+
+I am moving the `year` variable to the second position in the data frame.
+
+```{r}
+data_2020 <- df2 %>% 
+  filter(year == 2020) %>% 
+  relocate(country, year)
+
+data_2020 # view the data for 2020
+```
+
+We can run the same functions for `year == 2023`.
+
+```{r}
+# create a separate data frame for 2023
+data_2023 <- df2 %>% 
+  filter(year == 2023) %>% 
+  relocate(country, year)
+
+data_2023 # view the data for 2023
+```
+
+It is now clearer which year we are loading when we view the data frames.
+
+### Task 2.4.1a: Check for missing data
+
+We can check the entire data frame for missing values using `is.na()`.
+
+```{r}
+#| output: false
+is.na(data_2020)
+
+is.na(data_2023)
+```
+
+You can see that this output is far too extensive.
+
+We should check for missing values for a specific variable first.
+
+Let's use the `migrants` variable in the `df2` data frame by inserting `df2$migrants`.
+
+The code to check for missing values in the 2020 data frame for the variable `migrant` is as follows:
+
+```{r}
+is.na(data_2020$migrants)
+```
+
+Notice that there is a missing value for the variable `migrant` in the 2020 data.
+
+It may be important to see the total number of missing values in the data frame. We can check the number of missing values for each variable using `sapply()`. The `sapply()` is a base-R function and it is used for different purposes. Here is an example:
+
+```{r}
+sapply(data_2020, function(x) sum(is.na(x)))
+```
+
+`sapply()` is a loop function and the above code iterates the function for each variable in the `df2` data set.
+
+The logic of the function is `sapply(data, FUNction...)`.
+
+From the output, we notice that a few different variables have a missing value.
+
+You can use the `view()` function to take a closer look at the data to find the missing values.
+
+What do you notice about the source of the missing values when using `view()`?
+
+### Task 2.4.1b: Working with missing values
+
+In class, we will learn how to deal with missing values. For now, you can remove missing values using the code below or select those variables that has no missing values for your case study reports.
+
+When conducting univariate statistics, we can simply tell R to ignore missing values.
+
+```{r}
+# mean returns `NA` since there are missing values
+mean(data_2020$migrants)
+```
+
+Use `na.rm = TRUE` to remove missing values from a numeric variable
+
+```{r}
+# instruct R to remove missing values from the analysis using `
+mean(data_2020$migrants, na.rm = TRUE)
+```
+
+There are some exceptions here and it relates to the type of variable being used. We'll explore missing values in class.
+
+------------------------------------------------------------------------
+
+For our next set of tasks, we will focus on variables in the `data_2020` data frame.
+
+Recall that `data_2020` was used as a label for `africa_data_all` when `year == 2020`.
+
+### Task 2.4.2: `mean()`
+
+The `mean()` function returns the mean of a single numeric variable.
+
+```{r}
+# find the average population in 2020
+mean(data_2020$pop)
+
+# find the average percent urban population in 2020
+mean(data_2020$urban.pop)
+
+# find the average of median age in 2020
+mean(data_2020$med.age)
+```
+
+Notice that the last command returns `NA` due to missing values.
+
+We can correct this by using `na.rm = TRUE`.
+
+```{r}
+# check to see missing data in the variable
+is.na(data_2020$med.age)
+
+# compute the mean using the na.rm = TRUE
+mean(data_2020$med.age, na.rm = TRUE)
+```
+
+### Task 2.4.3: `median()`
+
+The `median()` function returns the middle value of a single numeric variable.
+
+```{r}
+median(data_2020$pop)
+```
+
+We can also use pipe operators to filter the countries that are above and below the `median` values.
+
+```{r}
+# filter data to show countries that are below the median
+data_2020 %>% 
+  filter(pop < median(pop)) %>% 
+  select(country, pop)
+
+# filter data to show countries that are above the median
+data_2020 %>% 
+  filter(pop > median(pop)) %>% 
+  select(country, pop)
+```
+
+### Task 2.4.4: `mode()` and `table()`
+
+The `mode()` function returns the variable type for the mode of a single variable.
+
+```{r}
+# what does this output tell us about the mode of the med.age variable?
+mode(data_2020$med.age) 
+```
+
+We can use the `table()` function to get our mode.
+
+The `table()` function returns a frequency table with counts of each level for a single variable.
+
+```{r}
+# what does this updated output tell us about the mode of the med.age variable?
+table(data_2020$med.age) 
+```
+
+### Task 2.4.5: `max()` and `min()`
+
+The `max()` function returns the maximum value of a single numeric variable.
+
+```{r}
+# get the maximum value
+max(data_2020$pop)
+
+# use pipes to gather details about which country or territory has the max value
+data_2020 %>% 
+  filter(pop == max(pop)) %>% 
+  select(country, pop)
+```
+
+The `min()` function returns the minimum value of a single numeric variable.
+
+```{r}
+# get the minimum value
+min(data_2020$pop)
+
+# use pipes to gather details about which country or territory has the min value
+data_2020 %>% 
+  filter(pop == min(pop)) %>% 
+  select(country, pop)
+```
+
+### Task 2.4.6: `range()`
+
+The `range()` function returns the min() and max() values of a single numeric variable.
+
+```{r}
+range(data_2020$pop)
+```
+
+However, we can manually compute the `range` by using arithmetic with our functions.
+
+```{r}
+# generate a new variable call population range that is the maximum minus the minimum value
+pop_range_2020 <- max(data_2020$pop) - min(data_2020$pop)
+pop_range_2020 # we must call the object back to see its value
+```
+
+### Task 2.4.7: `IQR()`
+
+```{r}
+# find the IQR for the 2020 population variable
+IQR(data_2020$pop)
+
+# find the IQR for the 2020 percent urban population variable
+IQR(data_2020$urban.pop)
+```
+
+### Task 2.4.8: `sd()`
+
+The `sd()` function returns the standard deviation for a single numeric variable.
+
+```{r}
+# find the standard deviation of the 2020 population variable
+sd(data_2020$pop)
+
+# find the standard deviation of the 2020 urban population variable
+sd(data_2020$urban.pop)
+```
+
+### Task 2.4.8: Use `summary()`
+
+The `summary()` function is often more efficient for a quick check of univariate statistics.
+
+```{r}
+summary(data_2020)
+```
+
+Not, however, the values that `summary()` returns and those that it does not. While the function can be used to be more efficient, it should not replace a thorough inspection of your data. We will discuss this more in exploratory data anlaysis.
+
+## Task 2.5: Create basic plots
+
+### Task 2.5.1: `boxplot()`
+
+`boxplot()` returns a box plot of a numeric variable or variables.
+
+```{r}
+boxplot(data_2020$pop)
+```
+
+### Task 2.5.2: `hist()`
+
+`hist()` returns a histogram of a single numeric variable.
+
+```{r}
+hist(data_2020$pop)
+```
+
+### Task 2.5.3: `stem()`
+
+`stem()` provides a stem-and-leaf plot when a single numeric variable is input.
+
+```{r}
+stem(data_2020$med.age)
+```
+
+### Task 2.5.4: `plot()`
+
+`plot()` provides a scatter plot of data values by its index, $i$.
+
+```{r}
+plot(data_2020$med.age)
+```
+
+### Task 2.5.5: `plot(density())`
+
+`plot(density())` provides a density plot of a single numeric variable
+
+```{r}
+plot(density(data_2020$pop))
+```
+
+------------------------------------------------------------------------
+
+# Preparing Case Study and Lab Reports
+
+Labs and case studies contain **Reports**. In this way, we have both *lab reports* and *case reports*.
+
+Lab reports are for your own research papers. Case reports are for your exploratory work.
+
+**Reports**, as the name may suggest, are meant to help you report out your own workflow.
+
+Developing your own workflow is an important part of statistical analysis. Your workflow and reports should **not** be a `copy` and `paste` of the exact code outlined in a case study's examples. That said, most examples and the code used are specifically designed to help us move efficiently through the materials for this course.
+
+Note: The use of internet resources like `Chat GPT` are discouraged when generating code. If an assignment is submitted after using any AI assisted software, there may be an issue with plagiarism. All code for our course is self-contained, and it should not require that you search for long hours to find a solution; all solutions are somewhere on our course site!
+
+### Submission
+
+Please complete the following reporting tasks for each part of the case study assignment.
+
+You will submit your reports using the *RMarkdown* file `(.Rmd)` format.
+
+For the case study, you should submit your reports to Canvas.
+
+------------------------------------------------------------------------
+
+# Part 2 Reports
+
+## Report 1.6
+
+State each variable and variable type in the `africa_data_all` data frame.
+
+What code provides us with the requested information most efficiently?
+
+## Report 1.7
+
+Why does `filter(summary(df2, year == 2020))` return an error?
+
+Recall that `df2` was used as a label for `africa_data_all`.
+
+## Report 1.8
+
+When using `view(data_2020)` after running the `sapply(data_2020, function(x) sum(is.na(x)))`, what do you notice? Specifically, what country (or territory) is the source of the missing data values?
+
+Recall that `data_2020` was used as a label for `africa_data_all` when `year == 2020`.
+
+## Report 1.9
+
+Compute univariate statistics for two numeric variables in `africa_data_all` for `year == 2023`.
+
+Univariate statistics for each variable should include: `mean()`, `median()`, a method to find the `mode` of the varaible, if it exists, `max()` and `min()`, a method to find the `range` of the varaible, `IQR()`, and `sd()`.
+
+## Report 1.10
+
+Create basic plots (i.e., `boxplot()`, `hist()`, `plot()`, and `plot(density())`) for the two numeric variables that you used in Report 1.9 (above). Add a title to each plot.
+
+\Large{Save each plot as a `pdf` and submit it with the case study files on Canvas [here](https://canvas.howard.edu/courses/46792)}.
+
+# Experiencing issues?
+
+If you experience issues executing your code, check the notes below.
+
+Remember that R is case sensitive in all instances, and space sensitive in some instances. Please be sure to go back and carefully check your code.
+
+If you get the following error:
+
+`lazy-load database ‘…rdb’ is corrupt`
+
+Try the following method and re-install the package.
+
+Restart your R session by running `.rs.restartR()` in your RStudio Console.
+
+The package might have been installed in your computer (even though it does not work). Remove it using `'`?remove.packages()`'`.
+
+Do not hesitate to contact me via email.

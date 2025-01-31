@@ -86,6 +86,14 @@ website:
               text: Instructions for each paper
             - href: papers/papers-more-info.qmd
               text: More information for papers
+        - section: "Case Studies"
+          contents:
+            - href: cases/case01.qmd
+              text: Case Study 1
+            - href: cases/case02-pt1.qmd
+              text: Case Study 2, pt. 1
+            - href: cases/case02-pt2.qmd
+              text: Case Study 2, pt. 2
         - section: "Labs"
           contents: 
             - href: labs/lab1.qmd
