@@ -40,8 +40,6 @@ This case study will help you explore and create your own workflow. The goal of 
 
 The topics in case study 2 cover one way to approach a new data set. In this case study, you'll cover how to load data from a package, generate a set of outputs using small code chunks, and produce and submit a few simple plots.
 
-You will submit your final output on Canvas [here](https://canvas.howard.edu/courses/55030).
-
 ------------------------------------------------------------------------
 
 # Part 0: Pre-case study tasks
@@ -143,7 +141,7 @@ In this part of the case study, you will complete the following tasks:
 
 -   Construct a response to the issue of misrepresentation in maps
 
-![The world's continents. Image from Encyclopedia Britannica.](img/lab1-continents.jpg){width="50%"}
+![The world's continents. Image from Encyclopedia Britannica.](../img/lab1-continents.jpg){width="50%"}
 
 ## Task 1.1: Explore notes on the social politics of maps
 
@@ -165,7 +163,7 @@ In this part of the case study, you will complete the following tasks:
 
 -   [How maps distort our perception of the world](https://the-ard.com/2023/06/09/the-mercator-projection-and-how-maps-distort-the-world/) is a short and focused resource written by Lee (2023) on the Anti-Racism Daily site. The author focuses on the social politics of perception.
 
-![The world's continents. Image from https://www.visualcapitalist.com/map-true-size-of-africa/](img/lab1-truesize.jpg){width="75%"}
+![The world's continents. Image from https://www.visualcapitalist.com/map-true-size-of-africa/](../img/lab1-truesize.jpg){width="75%"}
 
 ## Task 1.2: Load the `true_size` data
 
@@ -453,14 +451,6 @@ Lab reports are for your own research papers. Case reports are for your explorat
 Developing your own workflow is an important part of statistical analysis. Your workflow and reports should **not** be a `copy` and `paste` of the exact code outlined in a case study's examples. That said, most examples and the code used are specifically designed to help us move efficiently through the materials for this course.
 
 Note: The use of internet resources like `Chat GPT` are discouraged when generating code. If an assignment is submitted after using any AI assisted software, there may be an issue with plagiarism. All code for our course is self-contained, and it should not require that you search for long hours to find a solution; all solutions are somewhere on our course site!
-
-### Submission
-
-Please complete the following reporting tasks for each part of the case study assignment.
-
-You will submit your reports using what is called an *RMarkdown* file `(.Rmd)`.
-
-For the case study, you should submit your reports to Canvas.
 
 ------------------------------------------------------------------------
 

@@ -20,7 +20,7 @@ That said, during this lab, you will also return to some of the functions we hav
 
 By the end of this lab you will be able to:
 
-1.  Locate data sets in the `critstats` package, or use `gss_cat`
+1.  Locate data sets in the `critstats` package
 2.  Develop an original research question
 3.  Clean and manipulate data for analysis
 4.  Examine the relationship between two variables
@@ -92,7 +92,7 @@ library(critstats)
 
 In this part of the lab, you should complete the following tasks:
 
--   Locate a data sets in the `critstats` package or use `gss` data or your own data set.
+-   Locate a data set in the `critstats` package or your own data set.
 
 ```{r}
 library(critstats)
@@ -101,7 +101,7 @@ data(package = 'critstats')
 
 -   Recall that you can also use the `data(package="critstats")` command, with a double asterisk, to see a list of data sets in the \`critstats' package
 
--   Develop an original research question on two variables in your selected data set.
+-   Develop a set of research questions about two variables in your selected data set.
 
 ------------------------------------------------------------------------
 

@@ -11,7 +11,7 @@ subtitle: "Statistically Measuring and Modeling Social Justice"
 |  | [3](weeks/week03.html) | Wed, Jan 29 | [Theory construction](weeks/week03-slides.html) |  |  | [Case study 1 files](https://canvas.howard.edu/courses/59441/modules){target="_blank"} |
 |  | [4](weeks/week04.html) | Wed, Feb 5 | [Probability theory](weeks/week04-slides.html) |  |  | [Frisby (2024)](https://www.dropbox.com/scl/fi/b7sgjud5lm8z61kaw0gzr/frisby-2024-critical-quantitative-literacy-an-educational-foundation-for-critical-quantitative-research.pdf?rlkey=3e03lvj4ykidqo7jpgocmho8o&dl=0){target="_blank"} |
 | II | [5](weeks/week05.html) | Wed, Feb 12 | [Univariate analysis](weeks/week05-slides.html) | [Lab 1](labs/lab1.html) |  | Case study 2 files |
-|  | [6](weeks/week06.html) | Wed, Feb 19 | [Bivariate analysis](weeks/week06-slides.html) |  |  | []{target="_blank"} |
+|  | [6](weeks/week06.html) | Wed, Feb 19 | [Bivariate analysis](weeks/week06-slides.html) |  |  |  |
 |  | [7](weeks/week07.html) | Wed, Feb 26 | [Exploratory analysis](weeks/week07-slides.html) |  | [Paper 1](papers/paper1.html) |  |
 |  | [8](weeks/week08.html) | Wed, Mar 12 | [Hypothesis testing](weeks/week08-slides.html) |  |  |  |
 | III | [9](weeks/week09.html) | Wed, Mar 19 | [Notes on causal theories](weeks/week09-slides.html) |  |  | Case study 3 files |
