@@ -10,7 +10,7 @@ subtitle: "Statistically Measuring and Modeling Social Justice"
 |  | [2](weeks/week02.html) | Wed, Jan 22 | [Foundations](weeks/week02-slides.html) |  |  | [Pelham (2013, ch. 1)](https://www.dropbox.com/scl/fi/8mxvv4hdi43n1ollipp9g/_Pelham-B.-2013-.-Intermediate-Statistics-A-Conceptual-Course-Ch.-1-copy.pdf?rlkey=zltrtv567j94bs6ookj8sy8fe&dl=0){target="_blank"} |
 |  | [3](weeks/week03.html) | Wed, Jan 29 | [Theory construction](weeks/week03-slides.html) |  |  | [Case study 1 files](https://canvas.howard.edu/courses/59441/modules){target="_blank"} |
 |  | [4](weeks/week04.html) | Wed, Feb 5 | [Probability theory](weeks/week04-slides.html) |  |  | [Frisby (2024)](https://www.dropbox.com/scl/fi/b7sgjud5lm8z61kaw0gzr/frisby-2024-critical-quantitative-literacy-an-educational-foundation-for-critical-quantitative-research.pdf?rlkey=3e03lvj4ykidqo7jpgocmho8o&dl=0){target="_blank"} |
-| II | [5](weeks/week05.html) | Wed, Feb 12 | [Univariate analysis](weeks/week05-slides.html) | [Lab 1](labs/lab1.html) |  | Case study 2 files |
+| II | [5](weeks/week05.html) | Wed, Feb 12 | [Univariate analysis](weeks/week05-slides.html) | [Lab 1](labs/lab1.html) |  | Case study 2:  [pt. 1 ](cases/case02-pt1.html) & [pt. 2](cases/case02-pt2.html) |
 |  | [6](weeks/week06.html) | Wed, Feb 19 | [Bivariate analysis](weeks/week06-slides.html) |  |  |  |
 |  | [7](weeks/week07.html) | Wed, Feb 26 | [Exploratory analysis](weeks/week07-slides.html) |  | [Paper 1](papers/paper1.html) |  |
 |  | [8](weeks/week08.html) | Wed, Mar 12 | [Hypothesis testing](weeks/week08-slides.html) |  |  |  |

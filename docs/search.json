@@ -2406,6 +2406,27 @@
     ]
   },
   {
+    "objectID": "cases/week01-slides.html#learning-objectives",
+    "href": "cases/week01-slides.html#learning-objectives",
+    "title": "Case Study 1: Tuskegee Study of Untreated Syphillis in the Negro Male",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nThe goal of this lab is to introduce you to or remind you of the historical case that contributed to the development of the Institutional Review Board. This case is the Tuskegee Study of Untreated Syphilis in the Negro Male. Case files can be found below and in week 1."
+  },
+  {
+    "objectID": "cases/week01-slides.html#learning-activities",
+    "href": "cases/week01-slides.html#learning-activities",
+    "title": "Case Study 1: Tuskegee Study of Untreated Syphillis in the Negro Male",
+    "section": "Learning Activities",
+    "text": "Learning Activities\nBy the end of this case study you will be able to:\n\nIdentify historical issues of ethics and quantification\nDiscuss the Institutional Review Board (IRB) and its purposes"
+  },
+  {
+    "objectID": "cases/week01-slides.html#case-study-1-tuskegee-experiement-of-untreated-syphillis",
+    "href": "cases/week01-slides.html#case-study-1-tuskegee-experiement-of-untreated-syphillis",
+    "title": "Case Study 1: Tuskegee Study of Untreated Syphillis in the Negro Male",
+    "section": "Case Study 1: Tuskegee Experiement of Untreated Syphillis",
+    "text": "Case Study 1: Tuskegee Experiement of Untreated Syphillis\nTo help you prepare for our forthcoming discussions and readings, you should explore information about our first case study. One place to start is here: “The Tuskegee Experiment: Crash Course Black American History #29” in the video below:\n\n\n\n\n\n\n\n\nCourse Data GitHub"
+  },
+  {
     "objectID": "cases/case01.html",
     "href": "cases/case01.html",
     "title": "Case Study 1: Tuskegee Study of Untreated Syphillis in the Negro Male",
@@ -2458,7 +2479,7 @@
     "href": "index.html",
     "title": "Welcome to DATA 202",
     "section": "",
-    "text": "Part\nWeek\nDay\nTopics\nLabs\nPapers\nMain reading\n\n\n\n\nI\n1\nWed, Jan 15\nIntroduction\nLab 0\n\n\n\n\n\n2\nWed, Jan 22\nFoundations\n\n\nPelham (2013, ch. 1)\n\n\n\n3\nWed, Jan 29\nTheory construction\n\n\nCase study 1 files\n\n\n\n4\nWed, Feb 5\nProbability theory\n\n\nFrisby (2024)\n\n\nII\n5\nWed, Feb 12\nUnivariate analysis\nLab 1\n\nCase study 2 files\n\n\n\n6\nWed, Feb 19\nBivariate analysis\n\n\n\n\n\n\n7\nWed, Feb 26\nExploratory analysis\n\nPaper 1\n\n\n\n\n8\nWed, Mar 12\nHypothesis testing\n\n\n\n\n\nIII\n9\nWed, Mar 19\nNotes on causal theories\n\n\nCase study 3 files\n\n\n\n10\nWed, Mar 26\nModeling social in/justice\nLab 2\n\n\n\n\n\n11\nWed, Apr 2\nOn regression\n\n\n\n\n\n\n12\nWed, Apr 9\nMore on regression\n\n\n\n\n\nIV\n13\nWed, Apr 16\nStatistical learning\n\nPaper 2\nCase study 4 files\n\n\n\n14\nWed, Apr 23\nOverview of additional models",
+    "text": "Part\nWeek\nDay\nTopics\nLabs\nPapers\nMain reading\n\n\n\n\nI\n1\nWed, Jan 15\nIntroduction\nLab 0\n\n\n\n\n\n2\nWed, Jan 22\nFoundations\n\n\nPelham (2013, ch. 1)\n\n\n\n3\nWed, Jan 29\nTheory construction\n\n\nCase study 1 files\n\n\n\n4\nWed, Feb 5\nProbability theory\n\n\nFrisby (2024)\n\n\nII\n5\nWed, Feb 12\nUnivariate analysis\nLab 1\n\nCase study 2: pt. 1 & pt. 2\n\n\n\n6\nWed, Feb 19\nBivariate analysis\n\n\n\n\n\n\n7\nWed, Feb 26\nExploratory analysis\n\nPaper 1\n\n\n\n\n8\nWed, Mar 12\nHypothesis testing\n\n\n\n\n\nIII\n9\nWed, Mar 19\nNotes on causal theories\n\n\nCase study 3 files\n\n\n\n10\nWed, Mar 26\nModeling social in/justice\nLab 2\n\n\n\n\n\n11\nWed, Apr 2\nOn regression\n\n\n\n\n\n\n12\nWed, Apr 9\nMore on regression\n\n\n\n\n\nIV\n13\nWed, Apr 16\nStatistical learning\n\nPaper 2\nCase study 4 files\n\n\n\n14\nWed, Apr 23\nOverview of additional models",
     "crumbs": [
       "Course information",
       "Course landing page"
@@ -2496,26 +2517,5 @@
       "Appendix",
       "Resources"
     ]
-  },
-  {
-    "objectID": "cases/week01-slides.html#learning-objectives",
-    "href": "cases/week01-slides.html#learning-objectives",
-    "title": "Case Study 1: Tuskegee Study of Untreated Syphillis in the Negro Male",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nThe goal of this lab is to introduce you to or remind you of the historical case that contributed to the development of the Institutional Review Board. This case is the Tuskegee Study of Untreated Syphilis in the Negro Male. Case files can be found below and in week 1."
-  },
-  {
-    "objectID": "cases/week01-slides.html#learning-activities",
-    "href": "cases/week01-slides.html#learning-activities",
-    "title": "Case Study 1: Tuskegee Study of Untreated Syphillis in the Negro Male",
-    "section": "Learning Activities",
-    "text": "Learning Activities\nBy the end of this case study you will be able to:\n\nIdentify historical issues of ethics and quantification\nDiscuss the Institutional Review Board (IRB) and its purposes"
-  },
-  {
-    "objectID": "cases/week01-slides.html#case-study-1-tuskegee-experiement-of-untreated-syphillis",
-    "href": "cases/week01-slides.html#case-study-1-tuskegee-experiement-of-untreated-syphillis",
-    "title": "Case Study 1: Tuskegee Study of Untreated Syphillis in the Negro Male",
-    "section": "Case Study 1: Tuskegee Experiement of Untreated Syphillis",
-    "text": "Case Study 1: Tuskegee Experiement of Untreated Syphillis\nTo help you prepare for our forthcoming discussions and readings, you should explore information about our first case study. One place to start is here: “The Tuskegee Experiment: Crash Course Black American History #29” in the video below:\n\n\n\n\n\n\n\n\nCourse Data GitHub"
   }
 ]
