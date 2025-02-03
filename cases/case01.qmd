@@ -2,10 +2,26 @@
 title: "Case Study 1: Tuskegee Study of Untreated Syphillis in the Negro Male"
 subtitle: "DATA 202 - Alexander"
 format: 
-  html:
-    self-contained: true
-    self-contained-math: true
-editor: visual
+  html: default
+  pptx:
+    toc: false
+    reference_docx: "word-styles-reference.docx"
+    fig_caption: true
+  revealjs:
+    output-file: week01-slides.html
+    height: 900
+    width: 1600
+    smaller: false
+    slide-number: c/t #< collapsted/total
+    logo: "img/howard-logo.jpg"
+    footer: "[Course Data GitHub](https://github.com/data-202)"
+    toc: false
+    echo: true
+    incremental: false
+geometry: margin=1.0in
+editor_options:
+  markdown:
+    wrap: sentence
 ---
 
 In Case Study 1, we will explore the ethics and quantification.
@@ -25,8 +41,7 @@ By the end of this case study you will be able to:
 
 ## Case Study 1: Tuskegee Experiement of Untreated Syphillis
 
-To help you prepare for our forthcoming discussions and readings, you should explore information about our first case study.
-One place to start is here: "The Tuskegee Experiment: Crash Course Black American History #29" in the video below:
+To help you prepare for our forthcoming discussions and readings, you should explore information about our first case study. One place to start is here: "The Tuskegee Experiment: Crash Course Black American History #29" in the video below:
 
 <center>
 

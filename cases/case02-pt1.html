@@ -1,0 +1,1942 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Case Study 2, Part 1: The True Size of Africa – DATA 202: Statistically Measuring and Modeling Social Justice</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../cases/case02-pt2.html" rel="next">
+<link href="../cases/case01.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Case Study 2, Part 1: The True Size of Africa – DATA 202: Statistically Measuring and Modeling Social Justice">
+<meta property="og:description" content="DATA 202 - Alexander">
+<meta property="og:site_name" content="DATA 202: Statistically Measuring and Modeling Social Justice">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Appendix</li><li class="breadcrumb-item"><a href="../cases/case01.html">Case Studies</a></li><li class="breadcrumb-item"><a href="../cases/case02-pt1.html">Case Study 2, pt.&nbsp;1</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../img/dubois-loc.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/data-202/" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://canvas.howard.edu/courses/59441" title="Canvas site" class="quarto-navigation-tool px-1" aria-label="Canvas site"><i class="bi bi-code-square"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course landing page</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../course-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../computing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Computing</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Weekly materials</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week06.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week07.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 13</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../weeks/week14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 14</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendix</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Papers</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../papers/paper1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paper 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../papers/paper2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Paper 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../papers/papers-instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructions for each paper</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../papers/papers-more-info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">More information for papers</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Case Studies</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cases/case01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Case Study 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cases/case02-pt1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Case Study 2, pt.&nbsp;1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cases/case02-pt2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Case Study 2, pt.&nbsp;2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Labs</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../labs/lab2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#learning-activities" id="toc-learning-activities" class="nav-link" data-scroll-target="#learning-activities">Learning Activities</a></li>
+  <li><a href="#developing-a-workflow" id="toc-developing-a-workflow" class="nav-link" data-scroll-target="#developing-a-workflow">Developing a workflow</a></li>
+  <li><a href="#part-0-pre-case-study-tasks" id="toc-part-0-pre-case-study-tasks" class="nav-link" data-scroll-target="#part-0-pre-case-study-tasks">Part 0: Pre-case study tasks</a>
+  <ul class="collapse">
+  <li><a href="#task-0.1-check-your-working-directory" id="toc-task-0.1-check-your-working-directory" class="nav-link" data-scroll-target="#task-0.1-check-your-working-directory">Task 0.1: Check your working directory</a></li>
+  <li><a href="#task-0.2-start-a-new-rmarkdown-file" id="toc-task-0.2-start-a-new-rmarkdown-file" class="nav-link" data-scroll-target="#task-0.2-start-a-new-rmarkdown-file">Task 0.2: Start a new RMarkdown file</a></li>
+  <li><a href="#task-0.3-write-setup-code-chunks" id="toc-task-0.3-write-setup-code-chunks" class="nav-link" data-scroll-target="#task-0.3-write-setup-code-chunks">Task 0.3: Write setup code chunks</a></li>
+  <li><a href="#task-0.4-packages-and-libraries" id="toc-task-0.4-packages-and-libraries" class="nav-link" data-scroll-target="#task-0.4-packages-and-libraries">Task 0.4: Packages and libraries</a></li>
+  </ul></li>
+  <li><a href="#part-1-the-true-size-of-africa" id="toc-part-1-the-true-size-of-africa" class="nav-link" data-scroll-target="#part-1-the-true-size-of-africa">Part 1: The true size of Africa</a>
+  <ul class="collapse">
+  <li><a href="#task-1.1-explore-notes-on-the-social-politics-of-maps" id="toc-task-1.1-explore-notes-on-the-social-politics-of-maps" class="nav-link" data-scroll-target="#task-1.1-explore-notes-on-the-social-politics-of-maps">Task 1.1: Explore notes on the social politics of maps</a></li>
+  <li><a href="#task-1.2-load-the-true_size-data" id="toc-task-1.2-load-the-true_size-data" class="nav-link" data-scroll-target="#task-1.2-load-the-true_size-data">Task 1.2: Load the <code>true_size</code> data</a>
+  <ul class="collapse">
+  <li><a href="#task-1.2.1-install-the-critstats-package" id="toc-task-1.2.1-install-the-critstats-package" class="nav-link" data-scroll-target="#task-1.2.1-install-the-critstats-package">Task 1.2.1: Install the <code>critstats</code> package</a></li>
+  <li><a href="#task-1.2.2-call-the-true_size-data" id="toc-task-1.2.2-call-the-true_size-data" class="nav-link" data-scroll-target="#task-1.2.2-call-the-true_size-data">Task 1.2.2: Call the <code>true_size</code> data</a></li>
+  <li><a href="#task-1.2.3-inspect-the-true_size-documentation" id="toc-task-1.2.3-inspect-the-true_size-documentation" class="nav-link" data-scroll-target="#task-1.2.3-inspect-the-true_size-documentation">Task 1.2.3: Inspect the <code>true_size</code> documentation</a></li>
+  </ul></li>
+  <li><a href="#task-1.3-explore-the-true_size-data" id="toc-task-1.3-explore-the-true_size-data" class="nav-link" data-scroll-target="#task-1.3-explore-the-true_size-data">Task 1.3: Explore the <code>true_size</code> data</a>
+  <ul class="collapse">
+  <li><a href="#task-1.3.1-assign-the-true_size-data-frame-to-df1" id="toc-task-1.3.1-assign-the-true_size-data-frame-to-df1" class="nav-link" data-scroll-target="#task-1.3.1-assign-the-true_size-data-frame-to-df1">Task 1.3.1: Assign the <code>true_size</code> data frame to <code>df1</code></a></li>
+  <li><a href="#task-1.3.2-inspect-your-data" id="toc-task-1.3.2-inspect-your-data" class="nav-link" data-scroll-target="#task-1.3.2-inspect-your-data">Task 1.3.2: Inspect your data</a></li>
+  </ul></li>
+  <li><a href="#task-1.4-use-dplyr-verbs-on-true_size" id="toc-task-1.4-use-dplyr-verbs-on-true_size" class="nav-link" data-scroll-target="#task-1.4-use-dplyr-verbs-on-true_size">Task 1.4: Use <code>dplyr</code> verbs on <code>true_size</code></a>
+  <ul class="collapse">
+  <li><a href="#task-1.4.1-subset-columns-variables-using-select" id="toc-task-1.4.1-subset-columns-variables-using-select" class="nav-link" data-scroll-target="#task-1.4.1-subset-columns-variables-using-select">Task 1.4.1: Subset columns (variables) using <code>select()</code></a></li>
+  <li><a href="#task-1.4.2-filter-rows-cases-using-filter" id="toc-task-1.4.2-filter-rows-cases-using-filter" class="nav-link" data-scroll-target="#task-1.4.2-filter-rows-cases-using-filter">Task 1.4.2: Filter rows (cases) using <code>filter()</code></a></li>
+  <li><a href="#task-1.4.3-addremove-columns-variables-using-mutate" id="toc-task-1.4.3-addremove-columns-variables-using-mutate" class="nav-link" data-scroll-target="#task-1.4.3-addremove-columns-variables-using-mutate">Task 1.4.3: Add/remove columns (variables) using <code>mutate()</code></a></li>
+  <li><a href="#task-1.4.4-rename-a-column-using-rename" id="toc-task-1.4.4-rename-a-column-using-rename" class="nav-link" data-scroll-target="#task-1.4.4-rename-a-column-using-rename">Task 1.4.4: Rename a column using <code>rename()</code></a></li>
+  <li><a href="#task-1.4.5-use-relocate-to-reorder-the-columns" id="toc-task-1.4.5-use-relocate-to-reorder-the-columns" class="nav-link" data-scroll-target="#task-1.4.5-use-relocate-to-reorder-the-columns">Task 1.4.5: Use <code>relocate()</code> to reorder the columns</a></li>
+  <li><a href="#task-1.4.6-overwrite-your-data-frame" id="toc-task-1.4.6-overwrite-your-data-frame" class="nav-link" data-scroll-target="#task-1.4.6-overwrite-your-data-frame">Task 1.4.6: Overwrite your data frame</a></li>
+  <li><a href="#task-1.4.7-explore-summarise-arrange-and-other-verbs" id="toc-task-1.4.7-explore-summarise-arrange-and-other-verbs" class="nav-link" data-scroll-target="#task-1.4.7-explore-summarise-arrange-and-other-verbs">Task 1.4.7: Explore <code>summarise()</code>, <code>arrange()</code>, and other verbs</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#preparing-case-study-and-lab-reports" id="toc-preparing-case-study-and-lab-reports" class="nav-link" data-scroll-target="#preparing-case-study-and-lab-reports">Preparing Case Study and Lab Reports</a></li>
+  <li><a href="#part-1-reports" id="toc-part-1-reports" class="nav-link" data-scroll-target="#part-1-reports">Part 1 Reports</a>
+  <ul class="collapse">
+  <li><a href="#report-1.1" id="toc-report-1.1" class="nav-link" data-scroll-target="#report-1.1">Report 1.1</a></li>
+  <li><a href="#report-1.2" id="toc-report-1.2" class="nav-link" data-scroll-target="#report-1.2">Report 1.2</a></li>
+  <li><a href="#report-1.3" id="toc-report-1.3" class="nav-link" data-scroll-target="#report-1.3">Report 1.3</a></li>
+  <li><a href="#report-1.4" id="toc-report-1.4" class="nav-link" data-scroll-target="#report-1.4">Report 1.4</a></li>
+  <li><a href="#report-1.5" id="toc-report-1.5" class="nav-link" data-scroll-target="#report-1.5">Report 1.5</a></li>
+  </ul></li>
+  <li><a href="#experiencing-issues" id="toc-experiencing-issues" class="nav-link" data-scroll-target="#experiencing-issues">Experiencing issues?</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Appendix</li><li class="breadcrumb-item"><a href="../cases/case01.html">Case Studies</a></li><li class="breadcrumb-item"><a href="../cases/case02-pt1.html">Case Study 2, pt.&nbsp;1</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Case Study 2, Part 1: The True Size of Africa</h1>
+<p class="subtitle lead">DATA 202 - Alexander</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In Case Study 2, we will explore the social politics of maps and globally oriented data to help us make sense of what we mean by a “population.” The case study will integrate a series of new packages, functions, and code to support our explorations.</p>
+<p>There are two parts to this case study, this is part 1.</p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>In this case study component, you will be introduced to the <code>dplyr</code> package, which is one of the many packages in the <a href="https://www.tidyverse.org/"><code>tidyverse</code></a>. The <code>tidyverse</code> is a set of packages that will be used for cleaning and organizing data.</p>
+<hr>
+</section>
+<section id="learning-activities" class="level2">
+<h2 class="anchored" data-anchor-id="learning-activities">Learning Activities</h2>
+<p>By the end of this case study you will be able to:</p>
+<ol type="1">
+<li>Install and/or update R packages</li>
+<li>Assign data frames to different names for efficient exploration</li>
+<li>Generate a set of outputs using the <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> package</li>
+<li>Overwrite a data frame while using the <a href="https://style.tidyverse.org/pipes.html">pipe operator</a></li>
+<li>Produce simple plots using data located in an <code>R</code> package</li>
+</ol>
+</section>
+<section id="developing-a-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="developing-a-workflow">Developing a workflow</h2>
+<p>Coding workflows are an essential component of project completion.</p>
+<p>When analyzing data, it is important to understand the possible intersections between the <code>context</code>, <code>content</code>, and <code>code</code>. The best way to explore these relationships is by conducting a literature review. Reading about what others have done is more valuable than starting a workflow prematurely.</p>
+<p>Time may be used inefficiently and clear but standard outputs provide narratives that can likely be confirmed by or support what is already in the research literature. Without an understanding of these connections, analytic outputs may do less to move our understanding of issues forward.</p>
+<p>This case study will help you explore and create your own workflow. The goal of a coding workflow is not to simply <code>copy</code> and <code>paste</code> arguments that you find. Instead, you want to develop clear pathways to identifying solutions as you work with your data.</p>
+<p>The topics in case study 2 cover one way to approach a new data set. In this case study, you’ll cover how to load data from a package, generate a set of outputs using small code chunks, and produce and submit a few simple plots.</p>
+<hr>
+</section>
+<section id="part-0-pre-case-study-tasks" class="level1">
+<h1>Part 0: Pre-case study tasks</h1>
+<ul>
+<li><p>Check your working directory</p></li>
+<li><p>Start a new R Script</p></li>
+<li><p>Write a preamble</p></li>
+<li><p>Install and/or update packages and load libraries</p></li>
+</ul>
+<section id="task-0.1-check-your-working-directory" class="level2">
+<h2 class="anchored" data-anchor-id="task-0.1-check-your-working-directory">Task 0.1: Check your working directory</h2>
+<p>In your console, type in the following code to ensure you are in the desired directory:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you are not in the desired directory, you can change your directory using the associated path. This path should be the same as the project folder that you plan to work out of and set up in lecture five.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># insert your desired path in the parenthesis and remove the #</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># setwd("/your/working/directory/goes/here") </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can add a new sub-folder manually or under the <strong>Files</strong> tab in the RStudio IDE.</p>
+</section>
+<section id="task-0.2-start-a-new-rmarkdown-file" class="level2">
+<h2 class="anchored" data-anchor-id="task-0.2-start-a-new-rmarkdown-file">Task 0.2: Start a new RMarkdown file</h2>
+<p>Once you have confirmed that you are in the correct directory, start a new RMarkdown file (.Rmd) and write your preamble.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">"Case Study 2"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">"Your Full Name"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">"2024-09-09"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  pdf_document<span class="sc">:</span> default</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  html_document<span class="sc">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    theme<span class="sc">:</span> flatly</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>editor_options<span class="sc">:</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  markdown<span class="sc">:</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  wrap<span class="sc">:</span> sentence</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a> <span class="sc">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="task-0.3-write-setup-code-chunks" class="level2">
+<h2 class="anchored" data-anchor-id="task-0.3-write-setup-code-chunks">Task 0.3: Write setup code chunks</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ```{r, eval=F}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("devtools")</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># library(devtools)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="task-0.4-packages-and-libraries" class="level2">
+<h2 class="anchored" data-anchor-id="task-0.4-packages-and-libraries">Task 0.4: Packages and libraries</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install package</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("tidyverse", repos = "http://cran.us.r-project.org")</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("remotes", repos = "http://cran.us.r-project.org")</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># load the necessary libraries</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#collection of R packages designed for data science</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(remotes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>dplyr</code> package supports data analyst with efficient data manipulation. As a part of the <code>tidyverse</code> package, the functions included in <code>dplyr</code> we loaded earlier will help you generate efficient workflows. Though, in reality, most analysts transition between classic code found widely on the internet and the more recent <code>dplyr</code> commands.</p>
+<p>The <code>remotes</code> library will allow you to remotely install <code>critstats</code> data.</p>
+<hr>
+</section>
+</section>
+<section id="part-1-the-true-size-of-africa" class="level1">
+<h1>Part 1: The true size of Africa</h1>
+<p>In this part of the case study, you will complete the following tasks:</p>
+<ul>
+<li><p>Explore notes on the social politics of maps</p></li>
+<li><p>Examine the <code>true_size</code> data in the <code>critstats</code> package</p></li>
+<li><p>Construct a response to the issue of misrepresentation in maps</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../img/lab1-continents.jpg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>The world’s continents. Image from Encyclopedia Britannica.</figcaption>
+</figure>
+</div>
+<section id="task-1.1-explore-notes-on-the-social-politics-of-maps" class="level2">
+<h2 class="anchored" data-anchor-id="task-1.1-explore-notes-on-the-social-politics-of-maps">Task 1.1: Explore notes on the social politics of maps</h2>
+<ul>
+<li><p><a href="https://education.nationalgeographic.org/resource/map/#:~:text=Maps%20present%20information%20about%20the,features%2C%20and%20distances%20between%20places">What is a map?</a> This <em>National Geographic</em> education resource presents a clear overview of maps, geography, and Geographic Information Systems (GIS).</p></li>
+<li><p><a href="https://www.cnn.com/2016/08/18/africa/real-size-of-africa/index.html">What’s the real size of Africa?</a> is a CNN Africa Marketplace article that examines the Western foundations of maps and representations of the African continent.</p></li>
+<li><p><a href="https://www.jstor.org/stable/j.ctv550dcj">Vaughan (2018)</a> is an open access publication on the <em>spatial dimensions of social cartography</em>. The text contains valuable information about how maps have been used to understand health and human development issues, such as poverty, disease, housing, and the like. The text also contains notes on race and nationality, crime and disorder, and a host of references for further reading.</p></li>
+<li><p><a href="https://open.lib.umn.edu/mapping/chapter/1-maps-society-and-technology/">Manson &amp; Matson (2017)</a> present an overview of society and mapping with new technological tools. While doing so, the authors provide a history of maps and examine the basic social elements of maps, the technical elements of maps, and how maps have been integrated into liberal arts education.</p></li>
+<li><p><a href="https://press.uchicago.edu/books/HOC/HOC_V6/HOC_VOLUME6_R.pdf">Crampton (2015)</a> writes on <em>Maps and the Social Construction of Race</em> in a larger volume on maps produced by the University of Chicago Press.</p></li>
+<li><p><a href="https://theconversation.com/how-black-cartographers-put-racism-on-the-map-of-america-155081">Alderman &amp; Inwood (2021)</a> describe how Black cartographers use maps to examine issues of racial inequality. The authors provide a more focused discussion on the social politics of maps, as opposed to a more general overview of their functions.</p></li>
+<li><p><a href="https://sociologyinfocus.com/your-map-is-racist-and-heres-how-2/">Can maps be racist?</a> Palmer (2014) provides some context to understand the technical aspects of maps as they relate to our social construction of the global world. In this review, the author situates the common functions of maps onto the social dimensions while attending to the particular periods of the development and construction of global maps; thus integrating the political dimension of knowledge creation via map making.</p>
+<p>– <a href="https://areomagazine.com/2021/03/08/in-defence-of-the-mercator-projection-the-non-racism-of-maps/">Britton (2021)</a> in a blog post on the “non-racism of maps” offers a very different perspective on the Mercator projection. The author focuses on ideology and science in modern society. He argues that the original purpose of maps does not make them racist.</p></li>
+<li><p><a href="https://the-ard.com/2023/06/09/the-mercator-projection-and-how-maps-distort-the-world/">How maps distort our perception of the world</a> is a short and focused resource written by Lee (2023) on the Anti-Racism Daily site. The author focuses on the social politics of perception.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../img/lab1-truesize.jpg" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>The world’s continents. Image from https://www.visualcapitalist.com/map-true-size-of-africa/</figcaption>
+</figure>
+</div>
+</section>
+<section id="task-1.2-load-the-true_size-data" class="level2">
+<h2 class="anchored" data-anchor-id="task-1.2-load-the-true_size-data">Task 1.2: Load the <code>true_size</code> data</h2>
+<section id="task-1.2.1-install-the-critstats-package" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.2.1-install-the-critstats-package">Task 1.2.1: Install the <code>critstats</code> package</h3>
+<p>To begin, we will install and/or update the installation of <code>critstats</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># use the remote install function to call in your data</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"professornaite/critstats"</span>, <span class="at">force=</span><span class="cn">TRUE</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># load the `critstats` library</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(critstats)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># update the `critstats` package if needed</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># update.packages("critstats")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="task-1.2.2-call-the-true_size-data" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.2.2-call-the-true_size-data">Task 1.2.2: Call the <code>true_size</code> data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>critstats<span class="sc">::</span>true_size</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="task-1.2.3-inspect-the-true_size-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.2.3-inspect-the-true_size-documentation">Task 1.2.3: Inspect the <code>true_size</code> documentation</h3>
+<p>Using the <code>??data</code> prompt, you can inspect the contents of the data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>??critstats<span class="sc">::</span>true_size</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>As noted before, this serves as the data’s documentation and is the basis of a code book (or codebook). A codebook contains very specific details about a database, data set, and the variables each contains. We will explore codebooks more in the future.</p>
+<hr>
+</section>
+</section>
+<section id="task-1.3-explore-the-true_size-data" class="level2">
+<h2 class="anchored" data-anchor-id="task-1.3-explore-the-true_size-data">Task 1.3: Explore the <code>true_size</code> data</h2>
+<section id="task-1.3.1-assign-the-true_size-data-frame-to-df1" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.3.1-assign-the-true_size-data-frame-to-df1">Task 1.3.1: Assign the <code>true_size</code> data frame to <code>df1</code></h3>
+<p>Use the assignment operator to assign the <code>true_size</code> data frame to the object <code>df1</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> critstats<span class="sc">::</span>true_size</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="task-1.3.2-inspect-your-data" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.3.2-inspect-your-data">Task 1.3.2: Inspect your data</h3>
+<p>Use the <code>str()</code> function to inspect your data frame.</p>
+<p><code>str()</code> displays the structure of R objects.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>tibble [18 × 4] (S3: tbl_df/tbl/data.frame)
+ $ Country       : chr [1:18] "United States" "China" "India" "Mexico" ...
+ $ percent.africa: num [1:18] 32.4 31.6 10.8 6.5 4.2 2.1 1.7 1.5 1.5 1.3 ...
+ $ area.sq.km    : num [1:18] 9.83 9.6 3.29 1.96 1.29 0.64 0.51 0.46 0.45 0.38 ...
+ $ area.sq.mi    : num [1:18] 3.8 3.71 1.27 0.76 0.5 0.25 0.2 0.18 0.17 0.15 ...</code></pre>
+</div>
+</div>
+<p>You can also run similar commands separately:</p>
+<section id="task-1.3.2a-dim" class="level4">
+<h4 class="anchored" data-anchor-id="task-1.3.2a-dim">Task 1.3.2a: <code>dim()</code></h4>
+<p>Use the <code>dim()</code> function to check the dimensions of your data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># check the dimensions of your data</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(df1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 18  4</code></pre>
+</div>
+</div>
+<p>Note that the dimensions are reported as a <span class="math inline">\(n \times m\)</span> matrix with <span class="math inline">\(n\)</span> rows and <span class="math inline">\(m\)</span> columns.</p>
+</section>
+<section id="task-1.3.2b-view" class="level4">
+<h4 class="anchored" data-anchor-id="task-1.3.2b-view">Task 1.3.2b: <code>view()</code></h4>
+<p>Use the <code>View()</code> function to see all of your data in a separate window.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># view the data</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(df1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="task-1.3.2c-glimpse" class="level4">
+<h4 class="anchored" data-anchor-id="task-1.3.2c-glimpse">Task 1.3.2c: <code>glimpse()</code></h4>
+<p>Take a glimpse of your data using the <code>glimpse()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get a glimpse of your data frame</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(df1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 18
+Columns: 4
+$ Country        &lt;chr&gt; "United States", "China", "India", "Mexico", "Peru", "F…
+$ percent.africa &lt;dbl&gt; 32.4, 31.6, 10.8, 6.5, 4.2, 2.1, 1.7, 1.5, 1.5, 1.3, 1.…
+$ area.sq.km     &lt;dbl&gt; 9.83, 9.60, 3.29, 1.96, 1.29, 0.64, 0.51, 0.46, 0.45, 0…
+$ area.sq.mi     &lt;dbl&gt; 3.80, 3.71, 1.27, 0.76, 0.50, 0.25, 0.20, 0.18, 0.17, 0…</code></pre>
+</div>
+</div>
+</section>
+<section id="task-1.3.2d-head" class="level4">
+<h4 class="anchored" data-anchor-id="task-1.3.2d-head">Task 1.3.2d: <code>head()</code></h4>
+<p>View the first six observations in your data using the <code>head()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># view the "top" of your data</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  Country       percent.africa area.sq.km area.sq.mi
+  &lt;chr&gt;                  &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+1 United States           32.4       9.83       3.8 
+2 China                   31.6       9.6        3.71
+3 India                   10.8       3.29       1.27
+4 Mexico                   6.5       1.96       0.76
+5 Peru                     4.2       1.29       0.5 
+6 France                   2.1       0.64       0.25</code></pre>
+</div>
+</div>
+</section>
+<section id="task-1.3.2e-tail" class="level4">
+<h4 class="anchored" data-anchor-id="task-1.3.2e-tail">Task 1.3.2e: <code>tail()</code></h4>
+<p>View the last six observations in your data using the <code>tail()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># view the "bottom" of your data</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(df1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 4
+  Country        percent.africa area.sq.km area.sq.mi
+  &lt;chr&gt;                   &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+1 Italy                     1         0.3        0.12
+2 New Zealand               0.9       0.27       0.1 
+3 United Kingdom            0.8       0.24       0.09
+4 Nepal                     0.5       0.15       0.06
+5 Bangladesh                0.5       0.15       0.06
+6 Greece                    0.4       0.13       0.05</code></pre>
+</div>
+</div>
+</section>
+<section id="task-1.3.2f-specify-n-in-head-or-tail" class="level4">
+<h4 class="anchored" data-anchor-id="task-1.3.2f-specify-n-in-head-or-tail">Task 1.3.2f: Specify <code>n</code> in <code>head()</code> or <code>tail()</code></h4>
+<p>You can change the number of observations viewed by being more explicit in your code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df1, <span class="at">n =</span> <span class="dv">10</span>) <span class="co"># view the top 10 observations</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+   Country          percent.africa area.sq.km area.sq.mi
+   &lt;chr&gt;                     &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+ 1 United States              32.4       9.83       3.8 
+ 2 China                      31.6       9.6        3.71
+ 3 India                      10.8       3.29       1.27
+ 4 Mexico                      6.5       1.96       0.76
+ 5 Peru                        4.2       1.29       0.5 
+ 6 France                      2.1       0.64       0.25
+ 7 Spain                       1.7       0.51       0.2 
+ 8 Papua New Guinea            1.5       0.46       0.18
+ 9 Sweden                      1.5       0.45       0.17
+10 Japan                       1.3       0.38       0.15</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(df1, <span class="at">n =</span> <span class="dv">3</span>) <span class="co"># view the bottom 3 observations</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  Country    percent.africa area.sq.km area.sq.mi
+  &lt;chr&gt;               &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+1 Nepal                 0.5       0.15       0.06
+2 Bangladesh            0.5       0.15       0.06
+3 Greece                0.4       0.13       0.05</code></pre>
+</div>
+</div>
+</section>
+<section id="task-1.3.2g-summary" class="level4">
+<h4 class="anchored" data-anchor-id="task-1.3.2g-summary">Task 1.3.2g: <code>summary()</code></h4>
+<p>Get a summary of all variables in the data set.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get a summary of your data frame</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Country          percent.africa     area.sq.km       area.sq.mi    
+ Length:18          Min.   : 0.400   Min.   :0.1300   Min.   :0.0500  
+ Class :character   1st Qu.: 0.925   1st Qu.:0.2775   1st Qu.:0.1050  
+ Mode  :character   Median : 1.400   Median :0.4150   Median :0.1600  
+                    Mean   : 5.556   Mean   :1.6850   Mean   :0.6522  
+                    3rd Qu.: 3.675   3rd Qu.:1.1275   3rd Qu.:0.4375  
+                    Max.   :32.400   Max.   :9.8300   Max.   :3.8000  </code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="task-1.4-use-dplyr-verbs-on-true_size" class="level2">
+<h2 class="anchored" data-anchor-id="task-1.4-use-dplyr-verbs-on-true_size">Task 1.4: Use <code>dplyr</code> verbs on <code>true_size</code></h2>
+<p>In this section, we will review the <code>dplyr</code> verbs that help us get our data into a format that works for our analysis. These verbs can be used in any order. We can also use the pipe operator <code>%&gt;%</code> and use multiple verbs in a single code chunk.</p>
+<section id="task-1.4.1-subset-columns-variables-using-select" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.4.1-subset-columns-variables-using-select">Task 1.4.1: Subset columns (variables) using <code>select()</code></h3>
+<p>The <code>select()</code> command retains only those columns that are listed.</p>
+<p>It uses the logic <code>select(data, variable1, variable2, ...)</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># keep only the Country and percent.africa columns</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(df1, Country, percent.africa) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 2
+   Country          percent.africa
+   &lt;chr&gt;                     &lt;dbl&gt;
+ 1 United States              32.4
+ 2 China                      31.6
+ 3 India                      10.8
+ 4 Mexico                      6.5
+ 5 Peru                        4.2
+ 6 France                      2.1
+ 7 Spain                       1.7
+ 8 Papua New Guinea            1.5
+ 9 Sweden                      1.5
+10 Japan                       1.3
+11 Germany                     1.2
+12 Norway                      1.1
+13 Italy                       1  
+14 New Zealand                 0.9
+15 United Kingdom              0.8
+16 Nepal                       0.5
+17 Bangladesh                  0.5
+18 Greece                      0.4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># keep only the Country and area.sq.mi columns</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(df1, Country, area.sq.mi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 2
+   Country          area.sq.mi
+   &lt;chr&gt;                 &lt;dbl&gt;
+ 1 United States          3.8 
+ 2 China                  3.71
+ 3 India                  1.27
+ 4 Mexico                 0.76
+ 5 Peru                   0.5 
+ 6 France                 0.25
+ 7 Spain                  0.2 
+ 8 Papua New Guinea       0.18
+ 9 Sweden                 0.17
+10 Japan                  0.15
+11 Germany                0.14
+12 Norway                 0.13
+13 Italy                  0.12
+14 New Zealand            0.1 
+15 United Kingdom         0.09
+16 Nepal                  0.06
+17 Bangladesh             0.06
+18 Greece                 0.05</code></pre>
+</div>
+</div>
+<p>We can also subset columns by deleting others</p>
+<p>To do so, we use a minus sign ahead of the column names.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove the area.sq.mi variable</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(df1, <span class="sc">-</span>area.sq.km)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 3
+   Country          percent.africa area.sq.mi
+   &lt;chr&gt;                     &lt;dbl&gt;      &lt;dbl&gt;
+ 1 United States              32.4       3.8 
+ 2 China                      31.6       3.71
+ 3 India                      10.8       1.27
+ 4 Mexico                      6.5       0.76
+ 5 Peru                        4.2       0.5 
+ 6 France                      2.1       0.25
+ 7 Spain                       1.7       0.2 
+ 8 Papua New Guinea            1.5       0.18
+ 9 Sweden                      1.5       0.17
+10 Japan                       1.3       0.15
+11 Germany                     1.2       0.14
+12 Norway                      1.1       0.13
+13 Italy                       1         0.12
+14 New Zealand                 0.9       0.1 
+15 United Kingdom              0.8       0.09
+16 Nepal                       0.5       0.06
+17 Bangladesh                  0.5       0.06
+18 Greece                      0.4       0.05</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove the listed variables in the data frame</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">select</span>(df1, <span class="sc">-</span>area.sq.km, <span class="sc">-</span>area.sq.mi) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 2
+   Country          percent.africa
+   &lt;chr&gt;                     &lt;dbl&gt;
+ 1 United States              32.4
+ 2 China                      31.6
+ 3 India                      10.8
+ 4 Mexico                      6.5
+ 5 Peru                        4.2
+ 6 France                      2.1
+ 7 Spain                       1.7
+ 8 Papua New Guinea            1.5
+ 9 Sweden                      1.5
+10 Japan                       1.3
+11 Germany                     1.2
+12 Norway                      1.1
+13 Italy                       1  
+14 New Zealand                 0.9
+15 United Kingdom              0.8
+16 Nepal                       0.5
+17 Bangladesh                  0.5
+18 Greece                      0.4</code></pre>
+</div>
+</div>
+</section>
+<section id="task-1.4.2-filter-rows-cases-using-filter" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.4.2-filter-rows-cases-using-filter">Task 1.4.2: Filter rows (cases) using <code>filter()</code></h3>
+<p><code>filter()</code> allows us to select rows based on specific criteria.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># keep only those rows where the percent.africa value is grater than 30</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(df1, percent.africa <span class="sc">&gt;</span> <span class="dv">30</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 4
+  Country       percent.africa area.sq.km area.sq.mi
+  &lt;chr&gt;                  &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+1 United States           32.4       9.83       3.8 
+2 China                   31.6       9.6        3.71</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># keep only those rows where the percent.africa value is less than 1</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(df1, percent.africa <span class="sc">&lt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 4
+  Country        percent.africa area.sq.km area.sq.mi
+  &lt;chr&gt;                   &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+1 New Zealand               0.9       0.27       0.1 
+2 United Kingdom            0.8       0.24       0.09
+3 Nepal                     0.5       0.15       0.06
+4 Bangladesh                0.5       0.15       0.06
+5 Greece                    0.4       0.13       0.05</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># keep only those rows where percent.africa is less than 10 and greater than 1</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(df1, percent.africa <span class="sc">&lt;</span> <span class="dv">10</span> <span class="sc">&amp;</span> percent.africa <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 4
+  Country          percent.africa area.sq.km area.sq.mi
+  &lt;chr&gt;                     &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+1 Mexico                      6.5       1.96       0.76
+2 Peru                        4.2       1.29       0.5 
+3 France                      2.1       0.64       0.25
+4 Spain                       1.7       0.51       0.2 
+5 Papua New Guinea            1.5       0.46       0.18
+6 Sweden                      1.5       0.45       0.17
+7 Japan                       1.3       0.38       0.15
+8 Germany                     1.2       0.36       0.14
+9 Norway                      1.1       0.32       0.13</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># keep only those rows where Country is equal to "China"</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(df1, Country <span class="sc">==</span> <span class="st">"China"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+  Country percent.africa area.sq.km area.sq.mi
+  &lt;chr&gt;            &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+1 China             31.6        9.6       3.71</code></pre>
+</div>
+</div>
+<p>Notice the use of a <code>==</code> equal sign when referencing a cell’s value. This will become an important component of base logic and analysis when writing code.</p>
+</section>
+<section id="task-1.4.3-addremove-columns-variables-using-mutate" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.4.3-addremove-columns-variables-using-mutate">Task 1.4.3: Add/remove columns (variables) using <code>mutate()</code></h3>
+<p>We use <code>mutate()</code> to create new variables from existing variables.</p>
+<p>It is not clear what <code>area.sq.mi</code> and <code>area.sq.km</code> refer to in our data. Further inspection and a bit of internet searching will show us that these values are in the millions and that they represent estimates.</p>
+<p>We can transform these as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add a new column with a more accurate label for land area estimate (sq mi)</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(df1, <span class="at">est.square.miles =</span> df1<span class="sc">$</span>area.sq.mi <span class="sc">*</span> <span class="dv">1000000</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 5
+   Country          percent.africa area.sq.km area.sq.mi est.square.miles
+   &lt;chr&gt;                     &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;
+ 1 United States              32.4       9.83       3.8           3800000
+ 2 China                      31.6       9.6        3.71          3710000
+ 3 India                      10.8       3.29       1.27          1270000
+ 4 Mexico                      6.5       1.96       0.76           760000
+ 5 Peru                        4.2       1.29       0.5            500000
+ 6 France                      2.1       0.64       0.25           250000
+ 7 Spain                       1.7       0.51       0.2            200000
+ 8 Papua New Guinea            1.5       0.46       0.18           180000
+ 9 Sweden                      1.5       0.45       0.17           170000
+10 Japan                       1.3       0.38       0.15           150000
+11 Germany                     1.2       0.36       0.14           140000
+12 Norway                      1.1       0.32       0.13           130000
+13 Italy                       1         0.3        0.12           120000
+14 New Zealand                 0.9       0.27       0.1            100000
+15 United Kingdom              0.8       0.24       0.09            90000
+16 Nepal                       0.5       0.15       0.06            60000
+17 Bangladesh                  0.5       0.15       0.06            60000
+18 Greece                      0.4       0.13       0.05            50000</code></pre>
+</div>
+</div>
+<section id="task-1.4.3a-add-new-variables-using-the-pipe" class="level4">
+<h4 class="anchored" data-anchor-id="task-1.4.3a-add-new-variables-using-the-pipe">Task 1.4.3a: Add new variables using the pipe <code>%&gt;%</code></h4>
+<p>We can also use the <code>pipe</code> operator to mutate the variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can create the same output when using the %&gt;% (pipe)</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">est.square.miles =</span> df1<span class="sc">$</span>area.sq.mi <span class="sc">*</span> <span class="dv">1000000</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 5
+   Country          percent.africa area.sq.km area.sq.mi est.square.miles
+   &lt;chr&gt;                     &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;
+ 1 United States              32.4       9.83       3.8           3800000
+ 2 China                      31.6       9.6        3.71          3710000
+ 3 India                      10.8       3.29       1.27          1270000
+ 4 Mexico                      6.5       1.96       0.76           760000
+ 5 Peru                        4.2       1.29       0.5            500000
+ 6 France                      2.1       0.64       0.25           250000
+ 7 Spain                       1.7       0.51       0.2            200000
+ 8 Papua New Guinea            1.5       0.46       0.18           180000
+ 9 Sweden                      1.5       0.45       0.17           170000
+10 Japan                       1.3       0.38       0.15           150000
+11 Germany                     1.2       0.36       0.14           140000
+12 Norway                      1.1       0.32       0.13           130000
+13 Italy                       1         0.3        0.12           120000
+14 New Zealand                 0.9       0.27       0.1            100000
+15 United Kingdom              0.8       0.24       0.09            90000
+16 Nepal                       0.5       0.15       0.06            60000
+17 Bangladesh                  0.5       0.15       0.06            60000
+18 Greece                      0.4       0.13       0.05            50000</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add a new column with a more accurate label for land area estimate (sq km)</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span> </span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">est.square.km =</span> df1<span class="sc">$</span>area.sq.km <span class="sc">*</span> <span class="dv">1000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 5
+   Country          percent.africa area.sq.km area.sq.mi est.square.km
+   &lt;chr&gt;                     &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;
+ 1 United States              32.4       9.83       3.8        9830000
+ 2 China                      31.6       9.6        3.71       9600000
+ 3 India                      10.8       3.29       1.27       3290000
+ 4 Mexico                      6.5       1.96       0.76       1960000
+ 5 Peru                        4.2       1.29       0.5        1290000
+ 6 France                      2.1       0.64       0.25        640000
+ 7 Spain                       1.7       0.51       0.2         510000
+ 8 Papua New Guinea            1.5       0.46       0.18        460000
+ 9 Sweden                      1.5       0.45       0.17        450000
+10 Japan                       1.3       0.38       0.15        380000
+11 Germany                     1.2       0.36       0.14        360000
+12 Norway                      1.1       0.32       0.13        320000
+13 Italy                       1         0.3        0.12        300000
+14 New Zealand                 0.9       0.27       0.1         270000
+15 United Kingdom              0.8       0.24       0.09        240000
+16 Nepal                       0.5       0.15       0.06        150000
+17 Bangladesh                  0.5       0.15       0.06        150000
+18 Greece                      0.4       0.13       0.05        130000</code></pre>
+</div>
+</div>
+</section>
+<section id="task-1.4.3b-add-new-variables-and-remove-old-variables" class="level4">
+<h4 class="anchored" data-anchor-id="task-1.4.3b-add-new-variables-and-remove-old-variables">Task 1.4.3b: Add new variables and remove old variables</h4>
+<p>It is easiest to put all of the verbs together in a single chunk of code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove the old column; use the pipe command to do both operations at once</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">est.square.miles =</span> df1<span class="sc">$</span>area.sq.mi <span class="sc">*</span> <span class="dv">1000000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">est.square.km =</span> df1<span class="sc">$</span>area.sq.km <span class="sc">*</span> <span class="dv">1000000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>area.sq.mi, <span class="sc">-</span>area.sq.km) <span class="co"># remove the columns we do not want</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 4
+   Country          percent.africa est.square.miles est.square.km
+   &lt;chr&gt;                     &lt;dbl&gt;            &lt;dbl&gt;         &lt;dbl&gt;
+ 1 United States              32.4          3800000       9830000
+ 2 China                      31.6          3710000       9600000
+ 3 India                      10.8          1270000       3290000
+ 4 Mexico                      6.5           760000       1960000
+ 5 Peru                        4.2           500000       1290000
+ 6 France                      2.1           250000        640000
+ 7 Spain                       1.7           200000        510000
+ 8 Papua New Guinea            1.5           180000        460000
+ 9 Sweden                      1.5           170000        450000
+10 Japan                       1.3           150000        380000
+11 Germany                     1.2           140000        360000
+12 Norway                      1.1           130000        320000
+13 Italy                       1             120000        300000
+14 New Zealand                 0.9           100000        270000
+15 United Kingdom              0.8            90000        240000
+16 Nepal                       0.5            60000        150000
+17 Bangladesh                  0.5            60000        150000
+18 Greece                      0.4            50000        130000</code></pre>
+</div>
+</div>
+<p>These values seem to represent the data more clearly.</p>
+</section>
+</section>
+<section id="task-1.4.4-rename-a-column-using-rename" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.4.4-rename-a-column-using-rename">Task 1.4.4: Rename a column using <code>rename()</code></h3>
+<p>We can also use <code>rename()</code> to modify a column’s label.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">est.square.miles =</span> df1<span class="sc">$</span>area.sq.mi <span class="sc">*</span> <span class="dv">1000000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">est.square.km =</span> df1<span class="sc">$</span>area.sq.km <span class="sc">*</span> <span class="dv">1000000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>area.sq.mi, <span class="sc">-</span>area.sq.km)  <span class="sc">%&gt;%</span> </span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">country =</span> Country)  <span class="co"># make the 'C' in country lowercase</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 4
+   country          percent.africa est.square.miles est.square.km
+   &lt;chr&gt;                     &lt;dbl&gt;            &lt;dbl&gt;         &lt;dbl&gt;
+ 1 United States              32.4          3800000       9830000
+ 2 China                      31.6          3710000       9600000
+ 3 India                      10.8          1270000       3290000
+ 4 Mexico                      6.5           760000       1960000
+ 5 Peru                        4.2           500000       1290000
+ 6 France                      2.1           250000        640000
+ 7 Spain                       1.7           200000        510000
+ 8 Papua New Guinea            1.5           180000        460000
+ 9 Sweden                      1.5           170000        450000
+10 Japan                       1.3           150000        380000
+11 Germany                     1.2           140000        360000
+12 Norway                      1.1           130000        320000
+13 Italy                       1             120000        300000
+14 New Zealand                 0.9           100000        270000
+15 United Kingdom              0.8            90000        240000
+16 Nepal                       0.5            60000        150000
+17 Bangladesh                  0.5            60000        150000
+18 Greece                      0.4            50000        130000</code></pre>
+</div>
+</div>
+</section>
+<section id="task-1.4.5-use-relocate-to-reorder-the-columns" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.4.5-use-relocate-to-reorder-the-columns">Task 1.4.5: Use <code>relocate()</code> to reorder the columns</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="sc">%&gt;%</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">est.square.miles =</span> df1<span class="sc">$</span>area.sq.mi <span class="sc">*</span> <span class="dv">1000000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">est.square.km =</span> df1<span class="sc">$</span>area.sq.km <span class="sc">*</span> <span class="dv">1000000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>area.sq.mi, <span class="sc">-</span>area.sq.km)  <span class="sc">%&gt;%</span> </span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">country =</span> Country) <span class="sc">%&gt;%</span> </span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(country, percent.africa, est.square.miles) <span class="co"># reorder the columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 4
+   country          percent.africa est.square.miles est.square.km
+   &lt;chr&gt;                     &lt;dbl&gt;            &lt;dbl&gt;         &lt;dbl&gt;
+ 1 United States              32.4          3800000       9830000
+ 2 China                      31.6          3710000       9600000
+ 3 India                      10.8          1270000       3290000
+ 4 Mexico                      6.5           760000       1960000
+ 5 Peru                        4.2           500000       1290000
+ 6 France                      2.1           250000        640000
+ 7 Spain                       1.7           200000        510000
+ 8 Papua New Guinea            1.5           180000        460000
+ 9 Sweden                      1.5           170000        450000
+10 Japan                       1.3           150000        380000
+11 Germany                     1.2           140000        360000
+12 Norway                      1.1           130000        320000
+13 Italy                       1             120000        300000
+14 New Zealand                 0.9           100000        270000
+15 United Kingdom              0.8            90000        240000
+16 Nepal                       0.5            60000        150000
+17 Bangladesh                  0.5            60000        150000
+18 Greece                      0.4            50000        130000</code></pre>
+</div>
+</div>
+</section>
+<section id="task-1.4.6-overwrite-your-data-frame" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.4.6-overwrite-your-data-frame">Task 1.4.6: Overwrite your data frame</h3>
+<p>Now that we’ve restructured the data into a format that is more accurate, we can reassign our data frame using the pipe operator. Take note of how the code is built with new commands starting on a new line and ending with the <code>%&gt;%</code> operator.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>true_size_modified <span class="ot">&lt;-</span> df1 <span class="sc">%&gt;%</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">est.square.miles =</span> df1<span class="sc">$</span>area.sq.mi <span class="sc">*</span> <span class="dv">1000000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">est.square.km =</span> df1<span class="sc">$</span>area.sq.km <span class="sc">*</span> <span class="dv">1000000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>area.sq.mi, <span class="sc">-</span>area.sq.km)  <span class="sc">%&gt;%</span> </span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">country =</span> Country) <span class="sc">%&gt;%</span> </span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(country, percent.africa, est.square.miles) <span class="co"># reorder the columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now view your modified data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>true_size_modified</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 4
+   country          percent.africa est.square.miles est.square.km
+   &lt;chr&gt;                     &lt;dbl&gt;            &lt;dbl&gt;         &lt;dbl&gt;
+ 1 United States              32.4          3800000       9830000
+ 2 China                      31.6          3710000       9600000
+ 3 India                      10.8          1270000       3290000
+ 4 Mexico                      6.5           760000       1960000
+ 5 Peru                        4.2           500000       1290000
+ 6 France                      2.1           250000        640000
+ 7 Spain                       1.7           200000        510000
+ 8 Papua New Guinea            1.5           180000        460000
+ 9 Sweden                      1.5           170000        450000
+10 Japan                       1.3           150000        380000
+11 Germany                     1.2           140000        360000
+12 Norway                      1.1           130000        320000
+13 Italy                       1             120000        300000
+14 New Zealand                 0.9           100000        270000
+15 United Kingdom              0.8            90000        240000
+16 Nepal                       0.5            60000        150000
+17 Bangladesh                  0.5            60000        150000
+18 Greece                      0.4            50000        130000</code></pre>
+</div>
+</div>
+</section>
+<section id="task-1.4.7-explore-summarise-arrange-and-other-verbs" class="level3">
+<h3 class="anchored" data-anchor-id="task-1.4.7-explore-summarise-arrange-and-other-verbs">Task 1.4.7: Explore <code>summarise()</code>, <code>arrange()</code>, and other verbs</h3>
+<p>There are other verbs in the <code>dplyr</code> package.</p>
+<p>For example, we will use the <code>summarise()</code> and <code>arrange()</code> commands in the next part of the case study.</p>
+<p>You can learn more about other <code>dplyr</code> data transformations <a href="https://github.com/rstudio/cheatsheets/blob/main/data-transformation.pdf">here</a>.</p>
+<hr>
+<p>Now that you have a few tools to explore and modify data frames, we return to the <code>africa_data_all</code> data in the <code>critstats</code> package. We will use this data frame to work more with <code>dplyr</code> and explore univariate analyses.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="preparing-case-study-and-lab-reports" class="level1">
+<h1>Preparing Case Study and Lab Reports</h1>
+<p>Labs and case studies contain <strong>Reports</strong>. In this way, we have both <em>lab reports</em> and <em>case reports</em>.</p>
+<p>Lab reports are for your own research papers. Case reports are for your exploratory work.</p>
+<p><strong>Reports</strong>, as the name may suggest, are meant to help you report out your own workflow.</p>
+<p>Developing your own workflow is an important part of statistical analysis. Your workflow and reports should <strong>not</strong> be a <code>copy</code> and <code>paste</code> of the exact code outlined in a case study’s examples. That said, most examples and the code used are specifically designed to help us move efficiently through the materials for this course.</p>
+<p>Note: The use of internet resources like <code>Chat GPT</code> are discouraged when generating code. If an assignment is submitted after using any AI assisted software, there may be an issue with plagiarism. All code for our course is self-contained, and it should not require that you search for long hours to find a solution; all solutions are somewhere on our course site!</p>
+<hr>
+</section>
+<section id="part-1-reports" class="level1">
+<h1>Part 1 Reports</h1>
+<section id="report-1.1" class="level2">
+<h2 class="anchored" data-anchor-id="report-1.1">Report 1.1</h2>
+<p>What are some of the main concepts in <a href="https://www.jstor.org/stable/j.ctv550dcj">Vaughan (2018)</a>? Could the data in the <code>true_size</code> data be used to respond to and advance our understanding of the concepts in Vaughan (2018)? If so, how might it be used to examine both the social context (period) and historical consequences (uses) of inequity in map making? If not, explain.</p>
+</section>
+<section id="report-1.2" class="level2">
+<h2 class="anchored" data-anchor-id="report-1.2">Report 1.2</h2>
+<p>If the data in <code>true_size_modified</code> is accurate, what is the expected correlation between the percent.africa and est.square.miles variables? Specifically, why do we get the below scatter plot based on the data values?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="case02-pt1_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="report-1.3" class="level2">
+<h2 class="anchored" data-anchor-id="report-1.3">Report 1.3</h2>
+<p>Based on the original values in the <code>true_size</code> data, is there enough information to confirm if the claims about the size of Africa and the social politics of maps is true? Explain why or why not.</p>
+</section>
+<section id="report-1.4" class="level2">
+<h2 class="anchored" data-anchor-id="report-1.4">Report 1.4</h2>
+<p>Write code to add a new variable to the <code>true_size_modified</code> data called <code>proportion</code>.</p>
+<p>Use <code>mutate()</code> and arithmetic to generate the new variable.</p>
+<p>Hint: If <span class="math inline">\(Y\)</span> = <code>proportion</code>, then <span class="math inline">\(y_i = \dfrac{x_i}{sum(x)}\)</span> for some variable <span class="math inline">\(X\)</span> in data set.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 18
+Columns: 5
+$ country          &lt;chr&gt; "United States", "China", "India", "Mexico", "Peru", …
+$ percent.africa   &lt;dbl&gt; 32.4, 31.6, 10.8, 6.5, 4.2, 2.1, 1.7, 1.5, 1.5, 1.3, …
+$ est.square.miles &lt;dbl&gt; 3800000, 3710000, 1270000, 760000, 500000, 250000, 20…
+$ est.square.km    &lt;dbl&gt; 9830000, 9600000, 3290000, 1960000, 1290000, 640000, …
+$ proportion       &lt;dbl&gt; 0.323679727, 0.316013629, 0.108177172, 0.064735945, 0…</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+  country       percent.africa est.square.miles est.square.km proportion
+  &lt;chr&gt;                  &lt;dbl&gt;            &lt;dbl&gt;         &lt;dbl&gt;      &lt;dbl&gt;
+1 United States           32.4          3800000       9830000     0.324 
+2 China                   31.6          3710000       9600000     0.316 
+3 India                   10.8          1270000       3290000     0.108 
+4 Mexico                   6.5           760000       1960000     0.0647
+5 Peru                     4.2           500000       1290000     0.0426
+6 France                   2.1           250000        640000     0.0213</code></pre>
+</div>
+</div>
+<p>Overwrite <code>true_size_modified</code> with a new data framed titled <code>true_size_updated</code>.</p>
+<p>You should be able to call the data as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>true_size_updated</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 5
+   country          percent.africa est.square.miles est.square.km proportion
+   &lt;chr&gt;                     &lt;dbl&gt;            &lt;dbl&gt;         &lt;dbl&gt;      &lt;dbl&gt;
+ 1 United States              32.4          3800000       9830000    0.324  
+ 2 China                      31.6          3710000       9600000    0.316  
+ 3 India                      10.8          1270000       3290000    0.108  
+ 4 Mexico                      6.5           760000       1960000    0.0647 
+ 5 Peru                        4.2           500000       1290000    0.0426 
+ 6 France                      2.1           250000        640000    0.0213 
+ 7 Spain                       1.7           200000        510000    0.0170 
+ 8 Papua New Guinea            1.5           180000        460000    0.0153 
+ 9 Sweden                      1.5           170000        450000    0.0145 
+10 Japan                       1.3           150000        380000    0.0128 
+11 Germany                     1.2           140000        360000    0.0119 
+12 Norway                      1.1           130000        320000    0.0111 
+13 Italy                       1             120000        300000    0.0102 
+14 New Zealand                 0.9           100000        270000    0.00852
+15 United Kingdom              0.8            90000        240000    0.00767
+16 Nepal                       0.5            60000        150000    0.00511
+17 Bangladesh                  0.5            60000        150000    0.00511
+18 Greece                      0.4            50000        130000    0.00426</code></pre>
+</div>
+</div>
+</section>
+<section id="report-1.5" class="level2">
+<h2 class="anchored" data-anchor-id="report-1.5">Report 1.5</h2>
+<p>To confirm that you have generated the new variable and overwritten the data frame, create the plot below using the following code. Be sure to add your first name and last name in the quotes.</p>
+<p>The code should be verbatim with the exception of your name.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(true_size_updated<span class="sc">$</span>proportion, true_size_updated<span class="sc">$</span>percent.africa)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">"first.name last.name"</span>) <span class="co"># Add your first name and last name</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="case02-pt1_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For example, my code would read:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(true_size_updated<span class="sc">$</span>proportion, true_size_updated<span class="sc">$</span>percent.africa)</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">"Nathan Alexander"</span>) <span class="co"># Add your first name and last name</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="case02-pt1_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Notice the use of quotes when using <code>title()</code> under a plot.</p>
+<p>If you experience issues making the plot, it is likely that you have made an error in the previous steps. Remember that R is case sensitive in all instances, and space sensitive in some instances.</p>
+<p>Please be sure to go back and carefully check your code.</p>
+<p>{Save this plot as a <code>pdf</code> and submit it with case study files.</p>
+</section>
+</section>
+<section id="experiencing-issues" class="level1">
+<h1>Experiencing issues?</h1>
+<p>If you experience issues executing your code, check the notes below.</p>
+<p>Remember that R is case sensitive in all instances, and space sensitive in some instances. Please be sure to go back and carefully check your code.</p>
+<p>If you get the following error:</p>
+<p><code>lazy-load database ‘…rdb’ is corrupt</code></p>
+<p>Try the following method and re-install the package.</p>
+<p>Restart your R session by running <code>.rs.restartR()</code> in your RStudio Console.</p>
+<p>The package might have been installed in your computer (even though it does not work). Remove it using <code>'</code>?remove.packages()<code>'</code>.</p>
+<p>Do not hesitate to contact me via email.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/github\.com\/data-202\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../cases/case01.html" class="pagination-link" aria-label="Case Study 1">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Case Study 1</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../cases/case02-pt2.html" class="pagination-link" aria-label="Case Study 2, pt. 2">
+        <span class="nav-page-text">Case Study 2, pt.&nbsp;2</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2025, Nathan Alexander</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This page was built by Nathan Alexander, PhD in <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
