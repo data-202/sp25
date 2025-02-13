@@ -8,7 +8,7 @@ format:
 editor: visual
 ---
 
-For Lab 1, you should submit your solutions to Canvas as a `.pdf` and include your *RMarkdown* syntax (i.e., you can render an html file or push your code to GitHub, or share the .Rmd file). Please see the *Preparing Lab Reports* section at the bottom of this assignment.
+For Lab 1, you should submit your solutions to Canvas as a *RMarkdown* syntax (i.e., you can render an html file or push your code to GitHub, or share the .Rmd file). Please see the *Preparing Lab Reports* section at the bottom of this assignment.
 
 The `Lab 1` assignment will reintroduce you to data in the `critstats` package and add a second data set known as `gss_cat`. However, for the lab 1 and paper 2 assignment, you may use your own data set and we can work together to find you a data set that is ready to be analyzed. For new users, I would recommend against data that needs to be cleaned. However, by visiting the case study 2 files, you can learn more about cleaning your data.
 
@@ -63,10 +63,7 @@ You can add a new sub-folder manually or under the **Files** tab in the RStudio 
 
 ## Task 0.3: Write a preamble
 
-Name: <include your full name>
-Assignment: Lab 2
-Date: <here you may want to add a date>
-Purpose: <insert the goals or purpose of the RScript>
+Name: <include your full name> Assignment: Lab 2 Date: <here you may want to add a date> Purpose: <insert the goals or purpose of the RScript>
 
 ## Task 0.4: Packages and libraries
 

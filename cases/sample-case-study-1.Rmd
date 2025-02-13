@@ -1,0 +1,81 @@
+---
+title: "Case Study No. 2"
+author: 
+  - name: "Insert Your Name"
+    affiliation: "DATA 202, Fall 2024, Howard University"
+always_allow_html: true
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    self_contained: yes
+    mode: selfcontained
+  pdf_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+geometry: margin=1.0in
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Task 0.1: Change working directory
+
+I am updating my working directory.
+
+```{r}
+# getwd() # identify the working directory
+# setwd("/Users/nathanalexander/Dropbox/Teaching/Howard/data-202-files/sp25/labs")
+```
+
+## Task 0.4: Packages and libraries
+
+Load the packages and libraries for the case study.
+
+```{r}
+# install.packages("tidyverse", repos = "http://cran.us.r-project.org")
+# install.packages("remotes", repos = "http://cran.us.r-project.org")
+
+# load the necessary libraries
+library(tidyverse)
+library(dplyr)
+library(remotes)
+```
+
+### Task 1.2.1: Load the data
+
+I am going to load the true_size data frame from the critstats package.
+
+```{r}
+# use the remote install function to call in your data
+remotes::install_github("professornaite/critstats", force=TRUE)
+
+# load the `critstats` library
+library(critstats)
+
+# update the `critstats` package if needed
+# update.packages("critstats")
+```
+
+### Task 1.2.2: Call the true_size data frame.
+
+```{r}
+critstats::true_size
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
