@@ -1,0 +1,139 @@
+---
+title: "Untitled"
+author: "Nathan Alexander"
+date: "2025-02-12"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, warning=F, message=F}
+# load libraries for this session
+library(tidyverse)
+library(dplyr)
+library(remotes)
+```
+
+Load the `critstats` package.
+
+```{r, warning=F, message=F}
+# use the remote install function to call in your data
+# remotes::install_github("professornaite/critstats", force=TRUE)
+
+# load the critstats library
+library(critstats)
+```
+
+Load the `true_size` data frame in the `critstats` package.
+
+```{r, warning=F, message=F}
+critstats::true_size
+```
+
+Label my `true_size` data frame as `df1`.
+
+```{r, warning=F, message=F}
+df1 <- critstats::true_size
+df1
+```
+
+Inspect the data.
+
+```{r, warning=F, message=F}
+str(df1) # This will show us the structure of data frame 1 (df1)
+
+dim(df1) # This will show me the dimensions of the data frame
+
+glimpse(df1) # This will give you an output that is similar to str(df1) but it doesn't have as much info
+```
+View the top part and bottom part of our data frame.
+
+```{r, warning=F, message=F}
+head(df1)
+tail(df1)
+
+head(df1, n = 10)
+tail(df1, n = 10)
+```
+
+View a summary of the data frame.
+
+```{r, warning=F, message=F}
+summary(df1)
+```
+
+We'll look at some of the dplyr variables.
+
+```{r, warning=F, message=F}
+
+select(df1, Country, percent.africa)
+select(df1, -area.sq.km)
+```
+
+We use `filter` to select row, or deselect rows in our data frame.
+
+```{r}
+filter(df1, percent.africa > 30)
+filter(df1, percent.africa < 1)
+filter(df1, percent.africa < 11 & percent.africa > 0)
+```
+
+```{r}
+df1
+filter(df1, Country == "China")
+```
+
+Add and remove columns from a data set.
+
+```{r}
+mutate(df1, est.square.miles = df1$area.sq.mi * 1000000)
+
+# let's use a pipe %>% to run the same operation as above
+# the pipe operator literally means "and then"
+df1 %>%
+  mutate(est.square.miles = df1$area.sq.mi * 1000000)
+```
+
+Add two new variables and remove the old variables.
+
+```{r}
+
+df1 %>% 
+  mutate(est.square.miles = df1$area.sq.mi * 1000000) %>% 
+  mutate(est.square.km = df1$area.sq.km * 1000000) %>% 
+  select(-area.sq.mi, -area.sq.km) # remove the columns that we do not need
+```
+
+
+```{r}
+df1 %>% 
+  mutate(est.square.miles = df1$area.sq.mi * 1000000) %>% 
+  mutate(est.square.km = df1$area.sq.km * 1000000) %>% 
+  select(-area.sq.mi, -area.sq.km) %>% # remove the columns that we do not need
+  rename(country = Country) %>% # making the 'C' in the old Country column lowercase
+  relocate(country, percent.africa, est.square.km)
+```
+
+Overwrite the data frame with all of the changes that I have made.
+
+```{r}
+true_size_modified <- df1 %>% 
+  mutate(est.square.miles = df1$area.sq.mi * 1000000) %>% 
+  mutate(est.square.km = df1$area.sq.km * 1000000) %>% 
+  select(-area.sq.mi, -area.sq.km) %>% # remove the columns that we do not need
+  rename(country = Country) %>% # making the 'C' in the old Country column lowercase
+  relocate(country, percent.africa, est.square.km)
+
+true_size_modified
+```
+
+
+
+
+
+
+
+
