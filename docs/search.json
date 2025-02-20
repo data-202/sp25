@@ -2545,5 +2545,12 @@
       "Appendix",
       "Resources"
     ]
+  },
+  {
+    "objectID": "analysis/bivariate.html",
+    "href": "analysis/bivariate.html",
+    "title": "DATA 202 - Bivariate analysis",
+    "section": "",
+    "text": "Bivariate analysis\n\ndf &lt;- read.csv(\"https://raw.githubusercontent.com/data-202/sp25/refs/heads/master/data/pay_data.csv\")"
   }
 ]

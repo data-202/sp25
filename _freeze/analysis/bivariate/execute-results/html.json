@@ -1,0 +1,15 @@
+{
+  "hash": "81e458747a78a4066b8cf43941976d9b",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"DATA 202 - Bivariate analysis\"\nauthor: \"FirstName LastName\"\ndate: \"Week 6\"\noutput: html_document\neditor_options:\n    chunk_output_type: console\n---\n\n\n\n\n\n# Bivariate analysis\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ndf <- read.csv(\"https://raw.githubusercontent.com/data-202/sp25/refs/heads/master/data/pay_data.csv\")\n```\n:::\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
