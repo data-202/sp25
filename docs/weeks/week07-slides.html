@@ -386,7 +386,7 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="DATA 202 - Week 8 – DATA 202: Statistically Measuring and Modeling Social Justice">
+<meta property="og:title" content="DATA 202 - Week 7 – DATA 202: Statistically Measuring and Modeling Social Justice">
 <meta property="og:description" content="Exploratory Data Analysis">
 <meta property="og:site_name" content="DATA 202: Statistically Measuring and Modeling Social Justice">
 </head>
@@ -612,7 +612,7 @@ $ response &lt;chr&gt; "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "
 <span id="cb19-2"><a></a><span class="fu">ggplot</span>(yahoo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week07_files/figure-html/unnamed-chunk-7-1.png" width="672" class="r-stretch"></section>
+<img data-src="week07_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
 <section class="slide level2">
 
 <div class="cell">
@@ -620,7 +620,7 @@ $ response &lt;chr&gt; "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "
 <span id="cb20-2"><a></a><span class="fu">ggplot</span>(yahoo, <span class="fu">aes</span>(<span class="at">x =</span> race_eth))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week07_files/figure-html/unnamed-chunk-8-1.png" width="672" class="r-stretch"></section>
+<img data-src="week07_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
 <section class="slide level2">
 
 <div class="cell">
@@ -629,7 +629,7 @@ $ response &lt;chr&gt; "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "
 <span id="cb21-3"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="week07_files/figure-html/unnamed-chunk-9-1.png" width="672" class="r-stretch"></section>
+<img data-src="week07_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
 <section class="slide level2">
 
 <div class="callout callout-tip no-icon callout-titled callout-style-default">
@@ -1590,6 +1590,44 @@ X-squared = 53.964, df = 6, p-value = 7.5e-10</code></pre>
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

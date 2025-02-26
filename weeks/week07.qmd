@@ -1,12 +1,12 @@
 ---
-title: "DATA 202 - Week 8"
+title: "DATA 202 - Week 7"
 subtitle: "Exploratory Data Analysis"
 author: "Nathan Alexander, PhD"
 institute: "Center for Applied Data Science and Analytics"
 format: 
   html: default
   revealjs:
-    output-file: week08-slides.html
+    output-file: week07-slides.html
     height: 900
     width: 1600
     smaller: false
@@ -116,10 +116,10 @@ For this exploration, our goal is to understand the proportion of observations i
 
 To accomplish this goal, we can outline two questions around three tasks.
 
-| Questions                                       | Tasks & Detail                                     |
+| Questions | Tasks & Detail |
 |:----------------------------------|:------------------------------------|
-| Question 1: How are observations distributed?   | Task 1.1: Create a table of variable counts        |
-|                                                 | Task 1.2: Create a table of variable proportions   |
+| Question 1: How are observations distributed? | Task 1.1: Create a table of variable counts |
+|  | Task 1.2: Create a table of variable proportions |
 | Question 2: How can we visualize distributions? | Task 2.1: Create two to three basic visualizations |
 
 ------------------------------------------------------------------------
@@ -340,10 +340,10 @@ Recall that the $\cap$ represents "and" while the $\cup$ represents "or" in logi
 
 In the table below, the `response` variable is listed in rows.
 
-| Response | Black            | Hispanic            | Other            | White            |
+| Response | Black | Hispanic | Other | White |
 |---------------|---------------|---------------|---------------|---------------|
-| No       | No $\cap$ Black  | No $\cap$ Hispanic  | No $\cap$ Other  | No $\cap$ White  |
-| Yes      | Yes $\cap$ Black | Yes $\cap$ Hispanic | Yes $\cap$ Other | Yes $\cap$ White |
+| No | No $\cap$ Black | No $\cap$ Hispanic | No $\cap$ Other | No $\cap$ White |
+| Yes | Yes $\cap$ Black | Yes $\cap$ Hispanic | Yes $\cap$ Other | Yes $\cap$ White |
 
 : Response in rows {#tbl-second}
 
