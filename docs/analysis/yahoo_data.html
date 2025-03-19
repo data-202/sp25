@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Nathan Alexander, PhD">
+<meta name="author" content="FirstName LastName">
+<meta name="dcterms.date" content="2001-07-01">
 
-<title>DATA 202 - Week 9 – DATA 202: Statistically Measuring and Modeling Social Justice</title>
+<title>DATA 202 - Analysis of Yahoo! News Poll – DATA 202: Statistically Measuring and Modeling Social Justice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +65,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weeks/week10.qmd" rel="next">
-<link href="../weeks/week08.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -104,9 +103,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -138,8 +134,8 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="DATA 202 - Week 9 – DATA 202: Statistically Measuring and Modeling Social Justice">
-<meta property="og:description" content="Notes on causal theories">
+<meta property="og:title" content="DATA 202 - Analysis of Yahoo! News Poll – DATA 202: Statistically Measuring and Modeling Social Justice">
+<meta property="og:description" content="Homepage for DATA 202: Statistically Measuring and Modeling Social Justice">
 <meta property="og:site_name" content="DATA 202: Statistically Measuring and Modeling Social Justice">
 </head>
 
@@ -152,7 +148,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week01.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week09.html">Week 9</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">DATA 202 - Analysis of Yahoo! News Poll</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -219,13 +215,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Weekly materials</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../weeks/week01.html" class="sidebar-item-text sidebar-link">
@@ -276,13 +272,13 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week09.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weeks/week09.qmd" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week10.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week10.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 10</span></a>
   </div>
 </li>
@@ -426,54 +422,54 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#part-i-context" id="toc-part-i-context" class="nav-link active" data-scroll-target="#part-i-context">Part I: Context</a>
+  <li><a href="#libraries-and-packages" id="toc-libraries-and-packages" class="nav-link active" data-scroll-target="#libraries-and-packages">Libraries and packages</a></li>
+  <li><a href="#yahoo-news-poll" id="toc-yahoo-news-poll" class="nav-link" data-scroll-target="#yahoo-news-poll">Yahoo! News Poll</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
   <ul class="collapse">
-  <li><a href="#history-cause-and-effect" id="toc-history-cause-and-effect" class="nav-link" data-scroll-target="#history-cause-and-effect">History, cause, and effect</a></li>
-  <li><a href="#causation" id="toc-causation" class="nav-link" data-scroll-target="#causation">Causation</a></li>
-  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation">Correlation</a></li>
-  <li><a href="#causation-1" id="toc-causation-1" class="nav-link" data-scroll-target="#causation-1">Causation</a></li>
-  <li><a href="#associating-x-and-y" id="toc-associating-x-and-y" class="nav-link" data-scroll-target="#associating-x-and-y">Associating X and Y</a></li>
-  <li><a href="#framing-spurious-relationships" id="toc-framing-spurious-relationships" class="nav-link" data-scroll-target="#framing-spurious-relationships">Framing spurious relationships</a></li>
-  <li><a href="#confounding-variables" id="toc-confounding-variables" class="nav-link" data-scroll-target="#confounding-variables">Confounding variables</a></li>
-  <li><a href="#mediating-variables" id="toc-mediating-variables" class="nav-link" data-scroll-target="#mediating-variables">Mediating variables</a></li>
-  <li><a href="#moderating-variables" id="toc-moderating-variables" class="nav-link" data-scroll-target="#moderating-variables">Moderating variables</a></li>
+  <li><a href="#load-the-data-from-github" id="toc-load-the-data-from-github" class="nav-link" data-scroll-target="#load-the-data-from-github">Load the data from github</a></li>
+  <li><a href="#view" id="toc-view" class="nav-link" data-scroll-target="#view">View</a></li>
   </ul></li>
-  <li><a href="#part-ii-content" id="toc-part-ii-content" class="nav-link" data-scroll-target="#part-ii-content">Part II: Content</a></li>
-  <li><a href="#part-iii-code" id="toc-part-iii-code" class="nav-link" data-scroll-target="#part-iii-code">Part III: Code</a>
+  <li><a href="#explore" id="toc-explore" class="nav-link" data-scroll-target="#explore">Explore</a>
   <ul class="collapse">
-  <li><a href="#crime-statistics" id="toc-crime-statistics" class="nav-link" data-scroll-target="#crime-statistics">Crime statistics</a></li>
-  <li><a href="#education-data" id="toc-education-data" class="nav-link" data-scroll-target="#education-data">Education data</a></li>
+  <li><a href="#glimpse" id="toc-glimpse" class="nav-link" data-scroll-target="#glimpse">Glimpse</a></li>
+  <li><a href="#head-tail" id="toc-head-tail" class="nav-link" data-scroll-target="#head-tail">Head / Tail</a></li>
+  <li><a href="#counts-and-proportions" id="toc-counts-and-proportions" class="nav-link" data-scroll-target="#counts-and-proportions">Counts and proportions</a></li>
+  <li><a href="#visualize" id="toc-visualize" class="nav-link" data-scroll-target="#visualize">Visualize</a></li>
+  </ul></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
+  <ul class="collapse">
+  <li><a href="#sample-size" id="toc-sample-size" class="nav-link" data-scroll-target="#sample-size">Sample size</a></li>
+  <li><a href="#relative-frequencies" id="toc-relative-frequencies" class="nav-link" data-scroll-target="#relative-frequencies">Relative frequencies</a></li>
+  <li><a href="#crosstab" id="toc-crosstab" class="nav-link" data-scroll-target="#crosstab">Crosstab</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week09-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week01.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week09.html">Week 9</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DATA 202 - Week 9</h1>
-<p class="subtitle lead">Notes on causal theories</p>
+<h1 class="title">DATA 202 - Analysis of Yahoo! News Poll</h1>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Nathan Alexander, PhD </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Center for Applied Data Science and Analytics
-          </p>
-      </div>
-  </div>
 
 <div class="quarto-title-meta">
 
-      
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>FirstName LastName </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 1, 2001</p>
+    </div>
+  </div>
   
     
   </div>
@@ -483,435 +479,466 @@ window.Quarto = {
 </header>
 
 
-<section id="part-i-context" class="level2">
-<h2 class="anchored" data-anchor-id="part-i-context">Part I: Context</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/wk8-a-3.jpg" class="img-fluid figure-img"></p>
-<figcaption>Illustration by Yuko Shimizu from <a href="https://www.cigionline.org/articles/as-geopolitical-blocs-vie-for-primacy-in-space-the-history-of-colonization-looms-large/" target="_blank">cigionline.org</a>.</figcaption>
-</figure>
-</div>
-<p>Last week launched part 3 of our course: data and policy, as in public policies.</p>
-<p>Our goals this week will be to consider variations of justice for your particular area(s) of interest and study, and to cite references that allow us to understand the meaning of social justice in your specific intellectual domains.</p>
-<hr>
-<section id="history-cause-and-effect" class="level3">
-<h3 class="anchored" data-anchor-id="history-cause-and-effect">History, cause, and effect</h3>
-<p>Theory is often understood through an investigation of both the literature and the historical contexts surrounding a given issue. Take, for example, the legacies of colonization. As data and scientific developments expand into new fields, new questions arise as to what we can associate and how we understand these associations. For example, how does one theoretically relate a series of events from 150 years ago to a present set of conditions? What are the possibilities? What are the limitations? What are the cautionary tales?</p>
-<p>Statistics was situated as a vehicle to understand and measure observations. As it becomes an ever popular vehicle to inform social justice discourses, the many real-world associations identified in society bring to mind the well-known and readily available cautionary tale:</p>
-<blockquote class="blockquote">
-<p>Correlation does not imply causation.</p>
-</blockquote>
-<p>This popular statement relates to the ability (or inability) to deduce cause-and-effect relationships.</p>
-<hr>
-</section>
-<section id="causation" class="level3">
-<h3 class="anchored" data-anchor-id="causation">Causation</h3>
-<div class="callout callout-style-simple callout-note" data-apperance="simple">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Causality</strong> is a fundamental concept in scientific inquiry and statistical analysis. It refers to the relationship between cause and effect, where one event (the cause) is understood to be responsible for another event (the effect). In statistics, causal inference aims to identify and quantify these cause-effect relationships.</p>
-</div>
-</div>
-</div>
-<p>Causality can be defined as a relationship between two events where:</p>
-<ul>
-<li><p>The cause precedes the effect in time.</p></li>
-<li><p>There is a consistent association between the cause and effect.</p></li>
-<li><p>Alternative explanations for the association have been ruled out.</p></li>
-</ul>
-<hr>
-</section>
-<section id="correlation" class="level3">
-<h3 class="anchored" data-anchor-id="correlation">Correlation</h3>
-<p>In the traditional setting, correlation is framed as a statistical measure that relays the size and direction of the relationship between two or more variables. From a more critical framework, however, the idea of associations between variables and the attribution of relationships between variables must be both examined and interrogated.</p>
-<p>Associations should be understood and initiated from the root of a theoretical framework.</p>
-<p>If two variables are related, in a statistical context, we assume that their values <em>change</em> in some ordered fashion. These measures are often represented on an axis depicting the strength of the association.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/wk8-a-2.png" class="img-fluid figure-img"></p>
-<figcaption>Image from statlect.com</figcaption>
-</figure>
-</div>
-<hr>
+<section id="libraries-and-packages" class="level1">
+<h1>Libraries and packages</h1>
+<p>Load the libraries we needed. Be sure to <code>install.packages()</code> where needed.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(critstats)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'</code></pre>
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="yahoo-news-poll" class="level1">
+<h1>Yahoo! News Poll</h1>
+<p>The Yahoo! News Race and Justice poll was conducted in 2020 after the killing of George Floyd. There is pre-loaded data set located in R. A complete description of the data is as follows:</p>
+<blockquote class="blockquote">
+<p>Results from a Yahoo! News poll conducted by YouGov on May 29-31, 2020. In total 1060 U.S. adults were asked a series of questions regarding race and justice in the wake of the killing of George Floyd by a police officer. Results in this data set are percentages for the question, “Do you think Blacks and Whites receive equal treatment from the police?” For this particular question there were 1059 respondents.</p>
+</blockquote>
+</section>
+<section id="data" class="level1">
+<h1>Data</h1>
+<section id="load-the-data-from-github" class="level2">
+<h2 class="anchored" data-anchor-id="load-the-data-from-github">Load the data from github</h2>
+<p>We’ll use data on the gender pay gap that I have prepared for today’s discussion.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>yahoo <span class="ot">&lt;-</span> critstats<span class="sc">::</span>yahoo_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="view" class="level2">
+<h2 class="anchored" data-anchor-id="view">View</h2>
+<p>View a summary of the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(yahoo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   race_eth           response        
+ Length:1059        Length:1059       
+ Class :character   Class :character  
+ Mode  :character   Mode  :character  </code></pre>
+</div>
+</div>
+<p>Alternatively, you can use <code>View(yaho)</code> to see the data frame in a separate window.</p>
+</section>
+</section>
+<section id="explore" class="level1">
+<h1>Explore</h1>
+<section id="glimpse" class="level2">
+<h2 class="anchored" data-anchor-id="glimpse">Glimpse</h2>
+<p>Take a glimpse of the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(yahoo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1,059
+Columns: 2
+$ race_eth &lt;chr&gt; "White", "White", "White", "White", "White", "White", "White"…
+$ response &lt;chr&gt; "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes", "Yes"…</code></pre>
+</div>
+</div>
+</section>
+<section id="head-tail" class="level2">
+<h2 class="anchored" data-anchor-id="head-tail">Head / Tail</h2>
+<p>View the top (head) and bottom (tail) of the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(yahoo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  race_eth response
+  &lt;chr&gt;    &lt;chr&gt;   
+1 White    Yes     
+2 White    Yes     
+3 White    Yes     
+4 White    Yes     
+5 White    Yes     
+6 White    Yes     </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(yahoo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 2
+  race_eth response
+  &lt;chr&gt;    &lt;chr&gt;   
+1 Other    Not sure
+2 Other    Not sure
+3 Other    Not sure
+4 Other    Not sure
+5 Other    Not sure
+6 Other    Not sure</code></pre>
+</div>
+</div>
+</section>
+<section id="counts-and-proportions" class="level2">
+<h2 class="anchored" data-anchor-id="counts-and-proportions">Counts and proportions</h2>
+<p>Create a table of variable counts.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(yahoo<span class="sc">$</span>race_eth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   Black Hispanic    Other    White 
+     101      104       82      772 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(yahoo<span class="sc">$</span>response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+      No Not sure      Yes 
+     700      123      236 </code></pre>
+</div>
+</div>
+<p>Create a table of variable proportions</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(yahoo<span class="sc">$</span>race_eth))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     Black   Hispanic      Other      White 
+0.09537299 0.09820585 0.07743154 0.72898961 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(yahoo<span class="sc">$</span>response))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+       No  Not sure       Yes 
+0.6610009 0.1161473 0.2228517 </code></pre>
+</div>
+</div>
+</section>
+<section id="visualize" class="level2">
+<h2 class="anchored" data-anchor-id="visualize">Visualize</h2>
+<p>Start with the plot outline.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(yahoo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="week09_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="yahoo_data_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>As one value of a first variable increases the other variable’s values may also increase (positive relationship). Alternatively, as the value of one variable increases the other variable’s values may decrease (negative relationship). Key questions to consider focus on how context and other factors shape any seeming bivariate relationship.</p>
-<hr>
-<section id="spurious-correlation" class="level4">
-<h4 class="anchored" data-anchor-id="spurious-correlation">Spurious correlation</h4>
-<p>At the intersection of mathematics and statistics is the concept of the <a href="https://www.jstor.org/stable/42001453" target="_blank"><em>spurious correlation</em></a> (Ward, 2013). A few examples:</p>
-<ul>
-<li><p><a href="https://blogs.ams.org/blogonmathblogs/2017/04/10/divorce-and-margarine/" target="_blank">Divorce rate has been found to correlate with margarine use</a>.</p></li>
-<li><p>Ice cream sales have been correlated with:</p>
-<ul>
-<li><p>Swimming deaths</p></li>
-<li><p>Shark attacks</p></li>
-<li><p>Crime rates</p></li>
-</ul></li>
-<li><p>The use of the popular site <a href="https://academic.oup.com/jcmc/article/21/4/265/4161784" target="_blank">Facebook has been correlated with diminished well-being</a>.</p></li>
-</ul>
-<p>These association help us see the need to investigate relationships further. What are possible unexplained relationships in these associations? We identify potential spurious variables when developing theoretical ideas about associations.</p>
-<hr>
-</section>
-</section>
-<section id="causation-1" class="level3">
-<h3 class="anchored" data-anchor-id="causation-1">Causation</h3>
-<p>Causality (<a href="https://www.annualreviews.org/doi/full/10.1146/annurev-psych-010814-015135">See Sloman and Acnado (2015)</a>) is a representation and principle of cause and effect. There are many different viewpoints of causation across disciplines and fields of study. Terminology matters in how one frames cause and effect.</p>
-<p>There are four possible relationships between two variables:</p>
-<ul>
-<li><p>X causes Y</p></li>
-<li><p>Y causes X</p></li>
-<li><p>X and Y are both caused by Z</p></li>
-<li><p>X is not related to Y</p></li>
-</ul>
-<p>While these relationships may exist in some combination, it is important to frame their differences.</p>
-<hr>
-</section>
-<section id="associating-x-and-y" class="level3">
-<h3 class="anchored" data-anchor-id="associating-x-and-y">Associating X and Y</h3>
-<p>Our initial framing might directly link the variables <code>X</code> and <code>Y</code>.</p>
-<p>First, we have the association X causes Y.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A[X] --&gt; B[Y]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>Next, we have the association Y causes X.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A[Y] --&gt; B[X]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>Finally, we have the association X causes Y and Y causes X.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A[X] &lt;--&gt; B[Y]
-  B --&gt; A
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="framing-spurious-relationships" class="level3">
-<h3 class="anchored" data-anchor-id="framing-spurious-relationships">Framing spurious relationships</h3>
-<p>However, after further reading, we may find that we need to integrate a third factor Z.</p>
-<p>In this context, a third factor (the “third-cause fallacy”) represents a spurious relationship.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A[X]
-  B[Y]
-  C[Z]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>Spurious relationships denote an observed or hypothesized association.</p>
-<p>There are important differences in how we depict and deal with third factor associations.</p>
-<hr>
-</section>
-<section id="confounding-variables" class="level3">
-<h3 class="anchored" data-anchor-id="confounding-variables">Confounding variables</h3>
-<p>Confounding is a causal concept that focuses on spurious or distorted associations.</p>
-<p>Below, Z is considered a <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4017459/" target="_blank">confounding variable</a>.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph TD
-  A[Z] --&gt; B[X]
-  A --&gt; C[Y]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<ul>
-<li><p>Z is related to both the independent, <span class="math inline">\(X\)</span>, and dependent, <span class="math inline">\(Y\)</span>, variables in the causal sense.</p></li>
-<li><p>Your analysis should examine if the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> holds.</p></li>
-<li><p>These interactions are described as <em>spurious associations</em>.</p></li>
-</ul>
-<hr>
-</section>
-<section id="mediating-variables" class="level3">
-<h3 class="anchored" data-anchor-id="mediating-variables">Mediating variables</h3>
-<p>A <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4165346/" target="_blank">mediating variable</a> explains the process by which two variables are related.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A[X] --&gt; B[Z]
-  B --&gt; C[Y]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<ul>
-<li>Z provides the <em>mechanism</em> to relate the independent, <span class="math inline">\(X\)</span>, and dependent, <span class="math inline">\(Y\)</span>, variables.</li>
-</ul>
-<hr>
-</section>
-<section id="moderating-variables" class="level3">
-<h3 class="anchored" data-anchor-id="moderating-variables">Moderating variables</h3>
-<p>A <a href="https://www.researchgate.net/profile/Hugh-Arnold/publication/240438039_Moderator_Variables_A_Clarification_of_Conceptual_Analytic_and_Psychometric_Issues/links/5ee391fb92851ce9e7dce2ae/Moderator-Variables-A-Clarification-of-Conceptual-Analytic-and-Psychometric-Issues.pdf" target="_blank">moderating variable</a> explains the strength by which two variables are related.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A[X] --&gt; B[Z]
-  A --&gt; C[Y]
-  B --&gt; C
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<ul>
-<li>Z explains the <em>strength of association</em> between the independent, <span class="math inline">\(X\)</span>, and dependent, <span class="math inline">\(Y\)</span>, variables.</li>
-</ul>
-<p>Let us look at a concrete example.</p>
-<hr>
-</section>
-</section>
-<section id="part-ii-content" class="level2">
-<h2 class="anchored" data-anchor-id="part-ii-content">Part II: Content</h2>
-<p>The methods used to collect sample data is extremely important.</p>
-<p>If sample data are not collected in an appropriately, any resulting statistical analyses will be futile. As a result, planning a study by identifying research questions, the population and sample of interest, and considering the types of methods that will be used to analyze data that is collected are all essential parts in the statistical data analysis process.</p>
-<hr>
-<section id="more-on-sampling-methods" class="level4">
-<h4 class="anchored" data-anchor-id="more-on-sampling-methods">More on sampling methods</h4>
-<p>First, let’s revisit and describe the different sampling methods:</p>
-<p>There are two broad categories of selecting members of a population to generate sample data: probability sampling and non-probability sampling.</p>
-<p>Within these two broad categories are other methods based on the needs of the study. Each of these methods is used to support statistical data analysis with some methods providing stronger evidence than others.</p>
-<div class="callout-DEFINITIONS">
-<dl>
-<dt>Probability sampling</dt>
-<dd>
-<p>involves the random selection of subjects in such a way that every member of a sample has the sample probability of being selected.</p>
-</dd>
-<dt>Non-probability sampling</dt>
-<dd>
-<p>involves the use of criteria to select data that is not based on an equal likelihood of selection.</p>
-</dd>
-</dl>
-</div>
-<hr>
-<section id="probability-sampling-methods" class="level5">
-<h5 class="anchored" data-anchor-id="probability-sampling-methods">Probability sampling methods</h5>
-<ul>
-<li><p><strong>Simple random sample</strong> of <span class="math inline">\(n\)</span> subjects ensures that every possible sample of the same size <span class="math inline">\(n\)</span> has the same chance or likelihood of being chosen.</p></li>
-<li><p><strong>Systematic sample</strong> of <span class="math inline">\(n\)</span> subjects involves selecting every <span class="math inline">\(k\)</span>th subject on some regular interval.</p></li>
-<li><p><strong>Stratified sample</strong> involves dividing the population up into strata (groups) with the same characteristics and then randomly sampling within those strata.</p></li>
-<li><p><strong>Cluster sample</strong> involves partitioning the population into clusters (groups), randomly selecting some clusters, and then selecting all members of the selected clusters.</p></li>
-</ul>
-<hr>
-</section>
-<section id="non-prbability-sampling-methods" class="level5">
-<h5 class="anchored" data-anchor-id="non-prbability-sampling-methods">Non-prbability sampling methods</h5>
-<ul>
-<li><p><strong>Convenience sample</strong> is data gathered from the most accessible or convenient source. Although this is easy and efficient, the data cannot produce generalizable results.</p></li>
-<li><p><strong>Purposive sample</strong> is data gathered based on the purposes of the research or the specific research question. This strategy includes clear criteria and rationale for inclusion.</p></li>
-<li><p><strong>Snowball sample</strong> is data gathered via recruitment by the other participants of a study. The number of subjects included “snowballs” as more contacts are generated.</p></li>
-</ul>
-<hr>
-<section id="multistage-sampling" class="level6">
-<h6 class="anchored" data-anchor-id="multistage-sampling">Multistage sampling</h6>
-<p>In larger studies, sometimes multistage sampling procedures are used to generate data. In this design, different samples are selected in different stages, and each stage might use a different sampling method. The end result may represent a complicated sampling design but it is often simpler and faster than some designs, such as a simple random sample.</p>
-<hr>
-<p><strong>Missing Data</strong></p>
-<p>Data can be missing from a set, and the total number of elements can differ between two or more sets.</p>
-<p>The differences in the number of elements can be due to a host of reasons, but often it is missing data. A data value can be <em>missing at random</em> or <em>not missing at random</em>. The amount of information missing from a data set can have a minimal impact or a major impact on a statistical analysis.</p>
-<div class="callout callout-style-simple callout-note" data-apperance="simple">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Note – Missing data</strong></p>
-<p>A data value is <em>missing completely at random</em> if the likelihood of it being missing is independent of its value or any other values in the data set is just as likely to be missing.</p>
-<p>A data value is <em>not missing at random</em> if the missing value is related to the reason it is missing.</p>
-</div>
-</div>
-</div>
-<hr>
-</section>
-</section>
-</section>
-</section>
-<section id="part-iii-code" class="level2">
-<h2 class="anchored" data-anchor-id="part-iii-code">Part III: Code</h2>
-<section id="crime-statistics" class="level3">
-<h3 class="anchored" data-anchor-id="crime-statistics">Crime statistics</h3>
-<p>Data from 1973 on violent crime rates by US State in the <code>USArrests</code> data set.</p>
-<p>Values are per 100,000 residents for assault, murder, and rape.</p>
+<p>Add the variable categories to the plot using aesthetics (aes).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(USArrests)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>           Murder Assault UrbanPop Rape
-Alabama      13.2     236       58 21.2
-Alaska       10.0     263       48 44.5
-Arizona       8.1     294       80 31.0
-Arkansas      8.8     190       50 19.5
-California    9.0     276       91 40.6
-Colorado      7.9     204       78 38.7</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(USArrests)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>              Murder Assault UrbanPop Rape
-Vermont          2.2      48       32 11.2
-Virginia         8.5     156       63 20.7
-Washington       4.0     145       73 26.2
-West Virginia    5.7      81       39  9.3
-Wisconsin        2.6      53       66 10.8
-Wyoming          6.8     161       60 15.6</code></pre>
-</div>
-</div>
-<hr>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(USArrests<span class="sc">$</span>UrbanPop, USArrests<span class="sc">$</span>Murder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.06957262</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(USArrests<span class="sc">$</span>UrbanPop, USArrests<span class="sc">$</span>Murder,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Percent living in urban areas"</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Murders per 100,000 residents"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(yahoo, <span class="fu">aes</span>(<span class="at">x =</span> race_eth))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="week09_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="yahoo_data_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>What are some initial takeaways from this plot?</p>
-<p>Without a guiding theory, where might our analyses take us?</p>
-<hr>
-</section>
-<section id="education-data" class="level3">
-<h3 class="anchored" data-anchor-id="education-data">Education data</h3>
-<p>This data is borrowed from the folks at UCLA’s Statistical Methods and Data Analytics office.</p>
+<p>Add bars to the plot using plus (+) geom_bar().</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(foreign)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(ggplot2)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(MASS)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>educ <span class="ot">&lt;-</span> <span class="fu">read.dta</span>(<span class="st">"https://stats.idre.ucla.edu/stat/stata/dae/nb_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<hr>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(educ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>    id gender math daysabs prog
-1 1001   male   63       4    2
-2 1002   male   27       4    2
-3 1003 female   20       2    2
-4 1004 female   16       3    2
-5 1005 female    2       3    2
-6 1006 female   71      13    2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(educ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>      id gender math daysabs prog
-309 2152 female   46       1    3
-310 2153   male   26       1    2
-311 2154 female   79       3    3
-312 2155 female   59       0    2
-313 2156 female   90       0    3
-314 2157 female   77       2    3</code></pre>
-</div>
-</div>
-<hr>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>educ <span class="ot">&lt;-</span> <span class="fu">within</span>(educ, {</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  prog <span class="ot">&lt;-</span> <span class="fu">factor</span>(prog, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"General"</span>, <span class="st">"Academic"</span>, <span class="st">"Vocational"</span>))</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  id <span class="ot">&lt;-</span> <span class="fu">factor</span>(id)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(educ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       id         gender         math          daysabs               prog    
- 1001   :  1   female:160   Min.   : 1.00   Min.   : 0.000   General   : 40  
- 1002   :  1   male  :154   1st Qu.:28.00   1st Qu.: 1.000   Academic  :167  
- 1003   :  1                Median :48.00   Median : 4.000   Vocational:107  
- 1004   :  1                Mean   :48.27   Mean   : 5.955                   
- 1005   :  1                3rd Qu.:70.00   3rd Qu.: 8.000                   
- 1006   :  1                Max.   :99.00   Max.   :35.000                   
- (Other):308                                                                 </code></pre>
-</div>
-</div>
-<hr>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(educ, <span class="fu">aes</span>(daysabs, <span class="at">fill =</span> prog)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">facet_grid</span>(prog <span class="sc">~</span> </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                                                                                     ., <span class="at">margins =</span> <span class="cn">TRUE</span>, <span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(yahoo, <span class="fu">aes</span>(<span class="at">x =</span> race_eth)) <span class="sc">+</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="week09_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="yahoo_data_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>What are some initial takeaways from this plot?</p>
-<p>Without a guiding theory, where might our analyses take us?</p>
+<p>We can improve this plot with some additional code.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(yahoo, <span class="fu">aes</span>(<span class="at">x =</span> race_eth, <span class="at">fill =</span> race_eth)) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Race/Ethnicity"</span>, <span class="at">y =</span> <span class="st">"Count"</span>, <span class="at">title =</span> <span class="st">"Distribution of Race/Ethnicity"</span>) <span class="sc">+</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">face =</span> <span class="st">"bold"</span>)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.1</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="yahoo_data_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can also add counts to our bars.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(yahoo, <span class="fu">aes</span>(<span class="at">x =</span> race_eth, <span class="at">fill =</span> race_eth)) <span class="sc">+</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">stat =</span> <span class="st">"count"</span>, <span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">after_stat</span>(count)), </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Race/Ethnicity"</span>, <span class="at">y =</span> <span class="st">"Count"</span>, <span class="at">title =</span> <span class="st">"Distribution of Race/Ethnicity"</span>) <span class="sc">+</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>),</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">face =</span> <span class="st">"bold"</span>)</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.15</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="yahoo_data_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <hr>
+</section>
+</section>
+<section id="analysis" class="level1">
+<h1>Analysis</h1>
+<p>Load the descr and Hmisc libraries. Install packages as needed.</p>
+<p><code>descr</code> and <code>Hmisc</code> contain useful functions to analyze social science data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("descr")</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("Hmisc")</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(descr)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Hmisc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'Hmisc'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:dplyr':
+
+    src, summarize</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    format.pval, units</code></pre>
+</div>
+</div>
+<p>Pass the Yahoo! News Poll data frame to <code>df</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> yahoo <span class="co"># set the yahoo_data to df</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Rename the <code>race_eth</code> variable to <code>race</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">"race"</span> <span class="ot">=</span> <span class="st">"race_eth"</span>) <span class="co"># rename the race_eth variable to race</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="sample-size" class="level2">
+<h2 class="anchored" data-anchor-id="sample-size">Sample size</h2>
+<p>Get a count of the sample size.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">count</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+      n
+  &lt;int&gt;
+1  1059</code></pre>
+</div>
+</div>
+</section>
+<section id="relative-frequencies" class="level2">
+<h2 class="anchored" data-anchor-id="relative-frequencies">Relative frequencies</h2>
+<p>Get relative frequencies by the <code>race</code> variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(race) <span class="sc">%&gt;%</span> </span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> <span class="fu">prop.table</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  race         n   prop
+  &lt;chr&gt;    &lt;int&gt;  &lt;dbl&gt;
+1 Black      101 0.0954
+2 Hispanic   104 0.0982
+3 Other       82 0.0774
+4 White      772 0.729 </code></pre>
+</div>
+</div>
+<p>Get relative frequencies by the <code>responce</code> variable.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(response) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> <span class="fu">prop.table</span>(n))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  response     n  prop
+  &lt;chr&gt;    &lt;int&gt; &lt;dbl&gt;
+1 No         700 0.661
+2 Not sure   123 0.116
+3 Yes        236 0.223</code></pre>
+</div>
+</div>
+</section>
+<section id="crosstab" class="level2">
+<h2 class="anchored" data-anchor-id="crosstab">Crosstab</h2>
+<p>Get a crosstab of the <code>race</code> and <code>response</code> variables.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crosstab</span>(df<span class="sc">$</span>response, df<span class="sc">$</span>race, <span class="at">plot=</span>F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Cell Contents 
+|-------------------------|
+|                   Count | 
+|-------------------------|
+
+=======================================================
+               df$race
+df$response    Black   Hispanic   Other   White   Total
+-------------------------------------------------------
+No                92         75      47     486     700
+-------------------------------------------------------
+Not sure           3         14      21      85     123
+-------------------------------------------------------
+Yes                6         15      14     201     236
+-------------------------------------------------------
+Total            101        104      82     772    1059
+=======================================================</code></pre>
+</div>
+</div>
+<p>Standardize the frequencies.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crosstab</span>(df<span class="sc">$</span>response, df<span class="sc">$</span>race, <span class="at">plot=</span>F, <span class="at">prop.c=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Cell Contents 
+|-------------------------|
+|                   Count | 
+|          Column Percent | 
+|-------------------------|
+
+=======================================================
+               df$race
+df$response    Black   Hispanic   Other   White   Total
+-------------------------------------------------------
+No               92         75      47     486     700 
+               91.1%      72.1%   57.3%   63.0%        
+-------------------------------------------------------
+Not sure          3         14      21      85     123 
+                3.0%      13.5%   25.6%   11.0%        
+-------------------------------------------------------
+Yes               6         15      14     201     236 
+                5.9%      14.4%   17.1%   26.0%        
+-------------------------------------------------------
+Total           101        104      82     772    1059 
+                9.5%       9.8%    7.7%   72.9%        
+=======================================================</code></pre>
+</div>
+</div>
+<p>Create a crosstab with raw frequencies.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crosstab</span>(df<span class="sc">$</span>response, df<span class="sc">$</span>race, <span class="at">plot=</span>F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Cell Contents 
+|-------------------------|
+|                   Count | 
+|-------------------------|
+
+=======================================================
+               df$race
+df$response    Black   Hispanic   Other   White   Total
+-------------------------------------------------------
+No                92         75      47     486     700
+-------------------------------------------------------
+Not sure           3         14      21      85     123
+-------------------------------------------------------
+Yes                6         15      14     201     236
+-------------------------------------------------------
+Total            101        104      82     772    1059
+=======================================================</code></pre>
+</div>
+</div>
+<p>Gather the expected values.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crosstab</span>(df<span class="sc">$</span>response, df<span class="sc">$</span>race,</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">expected=</span>T, <span class="co">#Add expected frequency to each cell</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot=</span>F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Cell Contents 
+|-------------------------|
+|                   Count | 
+|         Expected Values | 
+|-------------------------|
+
+=======================================================
+               df$race
+df$response    Black   Hispanic   Other   White   Total
+-------------------------------------------------------
+No                92         75      47     486     700
+                66.8       68.7    54.2   510.3        
+-------------------------------------------------------
+Not sure           3         14      21      85     123
+                11.7       12.1     9.5    89.7        
+-------------------------------------------------------
+Yes                6         15      14     201     236
+                22.5       23.2    18.3   172.0        
+-------------------------------------------------------
+Total            101        104      82     772    1059
+=======================================================</code></pre>
+</div>
+</div>
+<p>Add the chi-square contributions.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">crosstab</span>(df<span class="sc">$</span>response, df<span class="sc">$</span>race,</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">expected=</span>T, <span class="co">#Add expected frequency to each cell</span></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">prop.chisq =</span> T, <span class="co">#Total contribution of each cell </span></span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot=</span>F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Cell Contents 
+|-------------------------|
+|                   Count | 
+|         Expected Values | 
+| Chi-square contribution | 
+|-------------------------|
+
+=========================================================
+               df$race
+df$response     Black   Hispanic    Other   White   Total
+---------------------------------------------------------
+No                 92         75       47     486     700
+                 66.8       68.7     54.2   510.3        
+                9.542      0.569    0.957   1.156        
+---------------------------------------------------------
+Not sure            3         14       21      85     123
+                 11.7       12.1      9.5    89.7        
+                6.498      0.305   13.828   0.243        
+---------------------------------------------------------
+Yes                 6         15       14     201     236
+                 22.5       23.2     18.3   172.0        
+               12.107      2.885    1.000   4.874        
+---------------------------------------------------------
+Total             101        104       82     772    1059
+=========================================================</code></pre>
+</div>
+</div>
+<p>Calculate your degrees of freedom:</p>
+<p><span class="math display">\[
+df_{\chi^2} = (r-1)(c-1)
+\]</span> Where <code>r</code> equals the number of rows and <code>c</code> equals the number of columns.</p>
+<p>In our case we have <span class="math inline">\(r = 3\)</span> and <span class="math inline">\(c=4\)</span>, so we get:</p>
+<p><span class="math display">\[
+df_{\chi^2} = (3-1)(4-1) = (2)(3) = 6
+\]</span></p>
+<p>Use the chi-square critical values.</p>
+<p>Gather the critical value of chi-square.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qchisq</span>(.<span class="dv">05</span>, <span class="dv">6</span>, <span class="at">lower.tail=</span>F)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12.59159</code></pre>
+</div>
+</div>
+<p>Take note of the <span class="math inline">\(6\)</span> in our code; that will change based on your analysis.</p>
+<p>Get the chi-square statistic.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(df<span class="sc">$</span>response, df<span class="sc">$</span>race)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test
+
+data:  df$response and df$race
+X-squared = 53.964, df = 6, p-value = 7.5e-10</code></pre>
+</div>
+</div>
+<p>From here you want to critically interpret your values.</p>
 
 
 </section>
@@ -1482,18 +1509,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../weeks/week08.html" class="pagination-link" aria-label="Week 8">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 8</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../weeks/week10.qmd" class="pagination-link" aria-label="Week 10">
-        <span class="nav-page-text">Week 10</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

@@ -1,0 +1,347 @@
+---
+title: "DATA 202 - Week 8"
+subtitle: "Hypothesis Testing"
+author: "Nathan Alexander, PhD"
+institute: "Center for Applied Data Science and Analytics"
+format: 
+  html: default
+  revealjs:
+    output-file: week08-slides.html
+    height: 900
+    width: 1600
+    smaller: false
+    scrollable: true
+    slide-number: c/t #< collapsted/total
+    logo: "img/howard-logo.jpg"
+    footer: "[Course Data GitHub](https://github.com/data-202)"
+    toc: false
+    echo: true
+    incremental: false
+---
+
+## Part I: Context
+
+What is your hypothesis?
+
+Hypothesis testing requires a solid theory to make sense of the relevant options to develop a hypothesis.
+
+As a fundamental statistical tool, it is important to be critical when dealing with social hypotheses around dynamic and often context-based issues. We need to be mindful of how context may interfere with the traditional standards of hypothesis testing. 
+
+QuantCrit (or critical quantitative methodologies) have been developed as a tool to help guide researchers in the quantitative social sciences, and in education, to consider how hypotheses can reinforce or challenge existing power structures and biases.
+
+---
+
+### Hypothesis testing in a historical context
+
+- **1700s origins**: First used by John Arbuthnot to analyze sex ratios at birth
+
+- **Modern framework**: Developed through work by Pearson, Fisher, and Neyman
+
+- **QuantCrit lens**: How have historical power dynamics influenced:
+
+  - Choice of null hypotheses?
+  
+  - Default assumptions about "normal" distributions?
+  
+  - Interpretation of statistical significance?
+
+---
+
+### Power dynamics in hypothesis formulation
+
+- **Case study**: Gender pay gap analysis
+  - Who defines "significant difference"?
+  - How are control groups constructed?
+  - What confounding variables might be ignored?
+  
+- **QuantCrit considerations**:
+  - Does our null hypothesis default to existing power structures?
+  - How do variable definitions perpetuate systemic biases?
+  - What alternative hypotheses might challenge dominant narratives?
+
+---
+
+Some basic but important real-world examples: 
+
+**Gender pay gap**: 
+Testing whether there's a significant difference in salaries between men and women in a particular industry.
+
+**Racial disparities in healthcare**: 
+Examining if there's a significant difference in health outcomes between different racial groups.
+
+**Educational achievement**: 
+Investigating the relationship between socioeconomic status and academic performance.
+
+In each of these cases, it is essential to consider:
+
+-   Who formulated the hypothesis and why?
+
+-   What assumptions are built into the statistical methods?
+
+-   How might the results be interpreted and/or misinterpreted?
+
+-   What are the potential consequences of failing to take into consideration the historical context?
+
+---
+
+### Guiding Questions for Responsible Analysis
+1. **Formulation**  
+   - Who benefits from this framing of H₀/H₁?  
+   - What alternative hypotheses were excluded?  
+
+2. **Interpretation**  
+   - How might "statistical significance" be misused?  
+   - What effect sizes matter in real-world terms?  
+
+3. **Application**  
+   - What systems maintain the status quo reflected in H₀?  
+   - How could these methods challenge existing power structures?
+   
+---
+
+### Considering your work
+
+As you think about your own research, what are some of the main hypothesis that you hold as it relates to the relationship between your study variables? What are the variable types? How might you measure and make sense of the relationship between the variables?
+
+## Part II: Content
+
+**Null and Alternative Hypotheses**
+
+### Formal Hypothesis Testing Framework
+
+1. **Null hypothesis ($H_0$)**: Default assumption of no effect/difference  
+   \( H_0: \mu = \mu_0 \)
+   
+2. **Alternative hypothesis ($H_1$)**: Research claim requiring evidence  
+   \( H_1: \mu \neq \mu_0 \) (two-tailed)
+   
+3. **Test statistic**: Quantifies discrepancy from H₀  
+   \( z = \frac{\bar{x} - \mu_0}{\sigma/\sqrt{n}} \)
+   
+4. **Decision rule**: Compare p-value to $\alpha$ (typically 0.05)
+
+5. **Conclusion**: Reject/fail to reject $H_0$ in context
+
+---
+
+Null hypothesis ($H_0$): Statement of no effect or no difference
+    
+Alternative hypothesis ($H_1$): Statement of an effect or difference
+
+------------------------------------------------------------------------
+
+Common test statistics: 
+
+**Test Statistic**: 
+A measure that allows us to quantify the difference between the observed data and what we'd expect under the null hypothesis
+
+- *Z-score*: A z-score is a statistical measure that quantifies the distance between a data point and the mean of a data set, expressed in terms of standard deviations. It indicates how many standard deviations a value is from the mean. A z-score of 0 means the data point is identical to the mean, while positive or negative values indicate the data point is above or below the mean, respectively.
+
+- *T-statistic*: The t-statistic is the ratio of the difference between an estimated value of a parameter and its assumed value to its standard error. It is commonly used in hypothesis testing to determine if a regression coefficient is significantly different from zero. In the classical linear regression model with normally distributed and homoscedastic error terms, the t-statistic follows a Student's t-distribution.
+
+- *F-statistic*: An F-statistic is a value used in ANOVA tests or regression analyses to determine if the means between two or more populations are significantly different. It is calculated by dividing the variance between groups by the variance within groups. The F-statistic is used to test the joint significance of a group of variables and helps determine whether to reject the null hypothesis.
+
+- *Chi-square statistic*: The chi-square statistic is used in the analysis of contingency tables to examine whether two categorical variables are independent. It measures the difference between observed frequencies and expected frequencies in one or more categories. Chi-square tests are often employed to test hypotheses and determine if there is a statistically significant difference between expected and observed frequencies.
+
+------------------------------------------------------------------------
+
+**p-value** (probability value)
+
+- The probability of obtaining test results at least as extreme as the observed results, assuming the null hypothesis is true
+
+- Calculated as: p-value = P(test statistic $\leq$ observed value | $H_0$ is true)
+
+------------------------------------------------------------------------
+
+**Significance Level** ($\alpha$)
+
+The threshold below which we reject the null hypothesis.
+
+- Common values: $0.05$, $0.01$
+
+------------------------------------------------------------------------
+
+**Decision Rule**
+
+Reject $H_0$ if p-value $\leq$ $\alpha$.
+
+- If the p-value is less than or equal to the chosen significance level ($\alpha$), we reject the null hypothesis. This suggests that the observed data is statistically significant enough to conclude that there's evidence against the null hypothesis.
+
+Fail to reject $H_0$ if p-value $>$ $\alpha$.
+
+- If the p-value is greater than the significance level ($\alpha$), we fail to reject the null hypothesis. This means that the observed data does not provide sufficient evidence to conclude against the null hypothesis.
+
+------------------------------------------------------------------------
+
+Type I and Type II Errors
+
+Type I error: Rejecting $H_0$ when it's actually true (false positive)
+
+Type II error: Failing to reject $H_0$ when it's actually false (false negative)
+
+| | Reject $H_0$ | Fail to Reject$H_0$ |
+|-------------|-------------------|----------------------|
+| $H_0$ is True | Type I Error | Correct Decision |
+| $H_0$ is False | Correct Decision | Type II Error |
+
+
+## Part III: Code
+
+### Two Categorical Variables: Chi-Square Test of Independence
+
+Gender and voting preference
+
+```{r, echo=F, warning=F, message=F}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+# Example: Testing association between gender and voting preference
+
+# Create sample data
+gender <- c(rep("Male", 90), rep("Female", 85), rep("Non-Binary", 125))
+# Create the vote vector with adjusted non-binary voting pattern
+vote <- c(rep("Party A", 55), rep("Party B", 45), 
+          rep("Party A", 65), rep("Party B", 35), 
+          rep("Party A", 85), rep("Party B", 15))
+gender_data <- data.frame(gender, vote)
+
+# Calculate percentages
+gender_data_summary <- as.data.frame(prop.table(table(gender_data$gender, gender_data$vote), 1))
+colnames(gender_data_summary) <- c("Gender", "Party", "Percentage")
+```
+
+```{r}
+# view the data
+glimpse(gender_data)
+
+# plot of data
+ggplot(gender_data_summary, aes(x = Gender, y = Percentage, fill = Party)) +
+  geom_bar(stat = "identity", position = "stack") +
+  geom_text(aes(label = scales::percent(Percentage, accuracy = 1)), 
+            position = position_stack(vjust = 0.5), 
+            color = "white", size = 4) +
+  scale_y_continuous(labels = scales::percent) +
+  scale_fill_manual(values = c("Party A" = "#1E90FF", "Party B" = "#FF6347")) +
+  theme_minimal() +
+  theme(legend.position = "top",
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 14, face = "bold"),
+        legend.title = element_blank()) +
+  labs(title = "Voting Preferences by Gender",
+       x = "Gender",
+       y = "Percentage")
+```
+
+```{r}
+# Perform chi-square test
+result <- chisq.test(table(gender_data$gender, gender_data$vote))
+```
+
+```{r}
+# Print results
+print(result)
+```
+
+```{r, echo=F}
+# Interpret results
+if (result$p.value < 0.05) {
+  print("There is a significant association between gender and voting preference.")
+} else {
+  print("There is no significant association between gender and voting preference.")
+}
+```
+
+------------------------------------------------------------------------
+
+### Two Numeric Variables: Pearson Correlation Test
+
+Study hours and exam scores
+
+```{r, echo=F}
+# Example: Testing correlation between study hours and exam scores
+
+# Create sample data
+study_hours <- rnorm(100, mean = 20, sd = 5)
+exam_scores <- 2 * study_hours + rnorm(100, mean = 0, sd = 10)
+```
+
+View and visualize the data.
+
+```{r}
+data.cor <- data.frame(study_hours, exam_scores)
+
+str(data.cor)
+
+ggplot(data.cor, aes(x = study_hours, y = exam_scores)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  theme_minimal() +
+  labs(title = "Relationship between Study Hours and Exam Scores",
+       x = "Study Hours",
+       y = "Exam Scores")
+```
+
+```{r}
+# Perform correlation test
+result.cor <- cor.test(data.cor$study_hours, data.cor$exam_scores)
+
+# Print results
+print(result.cor)
+```
+
+```{r, echo=F}
+# Interpret results
+if (result.cor$p.value < 0.05) {
+  print(paste("There is a significant correlation between study hours and exam scores. Correlation coefficient:", round(result.cor$estimate, 2)))
+} else {
+  print("There is no significant correlation between study hours and exam scores.")
+}
+```
+
+------------------------------------------------------------------------
+
+### One Categorical and One Numeric Variable: Independent Samples t-test
+
+Testing differences in exam scores between two teaching methods.
+
+```{r, echo=F}
+# Example: 
+
+# Create sample data
+method <- c(rep("Method A", 50), rep("Method B", 50))
+scores <- c(rnorm(50, mean = 75, sd = 10), rnorm(50, mean = 80, sd = 10))
+```
+
+View and visualize the data.
+
+```{r}
+data.exam <- data.frame(method, scores)
+
+str(data.exam)
+
+ggplot(data.exam, aes(x = method, y = scores, fill = method)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(title = "Comparison of Scores between Method A and Method B",
+       x = "Method",
+       y = "Scores")
+```
+
+Perform the t-test.
+
+```{r}
+# Perform t-test
+result <- t.test(scores ~ method, data = data.exam)
+
+# Print results
+print(result)
+```
+
+```{r, echo=F}
+# Interpret results
+if (result$p.value < 0.05) {
+  print("There is a significant difference in exam scores between the two teaching methods.")
+} else {
+  print("There is no significant difference in exam scores between the two teaching methods.")
+}
+```

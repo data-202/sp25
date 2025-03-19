@@ -8,7 +8,7 @@
 
 <meta name="author" content="Nathan Alexander, PhD">
 
-<title>DATA 202 - Week 9 – DATA 202: Statistically Measuring and Modeling Social Justice</title>
+<title>DATA 202 - Week 8 – DATA 202: Statistically Measuring and Modeling Social Justice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../weeks/week10.qmd" rel="next">
-<link href="../weeks/week08.html" rel="prev">
+<link href="../weeks/week09.html" rel="next">
+<link href="../weeks/week07.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -104,9 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -138,8 +135,8 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="DATA 202 - Week 9 – DATA 202: Statistically Measuring and Modeling Social Justice">
-<meta property="og:description" content="Notes on causal theories">
+<meta property="og:title" content="DATA 202 - Week 8 – DATA 202: Statistically Measuring and Modeling Social Justice">
+<meta property="og:description" content="Hypothesis Testing">
 <meta property="og:site_name" content="DATA 202: Statistically Measuring and Modeling Social Justice">
 </head>
 
@@ -152,7 +149,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week01.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week09.html">Week 9</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week01.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week08.html">Week 8</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -270,13 +267,13 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week08.html" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week08.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 8</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week09.html" class="sidebar-item-text sidebar-link active">
+  <a href="../weeks/week09.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9</span></a>
   </div>
 </li>
@@ -428,32 +425,31 @@ window.Quarto = {
   <ul>
   <li><a href="#part-i-context" id="toc-part-i-context" class="nav-link active" data-scroll-target="#part-i-context">Part I: Context</a>
   <ul class="collapse">
-  <li><a href="#history-cause-and-effect" id="toc-history-cause-and-effect" class="nav-link" data-scroll-target="#history-cause-and-effect">History, cause, and effect</a></li>
-  <li><a href="#causation" id="toc-causation" class="nav-link" data-scroll-target="#causation">Causation</a></li>
-  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation">Correlation</a></li>
-  <li><a href="#causation-1" id="toc-causation-1" class="nav-link" data-scroll-target="#causation-1">Causation</a></li>
-  <li><a href="#associating-x-and-y" id="toc-associating-x-and-y" class="nav-link" data-scroll-target="#associating-x-and-y">Associating X and Y</a></li>
-  <li><a href="#framing-spurious-relationships" id="toc-framing-spurious-relationships" class="nav-link" data-scroll-target="#framing-spurious-relationships">Framing spurious relationships</a></li>
-  <li><a href="#confounding-variables" id="toc-confounding-variables" class="nav-link" data-scroll-target="#confounding-variables">Confounding variables</a></li>
-  <li><a href="#mediating-variables" id="toc-mediating-variables" class="nav-link" data-scroll-target="#mediating-variables">Mediating variables</a></li>
-  <li><a href="#moderating-variables" id="toc-moderating-variables" class="nav-link" data-scroll-target="#moderating-variables">Moderating variables</a></li>
+  <li><a href="#hypothesis-testing-in-a-historical-context" id="toc-hypothesis-testing-in-a-historical-context" class="nav-link" data-scroll-target="#hypothesis-testing-in-a-historical-context">Hypothesis testing in a historical context</a></li>
+  <li><a href="#power-dynamics-in-hypothesis-formulation" id="toc-power-dynamics-in-hypothesis-formulation" class="nav-link" data-scroll-target="#power-dynamics-in-hypothesis-formulation">Power dynamics in hypothesis formulation</a></li>
+  <li><a href="#guiding-questions-for-responsible-analysis" id="toc-guiding-questions-for-responsible-analysis" class="nav-link" data-scroll-target="#guiding-questions-for-responsible-analysis">Guiding Questions for Responsible Analysis</a></li>
+  <li><a href="#considering-your-work" id="toc-considering-your-work" class="nav-link" data-scroll-target="#considering-your-work">Considering your work</a></li>
   </ul></li>
-  <li><a href="#part-ii-content" id="toc-part-ii-content" class="nav-link" data-scroll-target="#part-ii-content">Part II: Content</a></li>
+  <li><a href="#part-ii-content" id="toc-part-ii-content" class="nav-link" data-scroll-target="#part-ii-content">Part II: Content</a>
+  <ul class="collapse">
+  <li><a href="#formal-hypothesis-testing-framework" id="toc-formal-hypothesis-testing-framework" class="nav-link" data-scroll-target="#formal-hypothesis-testing-framework">Formal Hypothesis Testing Framework</a></li>
+  </ul></li>
   <li><a href="#part-iii-code" id="toc-part-iii-code" class="nav-link" data-scroll-target="#part-iii-code">Part III: Code</a>
   <ul class="collapse">
-  <li><a href="#crime-statistics" id="toc-crime-statistics" class="nav-link" data-scroll-target="#crime-statistics">Crime statistics</a></li>
-  <li><a href="#education-data" id="toc-education-data" class="nav-link" data-scroll-target="#education-data">Education data</a></li>
+  <li><a href="#two-categorical-variables-chi-square-test-of-independence" id="toc-two-categorical-variables-chi-square-test-of-independence" class="nav-link" data-scroll-target="#two-categorical-variables-chi-square-test-of-independence">Two Categorical Variables: Chi-Square Test of Independence</a></li>
+  <li><a href="#two-numeric-variables-pearson-correlation-test" id="toc-two-numeric-variables-pearson-correlation-test" class="nav-link" data-scroll-target="#two-numeric-variables-pearson-correlation-test">Two Numeric Variables: Pearson Correlation Test</a></li>
+  <li><a href="#one-categorical-and-one-numeric-variable-independent-samples-t-test" id="toc-one-categorical-and-one-numeric-variable-independent-samples-t-test" class="nav-link" data-scroll-target="#one-categorical-and-one-numeric-variable-independent-samples-t-test">One Categorical and One Numeric Variable: Independent Samples t-test</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week09-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week08-slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week01.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week09.html">Week 9</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weeks/week01.html">Weekly materials</a></li><li class="breadcrumb-item"><a href="../weeks/week08.html">Week 8</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">DATA 202 - Week 9</h1>
-<p class="subtitle lead">Notes on causal theories</p>
+<h1 class="title">DATA 202 - Week 8</h1>
+<p class="subtitle lead">Hypothesis Testing</p>
 </div>
 
 
@@ -485,433 +481,331 @@ window.Quarto = {
 
 <section id="part-i-context" class="level2">
 <h2 class="anchored" data-anchor-id="part-i-context">Part I: Context</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/wk8-a-3.jpg" class="img-fluid figure-img"></p>
-<figcaption>Illustration by Yuko Shimizu from <a href="https://www.cigionline.org/articles/as-geopolitical-blocs-vie-for-primacy-in-space-the-history-of-colonization-looms-large/" target="_blank">cigionline.org</a>.</figcaption>
-</figure>
-</div>
-<p>Last week launched part 3 of our course: data and policy, as in public policies.</p>
-<p>Our goals this week will be to consider variations of justice for your particular area(s) of interest and study, and to cite references that allow us to understand the meaning of social justice in your specific intellectual domains.</p>
+<p>What is your hypothesis?</p>
+<p>Hypothesis testing requires a solid theory to make sense of the relevant options to develop a hypothesis.</p>
+<p>As a fundamental statistical tool, it is important to be critical when dealing with social hypotheses around dynamic and often context-based issues. We need to be mindful of how context may interfere with the traditional standards of hypothesis testing.</p>
+<p>QuantCrit (or critical quantitative methodologies) have been developed as a tool to help guide researchers in the quantitative social sciences, and in education, to consider how hypotheses can reinforce or challenge existing power structures and biases.</p>
 <hr>
-<section id="history-cause-and-effect" class="level3">
-<h3 class="anchored" data-anchor-id="history-cause-and-effect">History, cause, and effect</h3>
-<p>Theory is often understood through an investigation of both the literature and the historical contexts surrounding a given issue. Take, for example, the legacies of colonization. As data and scientific developments expand into new fields, new questions arise as to what we can associate and how we understand these associations. For example, how does one theoretically relate a series of events from 150 years ago to a present set of conditions? What are the possibilities? What are the limitations? What are the cautionary tales?</p>
-<p>Statistics was situated as a vehicle to understand and measure observations. As it becomes an ever popular vehicle to inform social justice discourses, the many real-world associations identified in society bring to mind the well-known and readily available cautionary tale:</p>
-<blockquote class="blockquote">
-<p>Correlation does not imply causation.</p>
-</blockquote>
-<p>This popular statement relates to the ability (or inability) to deduce cause-and-effect relationships.</p>
-<hr>
-</section>
-<section id="causation" class="level3">
-<h3 class="anchored" data-anchor-id="causation">Causation</h3>
-<div class="callout callout-style-simple callout-note" data-apperance="simple">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Causality</strong> is a fundamental concept in scientific inquiry and statistical analysis. It refers to the relationship between cause and effect, where one event (the cause) is understood to be responsible for another event (the effect). In statistics, causal inference aims to identify and quantify these cause-effect relationships.</p>
-</div>
-</div>
-</div>
-<p>Causality can be defined as a relationship between two events where:</p>
+<section id="hypothesis-testing-in-a-historical-context" class="level3">
+<h3 class="anchored" data-anchor-id="hypothesis-testing-in-a-historical-context">Hypothesis testing in a historical context</h3>
 <ul>
-<li><p>The cause precedes the effect in time.</p></li>
-<li><p>There is a consistent association between the cause and effect.</p></li>
-<li><p>Alternative explanations for the association have been ruled out.</p></li>
-</ul>
-<hr>
-</section>
-<section id="correlation" class="level3">
-<h3 class="anchored" data-anchor-id="correlation">Correlation</h3>
-<p>In the traditional setting, correlation is framed as a statistical measure that relays the size and direction of the relationship between two or more variables. From a more critical framework, however, the idea of associations between variables and the attribution of relationships between variables must be both examined and interrogated.</p>
-<p>Associations should be understood and initiated from the root of a theoretical framework.</p>
-<p>If two variables are related, in a statistical context, we assume that their values <em>change</em> in some ordered fashion. These measures are often represented on an axis depicting the strength of the association.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/wk8-a-2.png" class="img-fluid figure-img"></p>
-<figcaption>Image from statlect.com</figcaption>
-</figure>
-</div>
-<hr>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'
-`geom_smooth()` using formula = 'y ~ x'</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="week09_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>As one value of a first variable increases the other variable’s values may also increase (positive relationship). Alternatively, as the value of one variable increases the other variable’s values may decrease (negative relationship). Key questions to consider focus on how context and other factors shape any seeming bivariate relationship.</p>
-<hr>
-<section id="spurious-correlation" class="level4">
-<h4 class="anchored" data-anchor-id="spurious-correlation">Spurious correlation</h4>
-<p>At the intersection of mathematics and statistics is the concept of the <a href="https://www.jstor.org/stable/42001453" target="_blank"><em>spurious correlation</em></a> (Ward, 2013). A few examples:</p>
+<li><p><strong>1700s origins</strong>: First used by John Arbuthnot to analyze sex ratios at birth</p></li>
+<li><p><strong>Modern framework</strong>: Developed through work by Pearson, Fisher, and Neyman</p></li>
+<li><p><strong>QuantCrit lens</strong>: How have historical power dynamics influenced:</p>
 <ul>
-<li><p><a href="https://blogs.ams.org/blogonmathblogs/2017/04/10/divorce-and-margarine/" target="_blank">Divorce rate has been found to correlate with margarine use</a>.</p></li>
-<li><p>Ice cream sales have been correlated with:</p>
-<ul>
-<li><p>Swimming deaths</p></li>
-<li><p>Shark attacks</p></li>
-<li><p>Crime rates</p></li>
+<li><p>Choice of null hypotheses?</p></li>
+<li><p>Default assumptions about “normal” distributions?</p></li>
+<li><p>Interpretation of statistical significance?</p></li>
 </ul></li>
-<li><p>The use of the popular site <a href="https://academic.oup.com/jcmc/article/21/4/265/4161784" target="_blank">Facebook has been correlated with diminished well-being</a>.</p></li>
 </ul>
-<p>These association help us see the need to investigate relationships further. What are possible unexplained relationships in these associations? We identify potential spurious variables when developing theoretical ideas about associations.</p>
 <hr>
 </section>
-</section>
-<section id="causation-1" class="level3">
-<h3 class="anchored" data-anchor-id="causation-1">Causation</h3>
-<p>Causality (<a href="https://www.annualreviews.org/doi/full/10.1146/annurev-psych-010814-015135">See Sloman and Acnado (2015)</a>) is a representation and principle of cause and effect. There are many different viewpoints of causation across disciplines and fields of study. Terminology matters in how one frames cause and effect.</p>
-<p>There are four possible relationships between two variables:</p>
+<section id="power-dynamics-in-hypothesis-formulation" class="level3">
+<h3 class="anchored" data-anchor-id="power-dynamics-in-hypothesis-formulation">Power dynamics in hypothesis formulation</h3>
 <ul>
-<li><p>X causes Y</p></li>
-<li><p>Y causes X</p></li>
-<li><p>X and Y are both caused by Z</p></li>
-<li><p>X is not related to Y</p></li>
-</ul>
-<p>While these relationships may exist in some combination, it is important to frame their differences.</p>
-<hr>
-</section>
-<section id="associating-x-and-y" class="level3">
-<h3 class="anchored" data-anchor-id="associating-x-and-y">Associating X and Y</h3>
-<p>Our initial framing might directly link the variables <code>X</code> and <code>Y</code>.</p>
-<p>First, we have the association X causes Y.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A[X] --&gt; B[Y]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>Next, we have the association Y causes X.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A[Y] --&gt; B[X]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>Finally, we have the association X causes Y and Y causes X.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A[X] &lt;--&gt; B[Y]
-  B --&gt; A
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<hr>
-</section>
-<section id="framing-spurious-relationships" class="level3">
-<h3 class="anchored" data-anchor-id="framing-spurious-relationships">Framing spurious relationships</h3>
-<p>However, after further reading, we may find that we need to integrate a third factor Z.</p>
-<p>In this context, a third factor (the “third-cause fallacy”) represents a spurious relationship.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A[X]
-  B[Y]
-  C[Z]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>Spurious relationships denote an observed or hypothesized association.</p>
-<p>There are important differences in how we depict and deal with third factor associations.</p>
-<hr>
-</section>
-<section id="confounding-variables" class="level3">
-<h3 class="anchored" data-anchor-id="confounding-variables">Confounding variables</h3>
-<p>Confounding is a causal concept that focuses on spurious or distorted associations.</p>
-<p>Below, Z is considered a <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4017459/" target="_blank">confounding variable</a>.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph TD
-  A[Z] --&gt; B[X]
-  A --&gt; C[Y]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<li><strong>Case study</strong>: Gender pay gap analysis
 <ul>
-<li><p>Z is related to both the independent, <span class="math inline">\(X\)</span>, and dependent, <span class="math inline">\(Y\)</span>, variables in the causal sense.</p></li>
-<li><p>Your analysis should examine if the relationship between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> holds.</p></li>
-<li><p>These interactions are described as <em>spurious associations</em>.</p></li>
+<li>Who defines “significant difference”?</li>
+<li>How are control groups constructed?</li>
+<li>What confounding variables might be ignored?</li>
+</ul></li>
+<li><strong>QuantCrit considerations</strong>:
+<ul>
+<li>Does our null hypothesis default to existing power structures?</li>
+<li>How do variable definitions perpetuate systemic biases?</li>
+<li>What alternative hypotheses might challenge dominant narratives?</li>
+</ul></li>
+</ul>
+<hr>
+<p>Some basic but important real-world examples:</p>
+<p><strong>Gender pay gap</strong>: Testing whether there’s a significant difference in salaries between men and women in a particular industry.</p>
+<p><strong>Racial disparities in healthcare</strong>: Examining if there’s a significant difference in health outcomes between different racial groups.</p>
+<p><strong>Educational achievement</strong>: Investigating the relationship between socioeconomic status and academic performance.</p>
+<p>In each of these cases, it is essential to consider:</p>
+<ul>
+<li><p>Who formulated the hypothesis and why?</p></li>
+<li><p>What assumptions are built into the statistical methods?</p></li>
+<li><p>How might the results be interpreted and/or misinterpreted?</p></li>
+<li><p>What are the potential consequences of failing to take into consideration the historical context?</p></li>
 </ul>
 <hr>
 </section>
-<section id="mediating-variables" class="level3">
-<h3 class="anchored" data-anchor-id="mediating-variables">Mediating variables</h3>
-<p>A <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4165346/" target="_blank">mediating variable</a> explains the process by which two variables are related.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A[X] --&gt; B[Z]
-  B --&gt; C[Y]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<section id="guiding-questions-for-responsible-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="guiding-questions-for-responsible-analysis">Guiding Questions for Responsible Analysis</h3>
+<ol type="1">
+<li><strong>Formulation</strong>
 <ul>
-<li>Z provides the <em>mechanism</em> to relate the independent, <span class="math inline">\(X\)</span>, and dependent, <span class="math inline">\(Y\)</span>, variables.</li>
-</ul>
+<li>Who benefits from this framing of H₀/H₁?<br>
+</li>
+<li>What alternative hypotheses were excluded?</li>
+</ul></li>
+<li><strong>Interpretation</strong>
+<ul>
+<li>How might “statistical significance” be misused?<br>
+</li>
+<li>What effect sizes matter in real-world terms?</li>
+</ul></li>
+<li><strong>Application</strong>
+<ul>
+<li>What systems maintain the status quo reflected in H₀?<br>
+</li>
+<li>How could these methods challenge existing power structures?</li>
+</ul></li>
+</ol>
 <hr>
 </section>
-<section id="moderating-variables" class="level3">
-<h3 class="anchored" data-anchor-id="moderating-variables">Moderating variables</h3>
-<p>A <a href="https://www.researchgate.net/profile/Hugh-Arnold/publication/240438039_Moderator_Variables_A_Clarification_of_Conceptual_Analytic_and_Psychometric_Issues/links/5ee391fb92851ce9e7dce2ae/Moderator-Variables-A-Clarification-of-Conceptual-Analytic-and-Psychometric-Issues.pdf" target="_blank">moderating variable</a> explains the strength by which two variables are related.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-  A[X] --&gt; B[Z]
-  A --&gt; C[Y]
-  B --&gt; C
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<ul>
-<li>Z explains the <em>strength of association</em> between the independent, <span class="math inline">\(X\)</span>, and dependent, <span class="math inline">\(Y\)</span>, variables.</li>
-</ul>
-<p>Let us look at a concrete example.</p>
-<hr>
+<section id="considering-your-work" class="level3">
+<h3 class="anchored" data-anchor-id="considering-your-work">Considering your work</h3>
+<p>As you think about your own research, what are some of the main hypothesis that you hold as it relates to the relationship between your study variables? What are the variable types? How might you measure and make sense of the relationship between the variables?</p>
 </section>
 </section>
 <section id="part-ii-content" class="level2">
 <h2 class="anchored" data-anchor-id="part-ii-content">Part II: Content</h2>
-<p>The methods used to collect sample data is extremely important.</p>
-<p>If sample data are not collected in an appropriately, any resulting statistical analyses will be futile. As a result, planning a study by identifying research questions, the population and sample of interest, and considering the types of methods that will be used to analyze data that is collected are all essential parts in the statistical data analysis process.</p>
+<p><strong>Null and Alternative Hypotheses</strong></p>
+<section id="formal-hypothesis-testing-framework" class="level3">
+<h3 class="anchored" data-anchor-id="formal-hypothesis-testing-framework">Formal Hypothesis Testing Framework</h3>
+<ol type="1">
+<li><p><strong>Null hypothesis (<span class="math inline">\(H_0\)</span>)</strong>: Default assumption of no effect/difference<br>
+( H_0: = _0 )</p></li>
+<li><p><strong>Alternative hypothesis (<span class="math inline">\(H_1\)</span>)</strong>: Research claim requiring evidence<br>
+( H_1: _0 ) (two-tailed)</p></li>
+<li><p><strong>Test statistic</strong>: Quantifies discrepancy from H₀<br>
+( z = )</p></li>
+<li><p><strong>Decision rule</strong>: Compare p-value to <span class="math inline">\(\alpha\)</span> (typically 0.05)</p></li>
+<li><p><strong>Conclusion</strong>: Reject/fail to reject <span class="math inline">\(H_0\)</span> in context</p></li>
+</ol>
 <hr>
-<section id="more-on-sampling-methods" class="level4">
-<h4 class="anchored" data-anchor-id="more-on-sampling-methods">More on sampling methods</h4>
-<p>First, let’s revisit and describe the different sampling methods:</p>
-<p>There are two broad categories of selecting members of a population to generate sample data: probability sampling and non-probability sampling.</p>
-<p>Within these two broad categories are other methods based on the needs of the study. Each of these methods is used to support statistical data analysis with some methods providing stronger evidence than others.</p>
-<div class="callout-DEFINITIONS">
-<dl>
-<dt>Probability sampling</dt>
-<dd>
-<p>involves the random selection of subjects in such a way that every member of a sample has the sample probability of being selected.</p>
-</dd>
-<dt>Non-probability sampling</dt>
-<dd>
-<p>involves the use of criteria to select data that is not based on an equal likelihood of selection.</p>
-</dd>
-</dl>
-</div>
+<p>Null hypothesis (<span class="math inline">\(H_0\)</span>): Statement of no effect or no difference</p>
+<p>Alternative hypothesis (<span class="math inline">\(H_1\)</span>): Statement of an effect or difference</p>
 <hr>
-<section id="probability-sampling-methods" class="level5">
-<h5 class="anchored" data-anchor-id="probability-sampling-methods">Probability sampling methods</h5>
+<p>Common test statistics:</p>
+<p><strong>Test Statistic</strong>: A measure that allows us to quantify the difference between the observed data and what we’d expect under the null hypothesis</p>
 <ul>
-<li><p><strong>Simple random sample</strong> of <span class="math inline">\(n\)</span> subjects ensures that every possible sample of the same size <span class="math inline">\(n\)</span> has the same chance or likelihood of being chosen.</p></li>
-<li><p><strong>Systematic sample</strong> of <span class="math inline">\(n\)</span> subjects involves selecting every <span class="math inline">\(k\)</span>th subject on some regular interval.</p></li>
-<li><p><strong>Stratified sample</strong> involves dividing the population up into strata (groups) with the same characteristics and then randomly sampling within those strata.</p></li>
-<li><p><strong>Cluster sample</strong> involves partitioning the population into clusters (groups), randomly selecting some clusters, and then selecting all members of the selected clusters.</p></li>
+<li><p><em>Z-score</em>: A z-score is a statistical measure that quantifies the distance between a data point and the mean of a data set, expressed in terms of standard deviations. It indicates how many standard deviations a value is from the mean. A z-score of 0 means the data point is identical to the mean, while positive or negative values indicate the data point is above or below the mean, respectively.</p></li>
+<li><p><em>T-statistic</em>: The t-statistic is the ratio of the difference between an estimated value of a parameter and its assumed value to its standard error. It is commonly used in hypothesis testing to determine if a regression coefficient is significantly different from zero. In the classical linear regression model with normally distributed and homoscedastic error terms, the t-statistic follows a Student’s t-distribution.</p></li>
+<li><p><em>F-statistic</em>: An F-statistic is a value used in ANOVA tests or regression analyses to determine if the means between two or more populations are significantly different. It is calculated by dividing the variance between groups by the variance within groups. The F-statistic is used to test the joint significance of a group of variables and helps determine whether to reject the null hypothesis.</p></li>
+<li><p><em>Chi-square statistic</em>: The chi-square statistic is used in the analysis of contingency tables to examine whether two categorical variables are independent. It measures the difference between observed frequencies and expected frequencies in one or more categories. Chi-square tests are often employed to test hypotheses and determine if there is a statistically significant difference between expected and observed frequencies.</p></li>
 </ul>
 <hr>
-</section>
-<section id="non-prbability-sampling-methods" class="level5">
-<h5 class="anchored" data-anchor-id="non-prbability-sampling-methods">Non-prbability sampling methods</h5>
+<p><strong>p-value</strong> (probability value)</p>
 <ul>
-<li><p><strong>Convenience sample</strong> is data gathered from the most accessible or convenient source. Although this is easy and efficient, the data cannot produce generalizable results.</p></li>
-<li><p><strong>Purposive sample</strong> is data gathered based on the purposes of the research or the specific research question. This strategy includes clear criteria and rationale for inclusion.</p></li>
-<li><p><strong>Snowball sample</strong> is data gathered via recruitment by the other participants of a study. The number of subjects included “snowballs” as more contacts are generated.</p></li>
+<li><p>The probability of obtaining test results at least as extreme as the observed results, assuming the null hypothesis is true</p></li>
+<li><p>Calculated as: p-value = P(test statistic <span class="math inline">\(\leq\)</span> observed value | <span class="math inline">\(H_0\)</span> is true)</p></li>
 </ul>
 <hr>
-<section id="multistage-sampling" class="level6">
-<h6 class="anchored" data-anchor-id="multistage-sampling">Multistage sampling</h6>
-<p>In larger studies, sometimes multistage sampling procedures are used to generate data. In this design, different samples are selected in different stages, and each stage might use a different sampling method. The end result may represent a complicated sampling design but it is often simpler and faster than some designs, such as a simple random sample.</p>
+<p><strong>Significance Level</strong> (<span class="math inline">\(\alpha\)</span>)</p>
+<p>The threshold below which we reject the null hypothesis.</p>
+<ul>
+<li>Common values: <span class="math inline">\(0.05\)</span>, <span class="math inline">\(0.01\)</span></li>
+</ul>
 <hr>
-<p><strong>Missing Data</strong></p>
-<p>Data can be missing from a set, and the total number of elements can differ between two or more sets.</p>
-<p>The differences in the number of elements can be due to a host of reasons, but often it is missing data. A data value can be <em>missing at random</em> or <em>not missing at random</em>. The amount of information missing from a data set can have a minimal impact or a major impact on a statistical analysis.</p>
-<div class="callout callout-style-simple callout-note" data-apperance="simple">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-body-container">
-<p><strong>Note – Missing data</strong></p>
-<p>A data value is <em>missing completely at random</em> if the likelihood of it being missing is independent of its value or any other values in the data set is just as likely to be missing.</p>
-<p>A data value is <em>not missing at random</em> if the missing value is related to the reason it is missing.</p>
-</div>
-</div>
-</div>
+<p><strong>Decision Rule</strong></p>
+<p>Reject <span class="math inline">\(H_0\)</span> if p-value <span class="math inline">\(\leq\)</span> <span class="math inline">\(\alpha\)</span>.</p>
+<ul>
+<li>If the p-value is less than or equal to the chosen significance level (<span class="math inline">\(\alpha\)</span>), we reject the null hypothesis. This suggests that the observed data is statistically significant enough to conclude that there’s evidence against the null hypothesis.</li>
+</ul>
+<p>Fail to reject <span class="math inline">\(H_0\)</span> if p-value <span class="math inline">\(&gt;\)</span> <span class="math inline">\(\alpha\)</span>.</p>
+<ul>
+<li>If the p-value is greater than the significance level (<span class="math inline">\(\alpha\)</span>), we fail to reject the null hypothesis. This means that the observed data does not provide sufficient evidence to conclude against the null hypothesis.</li>
+</ul>
 <hr>
-</section>
-</section>
+<p>Type I and Type II Errors</p>
+<p>Type I error: Rejecting <span class="math inline">\(H_0\)</span> when it’s actually true (false positive)</p>
+<p>Type II error: Failing to reject <span class="math inline">\(H_0\)</span> when it’s actually false (false negative)</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>Reject <span class="math inline">\(H_0\)</span></th>
+<th>Fail to Reject<span class="math inline">\(H_0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(H_0\)</span> is True</td>
+<td>Type I Error</td>
+<td>Correct Decision</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(H_0\)</span> is False</td>
+<td>Correct Decision</td>
+<td>Type II Error</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="part-iii-code" class="level2">
 <h2 class="anchored" data-anchor-id="part-iii-code">Part III: Code</h2>
-<section id="crime-statistics" class="level3">
-<h3 class="anchored" data-anchor-id="crime-statistics">Crime statistics</h3>
-<p>Data from 1973 on violent crime rates by US State in the <code>USArrests</code> data set.</p>
-<p>Values are per 100,000 residents for assault, murder, and rape.</p>
+<section id="two-categorical-variables-chi-square-test-of-independence" class="level3">
+<h3 class="anchored" data-anchor-id="two-categorical-variables-chi-square-test-of-independence">Two Categorical Variables: Chi-Square Test of Independence</h3>
+<p>Gender and voting preference</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(USArrests)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># view the data</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gender_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>           Murder Assault UrbanPop Rape
-Alabama      13.2     236       58 21.2
-Alaska       10.0     263       48 44.5
-Arizona       8.1     294       80 31.0
-Arkansas      8.8     190       50 19.5
-California    9.0     276       91 40.6
-Colorado      7.9     204       78 38.7</code></pre>
+<pre><code>Rows: 300
+Columns: 2
+$ gender &lt;chr&gt; "Male", "Male", "Male", "Male", "Male", "Male", "Male", "Male",…
+$ vote   &lt;chr&gt; "Party A", "Party A", "Party A", "Party A", "Party A", "Party A…</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(USArrests)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>              Murder Assault UrbanPop Rape
-Vermont          2.2      48       32 11.2
-Virginia         8.5     156       63 20.7
-Washington       4.0     145       73 26.2
-West Virginia    5.7      81       39  9.3
-Wisconsin        2.6      53       66 10.8
-Wyoming          6.8     161       60 15.6</code></pre>
-</div>
-</div>
-<hr>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(USArrests<span class="sc">$</span>UrbanPop, USArrests<span class="sc">$</span>Murder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.06957262</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(USArrests<span class="sc">$</span>UrbanPop, USArrests<span class="sc">$</span>Murder,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Percent living in urban areas"</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Murders per 100,000 residents"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot of data</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gender_data_summary, <span class="fu">aes</span>(<span class="at">x =</span> Gender, <span class="at">y =</span> Percentage, <span class="at">fill =</span> Party)) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"stack"</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> scales<span class="sc">::</span><span class="fu">percent</span>(Percentage, <span class="at">accuracy =</span> <span class="dv">1</span>)), </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">position =</span> <span class="fu">position_stack</span>(<span class="at">vjust =</span> <span class="fl">0.5</span>), </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>percent) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Party A"</span> <span class="ot">=</span> <span class="st">"#1E90FF"</span>, <span class="st">"Party B"</span> <span class="ot">=</span> <span class="st">"#FF6347"</span>)) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"top"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.title =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Voting Preferences by Gender"</span>,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Gender"</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Percentage"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="week09_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="week08_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>What are some initial takeaways from this plot?</p>
-<p>Without a guiding theory, where might our analyses take us?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform chi-square test</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(<span class="fu">table</span>(gender_data<span class="sc">$</span>gender, gender_data<span class="sc">$</span>vote))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Print results</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's Chi-squared test
+
+data:  table(gender_data$gender, gender_data$vote)
+X-squared = 4.7769, df = 2, p-value = 0.09177</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "There is no significant association between gender and voting preference."</code></pre>
+</div>
+</div>
 <hr>
 </section>
-<section id="education-data" class="level3">
-<h3 class="anchored" data-anchor-id="education-data">Education data</h3>
-<p>This data is borrowed from the folks at UCLA’s Statistical Methods and Data Analytics office.</p>
+<section id="two-numeric-variables-pearson-correlation-test" class="level3">
+<h3 class="anchored" data-anchor-id="two-numeric-variables-pearson-correlation-test">Two Numeric Variables: Pearson Correlation Test</h3>
+<p>Study hours and exam scores</p>
+<p>View and visualize the data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(foreign)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(ggplot2)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(MASS)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>educ <span class="ot">&lt;-</span> <span class="fu">read.dta</span>(<span class="st">"https://stats.idre.ucla.edu/stat/stata/dae/nb_data.dta"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<hr>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(educ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>data.cor <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(study_hours, exam_scores)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data.cor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    id gender math daysabs prog
-1 1001   male   63       4    2
-2 1002   male   27       4    2
-3 1003 female   20       2    2
-4 1004 female   16       3    2
-5 1005 female    2       3    2
-6 1006 female   71      13    2</code></pre>
+<pre><code>'data.frame':   100 obs. of  2 variables:
+ $ study_hours: num  19.8 28 23.1 25.3 21.7 ...
+ $ exam_scores: num  35.7 56.6 35.3 47.5 20.8 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(educ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>      id gender math daysabs prog
-309 2152 female   46       1    3
-310 2153   male   26       1    2
-311 2154 female   79       3    3
-312 2155 female   59       0    2
-313 2156 female   90       0    3
-314 2157 female   77       2    3</code></pre>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.cor, <span class="fu">aes</span>(<span class="at">x =</span> study_hours, <span class="at">y =</span> exam_scores)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relationship between Study Hours and Exam Scores"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Study Hours"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Exam Scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
-</div>
-<hr>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>educ <span class="ot">&lt;-</span> <span class="fu">within</span>(educ, {</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  prog <span class="ot">&lt;-</span> <span class="fu">factor</span>(prog, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"General"</span>, <span class="st">"Academic"</span>, <span class="st">"Vocational"</span>))</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  id <span class="ot">&lt;-</span> <span class="fu">factor</span>(id)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(educ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       id         gender         math          daysabs               prog    
- 1001   :  1   female:160   Min.   : 1.00   Min.   : 0.000   General   : 40  
- 1002   :  1   male  :154   1st Qu.:28.00   1st Qu.: 1.000   Academic  :167  
- 1003   :  1                Median :48.00   Median : 4.000   Vocational:107  
- 1004   :  1                Mean   :48.27   Mean   : 5.955                   
- 1005   :  1                3rd Qu.:70.00   3rd Qu.: 8.000                   
- 1006   :  1                Max.   :99.00   Max.   :35.000                   
- (Other):308                                                                 </code></pre>
-</div>
-</div>
-<hr>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(educ, <span class="fu">aes</span>(daysabs, <span class="at">fill =</span> prog)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span> <span class="fu">facet_grid</span>(prog <span class="sc">~</span> </span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>                                                                                     ., <span class="at">margins =</span> <span class="cn">TRUE</span>, <span class="at">scales =</span> <span class="st">"free"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="week09_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="week08_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>What are some initial takeaways from this plot?</p>
-<p>Without a guiding theory, where might our analyses take us?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform correlation test</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>result.cor <span class="ot">&lt;-</span> <span class="fu">cor.test</span>(data.cor<span class="sc">$</span>study_hours, data.cor<span class="sc">$</span>exam_scores)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print results</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result.cor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Pearson's product-moment correlation
+
+data:  data.cor$study_hours and data.cor$exam_scores
+t = 11.837, df = 98, p-value &lt; 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.6719016 0.8373412
+sample estimates:
+      cor 
+0.7670847 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "There is a significant correlation between study hours and exam scores. Correlation coefficient: 0.77"</code></pre>
+</div>
+</div>
 <hr>
+</section>
+<section id="one-categorical-and-one-numeric-variable-independent-samples-t-test" class="level3">
+<h3 class="anchored" data-anchor-id="one-categorical-and-one-numeric-variable-independent-samples-t-test">One Categorical and One Numeric Variable: Independent Samples t-test</h3>
+<p>Testing differences in exam scores between two teaching methods.</p>
+<p>View and visualize the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data.exam <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(method, scores)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data.exam)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   100 obs. of  2 variables:
+ $ method: chr  "Method A" "Method A" "Method A" "Method A" ...
+ $ scores: num  90.2 83.5 69.9 86.3 82.4 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data.exam, <span class="fu">aes</span>(<span class="at">x =</span> method, <span class="at">y =</span> scores, <span class="at">fill =</span> method)) <span class="sc">+</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Comparison of Scores between Method A and Method B"</span>,</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Method"</span>,</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Scores"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week08_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Perform the t-test.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform t-test</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>result <span class="ot">&lt;-</span> <span class="fu">t.test</span>(scores <span class="sc">~</span> method, <span class="at">data =</span> data.exam)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Print results</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  scores by method
+t = -1.8663, df = 95.633, p-value = 0.06506
+alternative hypothesis: true difference in means between group Method A and group Method B is not equal to 0
+95 percent confidence interval:
+ -8.1696395  0.2519092
+sample estimates:
+mean in group Method A mean in group Method B 
+              76.82506               80.78392 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "There is no significant difference in exam scores between the two teaching methods."</code></pre>
+</div>
+</div>
 
 
 </section>
@@ -1484,13 +1378,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../weeks/week08.html" class="pagination-link" aria-label="Week 8">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 8</span>
+      <a href="../weeks/week07.html" class="pagination-link" aria-label="Week 7">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 7</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../weeks/week10.qmd" class="pagination-link" aria-label="Week 10">
-        <span class="nav-page-text">Week 10</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../weeks/week09.html" class="pagination-link" aria-label="Week 9">
+        <span class="nav-page-text">Week 9</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,6 +1,6 @@
 ---
 title: "DATA 202 - Week 9"
-subtitle: "Hypothesis Testing"
+subtitle: "Notes on causal theories"
 author: "Nathan Alexander, PhD"
 institute: "Center for Applied Data Science and Analytics"
 format: 
@@ -21,176 +21,395 @@ format:
 
 ## Part I: Context
 
-What is your hypothesis? We begin today's class with a note about the different studies we are conducting and our hypotheses.
+![Illustration by Yuko Shimizu from [cigionline.org](https://www.cigionline.org/articles/as-geopolitical-blocs-vie-for-primacy-in-space-the-history-of-colonization-looms-large/){target="_blank"}.](img/wk8-a-3.jpg)
 
-Hypothesis testing requires a solid theory to make sense of the relevant options to develop a hypothesis. 
+Last week launched part 3 of our course: data and policy, as in public policies.
 
-As a fundamental statistical tool, it is important to be critical wen dealing with social issues and the standars of hypothesis testing. QuantCrit (or critical quantitative methodologies) have been developed as a tool to help guide researchers in the quantitative social sciences, and in education, to consider how hypotheses can reinforce or challenge existing power structues and biases.
+Our goals this week will be to consider variations of justice for your particular area(s) of interest and study, and to cite references that allow us to understand the meaning of social justice in your specific intellectual domains.
 
----
+------------------------------------------------------------------------
 
-Some basic but important real-world examples:
+### History, cause, and effect
 
-    Gender pay gap: Testing whether there's a significant difference in salaries between men and women in a particular industry.
-    
-    Racial disparities in healthcare: Examining if there's a significant difference in health outcomes between different racial groups.
-    
-    Educational achievement: Investigating the relationship between socioeconomic status and academic performance.
+Theory is often understood through an investigation of both the literature and the historical contexts surrounding a given issue. Take, for example, the legacies of colonization. As data and scientific developments expand into new fields, new questions arise as to what we can associate and how we understand these associations. For example, how does one theoretically relate a series of events from 150 years ago to a present set of conditions? What are the possibilities? What are the limitations? What are the cautionary tales?
 
-In each of these cases, it's essential to consider:
+Statistics was situated as a vehicle to understand and measure observations. As it becomes an ever popular vehicle to inform social justice discourses, the many real-world associations identified in society bring to mind the well-known and readily available cautionary tale:
 
-- Who formulated the hypothesis and why?
+> Correlation does not imply causation.
 
-- What assumptions are built into the statistical methods?
+This popular statement relates to the ability (or inability) to deduce cause-and-effect relationships.
 
-- How might the results be interpreted or misinterpreted?
+------------------------------------------------------------------------
 
-- What are the potential consequences of the findings?
+### Causation
 
----
+::: {.callout-note apperance="simple"}
+**Causality** is a fundamental concept in scientific inquiry and statistical analysis. It refers to the relationship between cause and effect, where one event (the cause) is understood to be responsible for another event (the effect). In statistics, causal inference aims to identify and quantify these cause-effect relationships.
+:::
 
-### Considering your work
+Causality can be defined as a relationship between two events where:
 
-As you think about your own work, what are some of the main hypothesis that you hold as it relates to the relationship between your study variables? What are the variable types? How might you measure and make sense of the relationship between the variables?
-    
+-   The cause precedes the effect in time.
+
+-   There is a consistent association between the cause and effect.
+
+-   Alternative explanations for the association have been ruled out.
+
+------------------------------------------------------------------------
+
+### Correlation
+
+In the traditional setting, correlation is framed as a statistical measure that relays the size and direction of the relationship between two or more variables. From a more critical framework, however, the idea of associations between variables and the attribution of relationships between variables must be both examined and interrogated.
+
+Associations should be understood and initiated from the root of a theoretical framework.
+
+If two variables are related, in a statistical context, we assume that their values *change* in some ordered fashion. These measures are often represented on an axis depicting the strength of the association.
+
+![Image from statlect.com](img/wk8-a-2.png)
+
+------------------------------------------------------------------------
+
+```{r}
+#| echo: false
+#| output: false
+#| warning: false
+
+library(ggplot2)
+library(gridExtra)
+
+# Function to generate correlated data
+generate_correlated_data <- function(n, r) {
+  x <- rnorm(n)
+  y <- r * x + sqrt(1 - r^2) * rnorm(n)
+  data.frame(x = x, y = y)
+}
+
+# Create plots for different correlation coefficients
+create_plot <- function(r) {
+  data <- generate_correlated_data(100, r)
+  ggplot(data, aes(x, y)) +
+    geom_point() +
+    geom_smooth(method = "lm", se = FALSE, color = "red") +
+    ggtitle(paste("r =", r)) +
+    theme_minimal() +
+    theme(plot.title = element_text(hjust = 0.25))
+}
+
+```
+
+```{r}
+#| echo: false
+#| output: true
+#| warning: false
+
+# Generate plots
+plots <- lapply(seq(-1, 1, 0.25), create_plot)
+
+# Arrange plots in a grid
+grid.arrange(grobs = plots, ncol = 3)
+```
+
+As one value of a first variable increases the other variable's values may also increase (positive relationship). Alternatively, as the value of one variable increases the other variable's values may decrease (negative relationship). Key questions to consider focus on how context and other factors shape any seeming bivariate relationship.
+
+------------------------------------------------------------------------
+
+#### Spurious correlation
+
+At the intersection of mathematics and statistics is the concept of the [*spurious correlation*](https://www.jstor.org/stable/42001453){target="_blank"} (Ward, 2013). A few examples:
+
+-   [Divorce rate has been found to correlate with margarine use](https://blogs.ams.org/blogonmathblogs/2017/04/10/divorce-and-margarine/){target="_blank"}.
+
+-   Ice cream sales have been correlated with:
+
+    -   Swimming deaths
+
+    -   Shark attacks
+
+    -   Crime rates
+
+-   The use of the popular site [Facebook has been correlated with diminished well-being](https://academic.oup.com/jcmc/article/21/4/265/4161784){target="_blank"}.
+
+These association help us see the need to investigate relationships further. What are possible unexplained relationships in these associations? We identify potential spurious variables when developing theoretical ideas about associations.
+
+------------------------------------------------------------------------
+
+### Causation
+
+Causality ([See Sloman and Acnado (2015)](https://www.annualreviews.org/doi/full/10.1146/annurev-psych-010814-015135)) is a representation and principle of cause and effect. There are many different viewpoints of causation across disciplines and fields of study. Terminology matters in how one frames cause and effect.
+
+There are four possible relationships between two variables:
+
+-   X causes Y
+
+-   Y causes X
+
+-   X and Y are both caused by Z
+
+-   X is not related to Y
+
+While these relationships may exist in some combination, it is important to frame their differences.
+
+------------------------------------------------------------------------
+
+### Associating X and Y
+
+Our initial framing might directly link the variables `X` and `Y`.
+
+First, we have the association X causes Y.
+
+```{mermaid}
+%%| echo: false
+graph LR
+  A[X] --> B[Y]
+```
+
+Next, we have the association Y causes X.
+
+```{mermaid}
+%%| echo: false
+graph LR
+  A[Y] --> B[X]
+```
+
+Finally, we have the association X causes Y and Y causes X.
+
+```{mermaid}
+%%| echo: false
+graph LR
+  A[X] <--> B[Y]
+  B --> A
+```
+
+------------------------------------------------------------------------
+
+### Framing spurious relationships
+
+However, after further reading, we may find that we need to integrate a third factor Z.
+
+In this context, a third factor (the "third-cause fallacy") represents a spurious relationship.
+
+```{mermaid}
+%%| echo: false
+graph LR
+  A[X]
+  B[Y]
+  C[Z]
+```
+
+Spurious relationships denote an observed or hypothesized association.
+
+There are important differences in how we depict and deal with third factor associations.
+
+------------------------------------------------------------------------
+
+### Confounding variables
+
+Confounding is a causal concept that focuses on spurious or distorted associations.
+
+Below, Z is considered a [confounding variable](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4017459/){target="_blank"}.
+
+```{mermaid}
+%%| echo: false
+graph TD
+  A[Z] --> B[X]
+  A --> C[Y]
+```
+
+-   Z is related to both the independent, $X$, and dependent, $Y$, variables in the causal sense.
+
+-   Your analysis should examine if the relationship between $X$ and $Y$ holds.
+
+-   These interactions are described as *spurious associations*.
+
+------------------------------------------------------------------------
+
+### Mediating variables
+
+A [mediating variable](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4165346/){target="_blank"} explains the process by which two variables are related.
+
+```{mermaid}
+%%| echo: false
+graph LR
+  A[X] --> B[Z]
+  B --> C[Y]
+```
+
+-   Z provides the *mechanism* to relate the independent, $X$, and dependent, $Y$, variables.
+
+------------------------------------------------------------------------
+
+### Moderating variables
+
+A [moderating variable](https://www.researchgate.net/profile/Hugh-Arnold/publication/240438039_Moderator_Variables_A_Clarification_of_Conceptual_Analytic_and_Psychometric_Issues/links/5ee391fb92851ce9e7dce2ae/Moderator-Variables-A-Clarification-of-Conceptual-Analytic-and-Psychometric-Issues.pdf){target="_blank"} explains the strength by which two variables are related.
+
+```{mermaid}
+%%| echo: false
+graph LR
+  A[X] --> B[Z]
+  A --> C[Y]
+  B --> C
+```
+
+-   Z explains the *strength of association* between the independent, $X$, and dependent, $Y$, variables.
+
+Let us look at a concrete example.
+
+------------------------------------------------------------------------
+
 ## Part II: Content
 
-Null and Alternative Hypotheses
+The methods used to collect sample data is extremely important.
 
-        Null hypothesis (H₀): Statement of no effect or no difference
-        
-        Alternative hypothesis (H₁): Statement of an effect or difference
+If sample data are not collected in an appropriately, any resulting statistical analyses will be futile. As a result, planning a study by identifying research questions, the population and sample of interest, and considering the types of methods that will be used to analyze data that is collected are all essential parts in the statistical data analysis process.
 
----
+------------------------------------------------------------------------
 
-Test Statistic
+#### More on sampling methods
 
-        A measure that allows us to quantify the difference between the observed data and what we'd expect under the null hypothesis
-        
-        Common test statistics: z-score, t-statistic, F-statistic, chi-square statistic
+First, let's revisit and describe the different sampling methods:
 
----
+There are two broad categories of selecting members of a population to generate sample data: probability sampling and non-probability sampling.
 
-Probability Distribution
+Within these two broad categories are other methods based on the needs of the study. Each of these methods is used to support statistical data analysis with some methods providing stronger evidence than others.
 
-        The distribution of the test statistic under the null hypothesis
-        
-        Examples: Normal distribution, t-distribution, F-distribution, chi-square distribution
+::: callout-DEFINITIONS
 
----
+Probability sampling
 
-p-value
+:   involves the random selection of subjects in such a way that every member of a sample has the sample probability of being selected.
 
-    The probability of obtaining test results at least as extreme as the observed results, assuming the null hypothesis is true
-    
-    Calculated as: p-value = P(test statistic ≥ observed value | H₀ is true)
+Non-probability sampling
 
----
+:   involves the use of criteria to select data that is not based on an equal likelihood of selection.
+:::
 
-Significance Level (α)
+------------------------------------------------------------------------
 
-    The threshold below which we reject the null hypothesis
-    
-    Common values: 0.05, 0.01
+##### Probability sampling methods
 
----
+-   **Simple random sample** of $n$ subjects ensures that every possible sample of the same size $n$ has the same chance or likelihood of being chosen.
 
-Decision Rule
+-   **Systematic sample** of $n$ subjects involves selecting every $k$th subject on some regular interval.
 
-    Reject H₀ if p-value ≤ α
-    
-    Fail to reject H₀ if p-value > α
+-   **Stratified sample** involves dividing the population up into strata (groups) with the same characteristics and then randomly sampling within those strata.
 
----
+-   **Cluster sample** involves partitioning the population into clusters (groups), randomly selecting some clusters, and then selecting all members of the selected clusters.
 
-Type I and Type II Errors
+------------------------------------------------------------------------
 
-    Type I error: Rejecting H₀ when it's actually true (false positive)
-    
-    Type II error: Failing to reject H₀ when it's actually false (false negative)
+##### Non-prbability sampling methods
 
----
+-   **Convenience sample** is data gathered from the most accessible or convenient source. Although this is easy and efficient, the data cannot produce generalizable results.
 
-Power
+-   **Purposive sample** is data gathered based on the purposes of the research or the specific research question. This strategy includes clear criteria and rationale for inclusion.
 
-    The probability of correctly rejecting a false null hypothesis
-    
-    Power = 1 - P(Type II error)
+-   **Snowball sample** is data gathered via recruitment by the other participants of a study. The number of subjects included "snowballs" as more contacts are generated.
+
+------------------------------------------------------------------------
+
+###### Multistage sampling
+
+In larger studies, sometimes multistage sampling procedures are used to generate data. In this design, different samples are selected in different stages, and each stage might use a different sampling method. The end result may represent a complicated sampling design but it is often simpler and faster than some designs, such as a simple random sample.
+
+------------------------------------------------------------------------
+
+**Missing Data**
+
+Data can be missing from a set, and the total number of elements can differ between two or more sets.
+
+The differences in the number of elements can be due to a host of reasons, but often it is missing data. A data value can be *missing at random* or *not missing at random*. The amount of information missing from a data set can have a minimal impact or a major impact on a statistical analysis.
+
+::: {.callout-note apperance="simple"}
+**Note -- Missing data**
+
+A data value is *missing completely at random* if the likelihood of it being missing is independent of its value or any other values in the data set is just as likely to be missing.
+
+A data value is *not missing at random* if the missing value is related to the reason it is missing.
+:::
+
+------------------------------------------------------------------------
 
 ## Part III: Code
 
-### Two Categorical Variables: Chi-Square Test of Independence
+### Crime statistics
+
+Data from 1973 on violent crime rates by US State in the `USArrests` data set.
+
+Values are per 100,000 residents for assault, murder, and rape.
 
 ```{r}
-# Example: Testing association between gender and voting preference
-
-# Create sample data
-gender <- c(rep("Male", 100), rep("Female", 100))
-vote <- c(rep("Party A", 55), rep("Party B", 45), rep("Party A", 65), rep("Party B", 35))
-data <- data.frame(gender, vote)
-
-# Perform chi-square test
-result <- chisq.test(table(data$gender, data$vote))
-
-# Print results
-print(result)
-
-# Interpret results
-if (result$p.value < 0.05) {
-  print("There is a significant association between gender and voting preference.")
-} else {
-  print("There is no significant association between gender and voting preference.")
-}
+head(USArrests)
+tail(USArrests)
 ```
 
----
-
-### Two Numeric Variables: Pearson Correlation Test
+------------------------------------------------------------------------
 
 ```{r}
-# Example: Testing correlation between study hours and exam scores
-
-# Create sample data
-study_hours <- rnorm(100, mean = 20, sd = 5)
-exam_scores <- 2 * study_hours + rnorm(100, mean = 0, sd = 10)
-data <- data.frame(study_hours, exam_scores)
-
-# Perform correlation test
-result <- cor.test(data$study_hours, data$exam_scores)
-
-# Print results
-print(result)
-
-# Interpret results
-if (result$p.value < 0.05) {
-  print(paste("There is a significant correlation between study hours and exam scores. Correlation coefficient:", round(result$estimate, 2)))
-} else {
-  print("There is no significant correlation between study hours and exam scores.")
-}
+cor(USArrests$UrbanPop, USArrests$Murder)
+plot(USArrests$UrbanPop, USArrests$Murder,
+     xlab = "Percent living in urban areas",
+     ylab = "Murders per 100,000 residents")
 ```
 
----
+What are some initial takeaways from this plot?
 
-### One Categorical and One Numeric Variable: Independent Samples t-test
+Without a guiding theory, where might our analyses take us?
+
+------------------------------------------------------------------------
+
+### Education data
+
+This data is borrowed from the folks at UCLA's Statistical Methods and Data Analytics office.
 
 ```{r}
-# Example: Testing difference in exam scores between two teaching methods
+#| echo: true
+#| output: false
+#| warning: false
+require(foreign)
+require(ggplot2)
+require(MASS)
 
-# Create sample data
-method <- c(rep("Method A", 50), rep("Method B", 50))
-scores <- c(rnorm(50, mean = 75, sd = 10), rnorm(50, mean = 80, sd = 10))
-data <- data.frame(method, scores)
-
-# Perform t-test
-result <- t.test(scores ~ method, data = data)
-
-# Print results
-print(result)
-
-# Interpret results
-if (result$p.value < 0.05) {
-  print("There is a significant difference in exam scores between the two teaching methods.")
-} else {
-  print("There is no significant difference in exam scores between the two teaching methods.")
-}
+educ <- read.dta("https://stats.idre.ucla.edu/stat/stata/dae/nb_data.dta")
 ```
+
+------------------------------------------------------------------------
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
+head(educ)
+tail(educ)
+
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
+
+educ <- within(educ, {
+  prog <- factor(prog, levels = 1:3, labels = c("General", "Academic", "Vocational"))
+  id <- factor(id)
+})
+
+summary(educ)
+```
+
+------------------------------------------------------------------------
+
+```{r}
+#| echo: true
+#| output: true
+#| warning: false
+ggplot(educ, aes(daysabs, fill = prog)) + geom_histogram(binwidth = 1) + facet_grid(prog ~ 
+                                                                                     ., margins = TRUE, scales = "free")
+```
+
+What are some initial takeaways from this plot?
+
+Without a guiding theory, where might our analyses take us?
+
+------------------------------------------------------------------------
