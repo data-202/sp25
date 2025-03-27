@@ -1,5 +1,5 @@
 ---
-title: "DATA 202 - Week 11"
+title: "DATA 202 - Week 10"
 subtitle: "Modeling social in/justice"
 author: "Nathan Alexander, PhD"
 institute: "Center for Applied Data Science and Analytics"
@@ -33,7 +33,7 @@ Over the next several weeks, our goals will relate to the various ways we can in
 W. E. B. Du Bois and Ida B. Wells-Barnett
 :::
 
----
+------------------------------------------------------------------------
 
 Following in line from our discussions of W.E.B. Du Bois and his infamous infographics, our next example will be based on the work of [Ida B. Wells-Barnett](https://www.womenshistory.org/education-resources/biographies/ida-b-wells-barnett) (1862-1931), a late 19th century and early 20th century activist and research journalist.
 
@@ -429,6 +429,4 @@ graph LR
 
 #### Research questions
 
-With our conceptual framing and backing theoretical work, we can proceed to examine exploratory analyses on the data. During the exploratory phase of analysis, a nice opportunity is presented that will allow you to examine the data is to generate a series of discrete research questions that help you make associations between various components of your data.
-
-### **Next up**: Week 12
+With our conceptual framing and backing theoretical work, we can proceed to examine exploratory analyses on the data. During the exploratory phase of analysis, a nice opportunity is presented that will allow you to examine the data and generate a series of research questions that help you make associations between various components of your data.
