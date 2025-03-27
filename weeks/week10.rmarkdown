@@ -19,6 +19,11 @@ format:
     incremental: false
 ---
 
+
+
+
+
+
 ## Part I: Context
 
 Over the next several weeks, our goals will relate to the various ways we can integrate social and theoretical concepts (the context) into decisions around measurement (the content) and analysis (the code). Importantly, we will examine various historical contexts to make sense of what has been done. In doing so, we will make sense on how to build on theory using context.
@@ -141,6 +146,11 @@ The *Washington Post* makes the `fatal force` data publicly accessible on their 
 
 We will need to install packages and/or load libraries to import and explore the data.
 
+
+
+
+
+
 ```{r}
 #| echo: true
 #| output: false
@@ -153,7 +163,17 @@ library(tidyverse) # collection of essential packages for data science
 library(dplyr) # the dplyr package makes data manipulation easier
 ```
 
+
+
+
+
+
 We then load the data directly into R from GitHub.
+
+
+
+
+
 
 ```{r}
 #| echo: true
@@ -161,6 +181,11 @@ We then load the data directly into R from GitHub.
 #| warning: false
 fatal <- read.csv("https://raw.githubusercontent.com/washingtonpost/data-police-shootings/master/v2/fatal-police-shootings-data.csv")
 ```
+
+
+
+
+
 
 ------------------------------------------------------------------------
 
@@ -170,6 +195,11 @@ We will first turn the file into a `tibble` using the `as_tibble` function.
 
 From there, we will use the `glimpse()`, `names()`, and `str()` functions to understand the data.
 
+
+
+
+
+
 ```{r}
 #| echo: true
 #| output: true
@@ -178,11 +208,21 @@ From there, we will use the `glimpse()`, `names()`, and `str()` functions to und
 fatal <- as_tibble(fatal) # turn data into a tibble
 ```
 
+
+
+
+
+
 Let us take note of the variables and variable types.
 
 ------------------------------------------------------------------------
 
 Get a glimpse of the data.
+
+
+
+
+
 
 ```{r}
 #| echo: true
@@ -192,9 +232,19 @@ Get a glimpse of the data.
 glimpse(fatal)
 ```
 
+
+
+
+
+
 ------------------------------------------------------------------------
 
 View the variable names.
+
+
+
+
+
 
 ```{r}
 #| echo: true
@@ -204,9 +254,19 @@ View the variable names.
 names(fatal)
 ```
 
+
+
+
+
+
 ------------------------------------------------------------------------
 
 Understand the structure of the tibble.
+
+
+
+
+
 
 ```{r}
 #| echo: true
@@ -216,14 +276,29 @@ Understand the structure of the tibble.
 str(fatal)
 ```
 
+
+
+
+
+
 ------------------------------------------------------------------------
 
 We should also view the `head()` and `tail()` of the data.
+
+
+
+
+
 
 ```{r}
 head(fatal)
 tail(fatal)
 ```
+
+
+
+
+
 
 What do you notice? What do you wonder?
 
@@ -259,9 +334,19 @@ A codebook for the data we have uploaded can be found at the bottom of the datab
 
 Let's first remind ourselves of the variables and variable types.
 
+
+
+
+
+
 ```{r}
 str(fatal)
 ```
+
+
+
+
+
 
 What do you notice? What do you wonder?
 
@@ -287,6 +372,11 @@ Let's fix a few variables based on our previous observations and the codebook.
 
 ------------------------------------------------------------------------
 
+
+
+
+
+
 ```{r}
 #| echo: true
 #| output: true
@@ -306,6 +396,11 @@ Let's fix a few variables based on our previous observations and the codebook.
   fatal
 ```
 
+
+
+
+
+
 ------------------------------------------------------------------------
 
 ##### Ancillary explorations
@@ -314,10 +409,20 @@ Sometimes when analyzing data, you may want to gather quick information.
 
 For example, let's say I also want to get a count of fatal shootings by year.
 
+
+
+
+
+
 ```{r}
 # get counts by year
 fatal %>% count(year)
 ```
+
+
+
+
+
 
 I was able to do this when I added the `year` variable to the dataframe.
 
@@ -329,9 +434,19 @@ What do you notice? What do you wonder?
 
 We should check the structure of our data again.
 
+
+
+
+
+
 ```{r}
 str(fatal)
 ```
+
+
+
+
+
 
 While our initial changes are noted, observe the `chr` (character) variable type.
 
@@ -339,11 +454,21 @@ While our initial changes are noted, observe the `chr` (character) variable type
 
 We may want to change these into `fct` (factor) variables types.
 
+
+
+
+
+
 ```{r}
 fatal_factor <- fatal %>% 
   mutate_if(is.character, as.factor)
 str(fatal_factor)
 ```
+
+
+
+
+
 
 Take note of the changes. It seems that this method was not the best solution.
 
@@ -357,12 +482,22 @@ The answers can be found in the Fatal Force [codebook](https://github.com/washin
 
 For efficiency, we will make changes to variables of interest and drop all missing values.
 
+
+
+
+
+
 ```{r}
 fatal %>% 
   mutate_at(c('threat_type', 'flee_status', 'armed_with', 'city', 'county', 'gender', 'race'), as.factor) %>%
   drop_na() -> fatal_clean # generate a new `clean` dataframe
 str(fatal_clean)
 ```
+
+
+
+
+
 
 However, with more time, we should inspect the data further and change all variables.
 
@@ -376,17 +511,37 @@ I will use the `sapply()` function from `Lab 1` to check for missing values.
 
 First, we'll check our original data.
 
+
+
+
+
+
 ```{r}
 sapply(fatal, function(x) sum(is.na(x)))
 ```
+
+
+
+
+
 
 ------------------------------------------------------------------------
 
 Then we'll examine our cleaned data.
 
+
+
+
+
+
 ```{r}
 sapply(fatal_clean, function(x) sum(is.na(x)))
 ```
+
+
+
+
+
 
 ------------------------------------------------------------------------
 
@@ -394,9 +549,19 @@ sapply(fatal_clean, function(x) sum(is.na(x)))
 
 We will begin to explore with a summary of our cleaned data.
 
+
+
+
+
+
 ```{r}
 summary(fatal_clean)
 ```
+
+
+
+
+
 
 ------------------------------------------------------------------------
 
@@ -404,12 +569,22 @@ summary(fatal_clean)
 
 With the clean data, I may be interested in getting counts by `state` and then `year` as we explore.
 
+
+
+
+
+
 ```{r}
 # get counts by state then year
 fatal_clean %>% 
   count(state, year)
 
 ```
+
+
+
+
+
 
 How might this output support our model development?
 
@@ -421,12 +596,23 @@ Based on our explorations up to this point, what data and relationships might yo
 
 Consider a basic path diagram to start and then build on your diagram using your theoretical constructions. Recall from previous lectures our discussions about variable types and their relationships in path diagrams (e.g., moderating vs. mediating).
 
+
+
+
+
+
 ```{mermaid}
 %%| echo: false
 graph LR
   A[X] --> B[Y]
 ```
 
+
+
+
+
+
 #### Research questions
 
 With our conceptual framing and backing theoretical work, we can proceed to examine exploratory analyses on the data. During the exploratory phase of analysis, a nice opportunity is presented that will allow you to examine the data and generate a series of research questions that help you make associations between various components of your data.
+
