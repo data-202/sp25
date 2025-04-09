@@ -2072,5 +2072,27 @@
     "title": "DATA 202 - Week 10",
     "section": "Part III: Code",
     "text": "Part III: Code\nWashington Post Fatal Force data\nThe main site for the Fatal Force data can be found here.\nThe Washington Post makes the fatal force data publicly accessible on their website and they provide a direct link to their GitHub repository (or repo). To access the data, we will pull it directly into R from Github.\nLoad the data\nWe will need to install packages and/or load libraries to import and explore the data.\n\n# install packages\ninstall.packages(\"tidyverse\", repos = \"http://cran.us.r-project.org\")\n\n# load libraries\nlibrary(tidyverse) # collection of essential packages for data science\nlibrary(dplyr) # the dplyr package makes data manipulation easier\n\nWe then load the data directly into R from GitHub.\n\nfatal &lt;- read.csv(\"https://raw.githubusercontent.com/washingtonpost/data-police-shootings/master/v2/fatal-police-shootings-data.csv\")"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to DATA 202",
+    "section": "",
+    "text": "Part\nWeek\nDay\nTopics\nLabs\nPapers\nMain reading\n\n\n\n\nI\n1\nWed, Jan 15\nIntroduction\nLab 0\n\nCase study 1\n\n\n\n2\nWed, Jan 22\nFoundations\n\n\nPelham (2013, ch. 1)\n\n\n\n3\nWed, Jan 29\nTheory construction\n\n\n\n\n\n\n4\nWed, Feb 5\nProbability theory\n\n\nCase study 2: pt. 1 & pt. 2\n\n\nII\n5\nWed, Feb 12\nUnivariate analysis\nLab 1\n\nFrisby (2024)\n\n\n\n6\nWed, Feb 19\nBivariate analysis\n\n\n\n\n\n\n7\nWed, Feb 26\nExploratory analysis\n\nPaper 1\n\n\n\n\n\nWed, Mar 5\nSpring Break\n\n\n\n\n\n\n8\nWed, Mar 12\nHypothesis testing\n\n\n\n\n\nIII\n9\nWed, Mar 19\nNotes on causal theories\n\n\nCase study 3 files\n\n\n\n10\nWed, Mar 26\nModeling social in/justice\nLab 2\n\n\n\n\n\n11\nWed, Apr 2\nOn regression\n\n\n\n\n\n\n12\nWed, Apr 9\nMore on regression\n\n\n\n\n\nIV\n13\nWed, Apr 16\nStatistical learning\n\nPaper 2\nCase study 4 files\n\n\n\n14\nWed, Apr 23\nOverview of additional models",
+    "crumbs": [
+      "Course information",
+      "Course landing page"
+    ]
+  },
+  {
+    "objectID": "index.html#site-description",
+    "href": "index.html#site-description",
+    "title": "Welcome to DATA 202",
+    "section": "Site Description",
+    "text": "Site Description\nThe pages on this site outline the coding components of the DATA 202: Statistically Measuring and Modeling Social Justice course at Howard University, taught by me: Professor Nathan Alexander.\nThe information on this page will serve as a technical companion to our Canvas site.\nThis page will support you in our course in the following ways:\n\nThis page will help you work with data sets and complete small tasks over time.\nThis page will walk you through the measurement aspect of research questions relevant to modeling issues of social justice.\nThis page will help you integrate mathematical ideas and technical formulas into your work.\nThis page will support your use of theory in your statistical practice, and increase your ability to document reproducible code around a set of research questions.\n\nOur canvas site (click here) contains readings and is where you will submit all assignments.\nThis site should be paired with Canvas to help you complete course assignments.\nAnd just for good measure: all assignments should be turned in via Canvas.\nWhen turning in assignments on Canvas:\n\nGenerally, PDF submissions are the way to go.\nI will not download any files not uploaded to Canvas. I will only click on a clearly visible Github repository (i.e., no shortened or bit.ly links). Article citations that include DOIs are preferred.\nWe will discuss Quarto Markdown files which integrate code, formulas, and text. Quarto is actually how I created this site for our course, and it is a great way to communicate your technical ideas.\nThis is a Canvas companion site/page (I’ll use these terms interchangeably) and it will serve as your guide to completing all technical assignments.\n\n\nGiving credit\nThe below websites were used when building this course site. I am thankful for those who have provided open source resources such as these that allow others to generate new products.\n\nDuke University’s STAT 101 course site\nNoli Brazil’s Quantitative Methods in Community Research\n\n\n\nNext up: Overview\nThe overview in the next section will walk you through the technical flow of the course.\nLike this section, a preview of forthcoming topics will be included at the bottom of each page; this means that you can treat this site like a textbook that you would read in order from start to finish. Though I encourage you to explore what else is out there and make use of other resources. That said, submissions should follow the formal guidelines outlined on our syllabus, Canvas, and this site.\n\nThe syllabus provides a high-level view of the course.\nCanvas is the go-to for submissions and provides readings and assignments.\nThis course site provides technical items and code to help you complete your assignments.\n\nComing up next are the four parts of the course and an overview of the assignments for the term. Course topics are outlined in more detail and integrated into the assignment submission schedule on the next page; see you over there!",
+    "crumbs": [
+      "Course information",
+      "Course landing page"
+    ]
   }
 ]
