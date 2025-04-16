@@ -259,7 +259,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weeks/week11.qmd" class="sidebar-item-text sidebar-link">
+  <a href="../weeks/week11.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 11</span></a>
   </div>
 </li>
@@ -724,8 +724,8 @@ X-squared = 10.259, df = 8, p-value = 0.2473</code></pre>
 <p>RQ2: How much variance in salary can be explained by gender and job title after controlling for years of experience?</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-ffb42c048a1dcc081ac7" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-ffb42c048a1dcc081ac7">{"x":{"diagram":"\ndigraph relationships {\n  graph [layout = dot, rankdir = LR]\n\n  # Define nodes\n  node [shape = ellipse, style = filled]\n  X1 [label = \"gender (X1)\", color = lightblue]\n  X2 [label = \"job title (X2)\", color = lightblue]\n  X3 [label = \"experience (X3)\", color = lightblue]\n  Y [label = \"annual salary (Y)\", fillcolor = lightblue, fontcolor = black]\n\n  # Define edges (relationships)\n  X1 -> Y\n  X2 -> Y\n  X3 -> Y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-85fe799df49765f0710c" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-85fe799df49765f0710c">{"x":{"diagram":"\ndigraph relationships {\n  graph [layout = dot, rankdir = LR]\n\n  # Define nodes\n  node [shape = ellipse, style = filled]\n  X1 [label = \"gender (X1)\", color = lightblue]\n  X2 [label = \"job title (X2)\", color = lightblue]\n  X3 [label = \"experience (X3)\", color = lightblue]\n  Y [label = \"annual salary (Y)\", fillcolor = lightblue, fontcolor = black]\n\n  # Define edges (relationships)\n  X1 -> Y\n  X2 -> Y\n  X3 -> Y\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -1004,8 +1004,8 @@ P value adjustment method: bonferroni </code></pre>
 <p>RQ2: Are there significant differences in salary distributions across job titles when accounting for gender and experience?</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-f8724df5ca8ec80eb67c" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-f8724df5ca8ec80eb67c">{"x":{"diagram":"\n  digraph variables_diagram {\n    graph [rankdir = LR]\n    \n    node [shape = ellipse, style = filled, fillcolor = lightblue]\n    gender [label = \"Gender\"]\n    job_title [label = \"Job Title\"]\n    \n    node [shape = ellipse, style = filled, fillcolor = lightyellow]\n    salary [label = \"Annual Salary\"]\n    experience [label = \"Years of Experience\"]\n    \n    gender -> salary\n    gender -> experience\n    job_title -> salary\n    job_title -> experience\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-e9ad284b639f928c4a00" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-e9ad284b639f928c4a00">{"x":{"diagram":"\n  digraph variables_diagram {\n    graph [rankdir = LR]\n    \n    node [shape = ellipse, style = filled, fillcolor = lightblue]\n    gender [label = \"Gender\"]\n    job_title [label = \"Job Title\"]\n    \n    node [shape = ellipse, style = filled, fillcolor = lightyellow]\n    salary [label = \"Annual Salary\"]\n    experience [label = \"Years of Experience\"]\n    \n    gender -> salary\n    gender -> experience\n    job_title -> salary\n    job_title -> experience\n  }\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <section id="manova" class="level3">

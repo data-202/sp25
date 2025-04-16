@@ -85,7 +85,7 @@ ggplot(pay_gap_data, aes(x = years_experience, y = annual_salary)) +
 cor.test(pay_gap_data$annual_salary, pay_gap_data$years_experience)
 ```
 
-### Categorical-Numeric relationships 
+### Categorical-Numeric relationships
 
 ```{r, message=F, warning=F}
 ## Gender vs Salary
@@ -118,7 +118,7 @@ pay_gap_data %>%
   theme(legend.position = "none")
 ```
 
-### Categorical-Categorical relationship 
+### Categorical-Categorical relationship
 
 ```{r, message=F, warning=F}
 # bar chart of the categorical relationships
@@ -156,7 +156,7 @@ ggplot(pay_gap_data, aes(x = years_experience, y = annual_salary, color = job_ti
   labs(title = "Experience-Salary Relationship by Job Title")
 ```
 
----
+------------------------------------------------------------------------
 
 # Multiple Variable Analysis
 
@@ -307,7 +307,7 @@ ggplot(pay_gap_data, aes(x = years_experience, y = annual_salary)) +
   labs(title = "Experience-Salary Relationship by Gender Group")
 ```
 
----
+------------------------------------------------------------------------
 
 # Multivariate Analysis
 
@@ -315,7 +315,7 @@ Multivariate analysis and multiple variable analysis are often confused, but the
 
 ## Research question
 
-RQ1: Do gender and job title jointly influence both salary and years of experience? 
+RQ1: Do gender and job title jointly influence both salary and years of experience?
 
 RQ2: Are there significant differences in salary distributions across job titles when accounting for gender and experience?
 
@@ -342,7 +342,7 @@ grViz("
 
 ### MANOVA
 
-RQ1: Do gender and job title jointly influence both salary and years of experience? 
+RQ1: Do gender and job title jointly influence both salary and years of experience?
 
 To answer RQ1, we'll first run a multiple analysis of variance (MANOVA) on our data.
 

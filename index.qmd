@@ -17,10 +17,10 @@ subtitle: "Statistically Measuring and Modeling Social Justice"
 |  | [8](weeks/week08.html) | Wed, Mar 12 | [Hypothesis testing](weeks/week08-slides.html) |  |  |  |
 | III | [9](weeks/week09.html) | Wed, Mar 19 | [Notes on causal theories](weeks/week09-slides.html) |  |  | Case study 3 files |
 |  | [10](weeks/week10.html) | Wed, Mar 26 | [Modeling social in/justice](weeks/week10-slides.html) | [Lab 2](labs/lab2.html) |  |  |
-|  | [11](weeks/week11.html) | Wed, Apr 2 | [On regression](weeks/week11-slides.html) |  |  |  |
-|  | [12](weeks/week12.html) | Wed, Apr 9 | [More on regression](weeks/week12-slides.html) |  |  |  |
-| IV | [13](weeks/week13.html) | Wed, Apr 16 | [Statistical learning](weeks/week13-slides.html) |  | [Paper 2](papers/paper2.html) | Case study 4 files |
-|  | [14](weeks/week14.html) | Wed, Apr 23 | [Overview of additional models](weeks/week14-slides.html) |  |  |  |
+|  | [11](weeks/week11.html) | Wed, Apr 2 | [Regression](weeks/week11-slides.html) |  |  |  |
+|  | [12](weeks/week12.html) | Wed, Apr 9 | [Multiple variable analysis](weeks/week12-slides.html) |  |  |  |
+| IV | [13](weeks/week13.html) | Wed, Apr 16 | [Writing critical statistics](weeks/week13-slides.html) |  | [Paper 2](papers/paper2.html) | Case study 4 files |
+|  | [14](weeks/week14.html) | Wed, Apr 23 | [Statistical learning](weeks/week14-slides.html) |  |  |  |
 :::
 
 ## Site Description

@@ -1,6 +1,6 @@
 ---
 title: "DATA 202 - Week 13"
-subtitle: "Multivariate analysis"
+subtitle: "Writing Critical Statistics"
 author: "Nathan Alexander, PhD"
 institute: "Center for Applied Data Science and Analytics"
 format: 
@@ -11,209 +11,60 @@ format:
     width: 1600
     smaller: false
     scrollable: true
-    slide-number: c/t #< collapsed/total
+    slide-number: c/t #< collapsted/total
     logo: "img/howard-logo.jpg"
     footer: "[Course Data GitHub](https://github.com/data-202)"
     toc: false
-    theme: simple
     echo: true
     incremental: false
+    self-contained: true
 ---
 
-## Part I: Context
+## Part I: Content
 
-### Framing social justice
-
-Multivariate analyses may require that we consider various intersections of social justice. Namely, rather than a single lens on an issue, we may be required to take an intersectional perspective with regards to a given *set* of social issues.
-
-There are many different definitions of social justice. Through our course, we have examined different data and statistical analyses to better engage the various connections when measuring and modeling social justice. However, it is important to develop more specific ideations and frameworks as we delve deeper into our selection of various methodologies to explore data.
-
-Earlier, we considered *theory construction* as one method to examine distinct and interrelated concepts in the development of a statistical study. Theory construction, together with the importance of understanding the phenomenon of **social justice** requires that we review some of the key concepts and principles that can be accented by data analysis.
-
-Importantly, we generally want to prioritize theory and context before methodology.
+Open session to support you in your final data analysis.
 
 ------------------------------------------------------------------------
 
-### Understanding social justice
+### Final Paper Rubric
 
-When considering the different definitions of social justice, we want to consider the distinction between individual and collective frameworks for justice. This distinction allows us to explore the relationships between social issues and equality, as a foundational principle to understanding difference. However, when we consider the historical context, we are often required to extend our analyses beyond the blanket expressions for equality.
+The rubric for the final paper will be used to assess your growth over the semester. In addition to the requirements outlined in the assignment, the rubric is used to assess the overall quality of the submission.
 
-Equality and equity are two concepts that are often discussed in the context of social justice and fairness. While they are related, they have distinct meanings.
+| Criteria | Exemplary | Good | Acceptable | Incomplete |
+|---------------|---------------|---------------|---------------|---------------|
+| Purpose | The central purpose or argument is readily apparent. | The writing has a clear purpose or argument, but may sometimes digress. | The central purpose or argument is not consistently clear throughout the paper. | The purpose or argument is generally unclear. |
+| Content | The focus of the paper relates to a relevant social issue and includes citations and support from the literature. | The content of the paper provides reasonable support for a social issue but may sometimes be unclear. | The content of the paper is not consistent in its relation to a social issue. | The content of the paper is generally not related to a social issue. |
+| Organization | The ideas are arranged logically and the paper contains the required sections as outlined in the paper assignment. | The ideas are arranged logically for the most part but may not include all required details or sections. | The ideas are arranged in some logical fashion but fail to provide the required details and sections. | The ideas are not arranged logically and fail to attend to the required sections as outlined in the paper assignment. |
+| R Code | All code is original and directly relates to the logic model and theory. | The code is original but may sometimes digress from the logic model and theory. | The code is somewhat original but fails to to relate to the logic model or theory. | The code is not original and does not relate to the logical model and theory. |
 
-------------------------------------------------------------------------
-
-::: {.callout-caution icon="false"}
-### **Definitions**: Equality vs. Equity
-
-**Equality**: Equality refers to the state of being equal, particularly in terms of rights, opportunities, and treatment. It emphasizes providing everyone with the same resources, regardless of their circumstances or needs. In other words, equality means that everyone is treated identically, without discrimination or favoritism. The goal of equality is to ensure fairness and eliminate unfair advantages or disadvantages.
-
-**Equity**: Equity is about fairness and justice by taking into account the unique circumstances and needs of individuals, as well as the historical contexts. It recognizes that not everyone starts from the same place and that treating everyone equally may not result in true fairness. Equity aims to provide individuals with the resources and support they need to overcome systemic disadvantages and achieve equality of outcome. It involves allocating resources and opportunities based on the specific needs and circumstances of individuals or groups.
-:::
-
-More generally, equality focuses on treating everyone the same, while equity emphasizes fairness by addressing individual or group-specific disadvantages and providing resources accordingly. Both concepts play an important role in promoting social justice and creating a more equitable society.
-
-![A surface explanation of equality vs. equity. Image from NACEweb.org](img/wk13-a-1.png)
-
-------------------------------------------------------------------------
-
-#### Principles of social justice
-
-There are many ways to take a theoretical approach to social justice, and often too many to list. As a result, it may be helpful for us to consider the principles of social justice as a framework to adapt your specific analyses (using real-world data) and your theoretical framework to a subset of these principles.
-
-| Principle | Component 1 | Component 2 | Component 3 |
-|------------------|------------------|------------------|------------------|
-| Fairness | Equal opportunity | Systemic disadvantage | Reducing inequality |
-| Solidarity | Social cohesion | Self-determination | Collective responsibility |
-| Dignity | Human rights | Worth of all | Combating marginalization |
-
-: Principles of social justice {.striped .hover}
-
-------------------------------------------------------------------------
-
-#### Dimensions of social justice
-
-Just as there are many theoretical entry points to social justice, there are also dimensional components that may be used to help focus your analysis. These dimensions help to clarify the specific principles noted above in a more concrete way. Importantly, these principles and dimensions are neither rigid or fixed.
-
-| Dimension | Component 1 | Component 2 | Component 3 |
-|------------------|------------------|------------------|------------------|
-| Economic | Poverty and income inequality | Fair distribution of resources and wealth | Access to education, employment, healthcare |
-| Environmental | Protecting and preserving the environment | Mitigating environmental degradation | Ensuring equitable access to natural resources |
-| Racial and ethnic | Combating racism and discrimination | Promoting racial and ethnic equality | Recognizing and valuing cultural diversity |
-| Gender and LGBTQ+ | Achieving gender equality and empowerment | Addressing discrimination based on sexuality or gender expression | Ensuring equal rights for all genders |
-
-: Dimensions of social justice {.striped .hover}
-
-------------------------------------------------------------------------
-
-![A sample framework for racial justice in education. Image from NEA.org](img/wk13-a-2.jpg)
-
-------------------------------------------------------------------------
-
-#### Strategies to promote social justice
-
-As you consider the various principles and dimensions in your theoretical framing of a particular social issue, data can be used as a method to promote social justice by examining attitudes around the various principles and dimensions (e.g., consider variables in the GSS data), examining real-world data on issues of social injustice (e.g., consider the fatal force database), and a host of other methods that center data analysis as a form of political knowledge.
-
-There are, however, specific ways to think about the implications of a particular analytical study. These methods can help to further refine the role and goals of any particular modeling of a social justice issues. Importantly, considering the various contexts to which an issue intersections is also important (i.e., global, national, and/or local).
-
-------------------------------------------------------------------------
-
--   Advocacy and activism
-
-    -- Using data to raise awareness about social issues
-
-    -- Mobilizing for policy change with various statistical models
-
-    -- Supporting grassroots movements using quantitative information
-
-------------------------------------------------------------------------
-
--   Policy interventions
-
-    -- Analyses to help examine and implement laws and regulations
-
-    -- Quantification to help redistribute resources and opportunities
-
-    -- Models to help inform inclusive social welfare programs
-
-------------------------------------------------------------------------
-
--   Education and awareness
-
-    -- Promoting critical thinking and empathy
-
-    -- Incorporating social justice into curricula
-
-    -- Engaging in dialogue and community outreach
-
-    -- Calls to action for promoting a more just and equitable society
-
-------------------------------------------------------------------------
+: DATA 202 final assessment rubric {.striped .hover}
 
 ## Part II: Content
 
-Multiple Variable Analysis and Multivariate Analysis are two terms often used in statistics and research methodology to describe different approaches to analyzing data involving multiple variables. While they share similarities, there are distinct differences between these two concepts.
+## Writing Critical Statistics
 
-------------------------------------------------------------------------
+Intersectionality, as a guiding principle, asserts that social categories interact multiplicatively, not additively. For example, the combined impact of racism and sexism is not merely the sum of each form of discrimination but can create unique social positions and outcomes
 
-### Multivariable vs. Multivariate
+-   **Context and Theory First:** Prioritize grounding statistical analysis in robust theoretical frameworks and contextual understanding before selecting a particular method. Consider the *Theory Construction* process that was reviewed in [week 3](week03.qmd) and [week 4](week04.qmd).
 
-*Multiple variable analysis* investigates the influence of individual independent variables on a single dependent variable, while *multivariate analysis* explores the relationships and patterns among multiple variables simultaneously. Multiple Variable Analysis is often used when studying the effects of specific factors, while multivariate analysis is employed to uncover broader patterns and structures within a dataset. Both approaches are valuable in data analysis, and the choice between them depends on the research objectives and the nature of the data being analyzed.
+-   **Selection of Variables:** Carefully choose which intersecting identities to include, based on the research question and the populations affected by the social issue under study.
 
-::: {.callout-caution icon="false"}
-#### **Definitions**: Multiple variable analysis vs. Multivariate analysis
-
-**Multiple Variable Analysis**: Multiple Variable Analysis refers to the process of examining the relationships between several independent variables and a single dependent variable. It aims to understand how each independent variable influences or predicts the dependent variable individually, while controlling for other variables. In this analysis, each independent variable is analyzed separately, often using techniques such as regression analysis or analysis of variance (ANOVA).
-
-**Multivariate Analysis**: Multivariate Analysis involves the simultaneous analysis of multiple dependent and independent variables. It aims to explore the relationships and patterns among multiple variables, considering them as a whole. This analysis technique allows for the examination of complex interactions and associations between variables, providing a more comprehensive understanding of the data.
-:::
-
-------------------------------------------------------------------------
-
-#### Key characteristics of multiple variable analysis
-
-1.  **Focus**: Examining the impact of individual independent variables on a single dependent variable.
-
-2.  **Analytic approach**: Each independent variable is analyzed separately, allowing for isolation of their effects.
-
-3.  **Purpose**: To identify the individual contributions and significance of multiple variables in explaining the variation in the dependent variable.
-
-4.  **Statistical techniques**: Common techniques include simple linear regression, multiple linear regression, and ANOVA.
-
-------------------------------------------------------------------------
-
-#### Key characteristics of multivariate analysis
-
-1.  **Focus**: Examining the relationships and interactions among multiple variables simultaneously.
-
-2.  **Analytic approach**: Considering all variables together, accounting for their joint effects and potential interdependence.
-
-3.  **Purpose**: To explore patterns, associations, and structures within the data, identifying underlying factors or dimensions.
-
-4.  **Statistical techniques**: Common techniques include factor analysis, principal component analysis, cluster analysis, and structural equation modeling.
-
-------------------------------------------------------------------------
-
-### Examples of multivariate analysis techniques
-
--   *Principal component analysis (PCA)*: PCA is used to reduce the dimensionality of data by transforming it into a new set of uncorrelated variables called principal components. R functions for PCA include `prcomp()` and `princomp()`.
-
--   *Factor analysis*: Factor Analysis aims to identify latent factors that explain the correlations among observed variables. R offers functions like `factanal()` and `psych::fa()` for conducting factor analysis.
-
--   *Canonical correlation analysis (CCA)*: CCA examines the relationships between two sets of variables and identifies the linear combinations of each set that have maximum correlation with each other. The `CCA()` function in the stats package can be used for this analysis.
-
--   *Cluster analysis*: Cluster Analysis groups similar observations into clusters based on the similarity of their characteristics. R provides various clustering techniques, such as k-means clustering (`kmeans()`), hierarchical clustering (`hclust()`), and model-based clustering (`Mclust()`).
-
--   *Discriminant analysis*: Discriminant Analysis aims to find a linear combination of variables that maximally separate predefined groups or classes. R offers functions like `lda()` and `qda()` for performing Linear Discriminant Analysis (LDA) and Quadratic Discriminant Analysis (QDA), respectively.
-
--   *Multivariate regression*: Multivariate Regression extends simple linear regression to multiple response variables. The `lm()` function in R can be used for multivariate regression analysis.
-
--   *Multivariate analysis of variance (MANOVA)*: MANOVA extends the analysis of variance (ANOVA) to multiple response variables simultaneously. The `manova()` function in R can be used for MANOVA.
-
--   *Multidimensional scaling (MDS)*: MDS visualizes the similarity or dissimilarity between objects in a lower-dimensional space. R provides functions like `cmdscale()` and `isoMDS()` for performing MDS.
-
--   *Structural Equation Modeling (SEM)*: SEM is a comprehensive framework for testing complex relationships among variables. R packages like lavaan and sem offer functionalities for conducting SEM.
-
--   *Correspondence Analysis*: Correspondence Analysis explores the associations between categorical variables and visualizes them in a low-dimensional space. The `ca()` function in the ca package is commonly used for correspondence analysis.
-
-We will consider a few of these models in our final weeks for the course.
-
-------------------------------------------------------------------------
-
-```{r}
-#| echo: false
-#| output: false
-#| warning: false
-## Sample outline of a bivariate regression analysis
-
-# Generate sample data
-set.seed(400)
-x <- rnorm(100)
-y <- 2 + -3*x^2 + rnorm(100)
-z <- -4 + 3*x - rnorm(100)
-```
+-   **Interpretation of Results:** Recognize that statistical findings reflect not just individual characteristics but also broader systems of power, oppression, and privilege.
 
 ## Part III: Code
 
-We will discuss specific code for your projects.
+Data analysis examples: There are a wealth of sources on the web to support your future work. These sources are useful for analyzing data that you find online and want to perform various tests on.
 
-### Next up: Week 14
+Below, I outline some of these sources that can help extend your analysis as you move forward.
+
+-   [Using R for Multivariate Analysis](https://little-book-of-r-for-multivariate-analysis.readthedocs.io/en/latest/src/multivariateanalysis.html)
+
+-   [An Introduction to Political and Social Data Analysis Using R](https://bookdown.org/tomholbrook12/bookdown-demo/)
+
+-   [Modern Statistics with R](https://www.modernstatisticswithr.com/)
+
+-   [R for Graduate Students](https://bookdown.org/yih_huynh/Guide-to-R-Book/)
+
+-   [R for Social Scientists](https://datacarpentry.org/r-socialsci/)
+
+-   [Data Analysis Examples](https://stats.oarc.ucla.edu/other/dae/)
