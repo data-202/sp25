@@ -51,7 +51,7 @@ And just for good measure: all assignments should be turned in via Canvas.
 
 -   I will not download any files not uploaded to **Canvas**. I will only click on a clearly visible Github repository (i.e., no shortened or bit.ly links). Article citations that include DOIs are preferred.
 
--   We will discuss **Quarto Markdown files** which integrate code, formulas, and text. Quarto is actually how I created this site for our course, and it is a great way to communicate your technical ideas.
+-   We will discuss **RMarkdown files** which integrate code, formulas, and text. The .Rmd file is actually how I created some pages on this site for our course, and it is a great way to communicate your technical ideas.
 
 -   This is a Canvas *companion* site/page (I'll use these terms interchangeably) and it will serve as your guide to completing all technical assignments.
 
