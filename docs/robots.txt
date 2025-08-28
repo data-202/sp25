@@ -1,1 +1,0 @@
-Sitemap: https://github.com/data-202/sitemap.xml
