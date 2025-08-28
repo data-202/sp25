@@ -481,7 +481,7 @@ First, install the 'praise' package.
 #| warning: false
 #| output: false
 # install the package
-install.packages("praise", repos = "http://cran.us.r-project.org")
+install.packages("praise")
 ```
 
 ------------------------------------------------------------------------
